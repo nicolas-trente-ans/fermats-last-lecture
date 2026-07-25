@@ -1,0 +1,36 @@
+key,en,fr,hu,pirate
+chapter.1,Chapter 1 · Basics,Chapitre 1 · Bases,1. fejezet · Alapok,Chapter 1 · Basics
+chapter.2,Chapter 2 · Linear Algebra,Chapitre 2 · Algèbre linéaire,2. fejezet · Lineáris algebra,Chapter 2 · Linear Algebra
+chapter.3,Chapter 3 · Abstract Algebra,Chapitre 3 · Algèbre abstraite,3. fejezet · Absztrakt algebra,Chapter 3 · Abstract Algebra
+chapter.4,Chapter 4 · Elliptic Curves,Chapitre 4 · Courbes elliptiques,4. fejezet · Elliptikus görbék,Chapter 4 · Elliptic Curves
+chapter.5,Chapter 5 · Modular Forms,Chapitre 5 · Formes modulaires,5. fejezet · Moduláris formák,Chapter 5 · Modular Forms
+chapter.6,Chapter 6 · The Endgame,Chapitre 6 · Le final,6. fejezet · A végjáték,Chapter 6 · The Endgame
+section.intro,Introduction,Introduction,Bevezetés,Introduction
+section.basic_sets,Basic set and number theory,Ensembles et théorie des nombres de base,Alapvető halmaz- és számelmélet,Basic set and number theory
+section.symbols_notation,Symbols and notation,Symboles et notation,Szimbólumok és jelölés,Symbols and notation
+section.divisibility_congruence,Divisibility and congruence,Divisibilité et congruence,Oszthatóság és kongruencia,Divisibility and congruence
+section.gcd,Greatest common divisor,Plus grand commun diviseur,Legnagyobb közös osztó,Greatest common divisor
+section.flt_n3,Proof of FLT for n = 3,Preuve du DLF pour n = 3,FLT bizonyítása n = 3-ra,Proof of FLT for n = 3
+section.flt_n4,Proof of FLT for n = 4,Preuve du DLF pour n = 4,FLT bizonyítása n = 4-re,Proof of FLT for n = 4
+section.calculus_complex,Basic calculus and complex analysis,Calcul et analyse complexe de base,Alap kalkulus és komplex analízis,Basic calculus and complex analysis
+section.matrices,Matrices linear systems and determinants,Matrices systèmes linéaires et déterminants,Mátrixok lineáris rendszerek és determinánsok,Matrices linear systems and determinants
+section.vector_spaces,Vector spaces basis and dimension,Espaces vectoriels base et dimension,Vektorterek bázis és dimenzió,Vector spaces basis and dimension
+section.linear_transforms,Linear transformations inner products and the spectral theorem,Transformations linéaires produits scalaires et théorème spectral,Lineáris leképezések skalárszorzat és spektráltétel,Linear transformations inner products and the spectral theorem
+section.groups,Groups homomorphisms and group actions,Groupes homomorphismes et actions de groupe,Csoportok homomorfizmusok és csoportműveletek,Groups homomorphisms and group actions
+section.rings_fields,Rings fields ideals and unique factorization,Anneaux corps idéaux et factorisation unique,Gyűrűk testek ideálok és egyértelmű faktorizáció,Rings fields ideals and unique factorization
+section.galois_theory,Field extensions and Galois theory,Extensions de corps et théorie de Galois,Testbővítések és Galois-elmélet,Field extensions and Galois theory
+section.galois_reps,Galois representations ramification and Frobenius,Représentations de Galois ramification et Frobenius,Galois-reprezentációk elágazás és Frobenius,Galois representations ramification and Frobenius
+section.padic,p-adic valuations and p-adic numbers,Valuations p-adiques et nombres p-adiques,p-adikus valuációk és p-adikus számok,p-adic valuations and p-adic numbers
+section.projective_elliptic,Projective geometry and elliptic curves,Géométrie projective et courbes elliptiques,Projektív geometria és elliptikus görbék,Projective geometry and elliptic curves
+section.elliptic_group_law,The group law on elliptic curves,La loi de groupe sur les courbes elliptiques,Csoportművelet elliptikus görbéken,The group law on elliptic curves
+section.reduction_mod_p,Reduction modulo p point counting and Frobenius,Réduction modulo p comptage de points et Frobenius,Redukció modulo p pontszámolás és Frobenius,Reduction modulo p point counting and Frobenius
+section.torsion_tate,Torsion points Tate modules and Galois representations,Points de torsion modules de Tate et représentations de Galois,Torziós pontok Tate-modulusok és Galois-reprezentációk,Torsion points Tate modules and Galois representations
+section.invariants_lfunctions,Invariants minimal models semistability L-functions and the conductor,Invariants modèles minimaux semi-stabilité fonctions L et conducteur,Invariánsok minimális modellek szemistabilitás L-függvények és a vezető,Invariants minimal models semistability L-functions and the conductor
+section.eta_modular,The eta function modular group and modular forms,Fonction êta groupe modulaire et formes modulaires,Az eta-függvény moduláris csoport és moduláris formák,The eta function modular group and modular forms
+section.spaces_modular,Spaces of modular forms and the Petersson inner product,Espaces de formes modulaires et produit scalaire de Petersson,Moduláris formák terei és a Petersson-skalárszorzat,Spaces of modular forms and the Petersson inner product
+section.hecke,Hecke operators and Hecke forms,Opérateurs de Hecke et formes de Hecke,Hecke-operátorok és Hecke-formák,Hecke operators and Hecke forms
+section.newforms,L-functions newforms and Galois representations,Fonctions L newforms et représentations de Galois,L-függvények newformok és Galois-reprezentációk,L-functions newforms and Galois representations
+section.four_clues,Four clues connecting elliptic curves and modular forms,Quatre indices reliant courbes elliptiques et formes modulaires,Négy nyom elliptikus görbék és moduláris formák között,Four clues connecting elliptic curves and modular forms
+section.modularity,The modularity theorem and Galois representations,Le théorème de modularité et les représentations de Galois,A modularitási tétel és Galois-reprezentációk,The modularity theorem and Galois representations
+section.serre_ribet_frey,Serre Ribet and the Frey curve,Serre Ribet et la courbe de Frey,Serre Ribet és a Frey-görbe,Serre Ribet and the Frey curve
+section.final_proof,The final proof of Fermat's Last Theorem,La preuve finale du dernier théorème de Fermat,Fermat utolsó tételének végső bizonyítása,The final proof of Fermat's Last Theorem

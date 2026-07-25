@@ -1,0 +1,12 @@
+id,section_id,type,prompt_key,answer,choices_keys,weight,review_section_id
+sets-mc-nats-counting,basic-sets,mc,q.sets.nats_counting.prompt,q.sets.nats_counting.a,q.sets.nats_counting.a|q.sets.nats_counting.b|q.sets.nats_counting.c,1,
+sets-mc-ints-extend,basic-sets,mc,q.sets.ints_extend.prompt,q.sets.ints_extend.a,q.sets.ints_extend.a|q.sets.ints_extend.b|q.sets.ints_extend.c,1,
+sets-mc-neg-membership,basic-sets,mc,q.sets.neg_membership.prompt,q.sets.neg_membership.a,q.sets.neg_membership.a|q.sets.neg_membership.b|q.sets.neg_membership.c,1,
+sets-mc-seven-rational,basic-sets,mc,q.sets.seven_rational.prompt,q.sets.seven_rational.a,q.sets.seven_rational.a|q.sets.seven_rational.b|q.sets.seven_rational.c,1,
+sets-mc-sqrt2-compare,basic-sets,mc,q.sets.sqrt2_compare.prompt,q.sets.sqrt2_compare.a,q.sets.sqrt2_compare.a|q.sets.sqrt2_compare.b|q.sets.sqrt2_compare.c,1,
+sets-mc-reals-properties,basic-sets,mc,q.sets.reals_properties.prompt,q.sets.reals_properties.a,q.sets.reals_properties.a|q.sets.reals_properties.b|q.sets.reals_properties.c,1,
+sets-mc-real-in-complex,basic-sets,mc,q.sets.real_in_complex.prompt,q.sets.real_in_complex.a,q.sets.real_in_complex.a|q.sets.real_in_complex.b|q.sets.real_in_complex.c,1,
+sets-mc-member-vs-subset,basic-sets,mc,q.sets.member_vs_subset.prompt,q.sets.member_vs_subset.a,q.sets.member_vs_subset.a|q.sets.member_vs_subset.b|q.sets.member_vs_subset.c,1,
+sets-mc-inclusion-why,basic-sets,mc,q.sets.inclusion_why.prompt,q.sets.inclusion_why.a,q.sets.inclusion_why.a|q.sets.inclusion_why.b|q.sets.inclusion_why.c,1,
+sets-mc-nxn-subset,basic-sets,mc,q.sets.nxn_subset.prompt,q.sets.nxn_subset.a,q.sets.nxn_subset.a|q.sets.nxn_subset.b|q.sets.nxn_subset.c,1,
+sets-mc-c-vs-r2,basic-sets,mc,q.sets.c_vs_r2.prompt,q.sets.c_vs_r2.a,q.sets.c_vs_r2.a|q.sets.c_vs_r2.b|q.sets.c_vs_r2.c,1,

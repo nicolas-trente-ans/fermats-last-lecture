@@ -1,0 +1,12 @@
+question_id,hint_key,hint_order
+sets-mc-nats-counting,q.sets.nats_counting.hint,1
+sets-mc-ints-extend,q.sets.ints_extend.hint,1
+sets-mc-neg-membership,q.sets.neg_membership.hint,1
+sets-mc-seven-rational,q.sets.seven_rational.hint,1
+sets-mc-sqrt2-compare,q.sets.sqrt2_compare.hint,1
+sets-mc-reals-properties,q.sets.reals_properties.hint,1
+sets-mc-real-in-complex,q.sets.real_in_complex.hint,1
+sets-mc-member-vs-subset,q.sets.member_vs_subset.hint,1
+sets-mc-inclusion-why,q.sets.inclusion_why.hint,1
+sets-mc-nxn-subset,q.sets.nxn_subset.hint,1
+sets-mc-c-vs-r2,q.sets.c_vs_r2.hint,1

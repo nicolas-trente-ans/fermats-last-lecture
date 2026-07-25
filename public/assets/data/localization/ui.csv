@@ -1,0 +1,31 @@
+key,en,fr,hu,pirate
+title,Fermat's Last Lecture,La Dernière Leçon de Fermat,A Fermat utolsó előadása,Fermat's Last Lecture
+ui.home_lede,"Follow the video section by section. Mark a section complete to unlock a short knowledge check drawn from that section and earlier ones.","Suivez la vidéo section par section. Marquez une section comme terminée pour débloquer un court contrôle tiré de cette section et des précédentes.","Kövesd a videót szakaszonként. Ha egy szakaszt késznek jelölsz, feloldódik egy rövid tudásellenőrzés az adott és a korábbi szakaszokból.","Sail the lecture section by section. Mark a stretch complete to unlock a short knowledge check from that waters and earlier ones."
+ui.completed,Completed,Terminé,Kész,Done and dusted
+ui.coming_soon,Coming soon,Bientôt,Hamarosan,Not yet on the map
+ui.open,Open,Ouvrir,Megnyitás,Set sail
+ui.back_home,All sections,Toutes les sections,Összes szakasz,Back to the chart
+ui.watch_range,Watch,Regardez,Nézd,Watch
+ui.mark_complete,Mark section complete,Marquer la section comme terminée,Szakasz kész,Mark this stretch done
+ui.mode_video,Video,Vidéo,Videó,Video
+ui.mode_notes,Notes,Notes,Jegyzetek,Notes
+ui.notes_missing,Notes for this section are not available in this language yet.,Les notes de cette section ne sont pas encore disponibles dans cette langue.,Ehhez a szakaszhoz még nincs jegyzet ezen a nyelven.,Notes for this stretch ain't aboard in this tongue yet.
+ui.knowledge_check,Knowledge check,Contrôle de connaissances,Tudásellenőrzés,Knowledge check
+ui.knowledge_check_lede,"A few questions from this section and earlier ones. Answered questions stay answered until you refamiliarize.","Quelques questions de cette section et des précédentes. Les questions déjà répondues restent marquées jusqu'à une refamiliarisation.","Néhány kérdés az aktuális és korábbi szakaszokból. A megválaszolt kérdések addig maradnak megválaszolva, amíg újra nem ismerkedel.","A few questions from this stretch and earlier ones. Answered ones stay marked till ye refamiliarize."
+ui.complete_to_unlock,Mark this section complete to unlock the knowledge check.,Marquez cette section comme terminée pour débloquer le contrôle.,Jelöld késznek a szakaszt a tudásellenőrzés feloldásához.,Mark this stretch done to unlock the check.
+ui.no_questions_yet,Questions for this section are coming soon. You can still watch and mark it complete.,Les questions de cette section arrivent bientôt. Vous pouvez quand même regarder et marquer comme terminé.,Ehhez a szakaszhoz hamarosan jönnek kérdések. Addig is nézheted és késznek jelölheted.,Questions for this stretch be comin' soon. Ye can still watch and mark it done.
+ui.start_check,Start check,Commencer le contrôle,Ellenőrzés indítása,Start the check
+ui.refamiliarize,Refamiliarize,Refamiliariser,Újraismerkedés,Refamiliarize
+ui.check_complete,Check complete. Start again anytime for remaining unanswered questions.,Contrôle terminé. Relancez pour les questions encore sans réponse.,Ellenőrzés kész. Indítsd újra a még megválaszolatlan kérdésekhez.,Check complete. Fire again anytime for unanswered questions.
+ui.start_when_ready,Press Start check when you are ready.,Appuyez sur Commencer le contrôle quand vous êtes prêt.,Nyomd meg az Ellenőrzés indítását ha készen állsz.,Press Start check when ye be ready.
+ui.match_placeholder,Type a symbol or name…,Tapez un symbole ou un nom…,Írj egy szimbólumot vagy nevet…,Type a symbol or name…
+ui.submit,Submit,Valider,Beküldés,Submit
+ui.hint,Hint,Indice,Segítség,Hint
+ui.next,Next,Suivant,Következő,Next
+ui.previous,Previous,Précédent,Előző,Previous
+ui.previous_section,Previous section,Section précédente,Előző szakasz,Previous stretch
+ui.next_section,Next section,Section suivante,Következő szakasz,Next stretch
+ui.correct,Correct.,Correct.,Helyes.,Aye correct.
+ui.try_again,Not quite — try again or open the hint.,Pas tout à fait — réessayez ou ouvrez l'indice.,Nem egészen — próbáld újra vagy nyisd meg a segítséget.,Not quite — try again or open the hint.
+ui.review_section,Review earlier section,Revoir une section précédente,Nézd meg újra a korábbi szakaszt,Revisit an earlier stretch
+ui.section_missing,Section not found.,Section introuvable.,A szakasz nem található.,Section not found.
