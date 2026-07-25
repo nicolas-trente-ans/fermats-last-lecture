@@ -42,7 +42,7 @@ jobs:
       - name: Build
         run: yarn build
         env:
-          VITE_BASE_PATH: /fermat/
+          VITE_BASE_PATH: /fermats-last-lecture/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

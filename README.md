@@ -56,4 +56,4 @@ yarn build
 
 ## GitHub Pages
 
-Set the repository Pages source to GitHub Actions. The workflow builds with `VITE_BASE_PATH=/fermat/` (rename in `.github/workflows/deploy.yml` if the repo name differs).
+Set the repository Pages source to GitHub Actions. The workflow builds with `VITE_BASE_PATH=/fermats-last-lecture/` (must match the GitHub repo name in the Pages URL).
