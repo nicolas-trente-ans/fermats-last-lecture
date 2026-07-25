@@ -215,7 +215,7 @@ Across all kinds:
   - `match`: leave `choices_keys` empty; `answer` is a pipe-separated accept list of short strings (symbols/names), graded after normalization.
 - Prefer `mc` for relational / comparative / narrative / graphic discrimination; use `match` for symbol/name consolidation under a cued organizer.
 - `organizer`: `expository` | `comparative` | `narrative` | `graphic` (required).
-- A check draws a small sample (`QUIZ_SIZE`) from unanswered items in the section prefix.
+- A check draws a small sample (`QUIZ_SIZE`, default 3) from unanswered items in the section prefix. Override per section with optional `quiz_size` in `sections.csv`.
 - Keep symbol lines and formal math aligned across locales; translate prose. For `pirate`, lean into cringe humor without changing the math claim.
 - Hints: one clear hint per item is enough unless scaffolding steps are intentional (`hint_order`).
 

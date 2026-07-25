@@ -96,6 +96,7 @@ function parseSection(row: Record<string, string>): Section {
     throw new Error(`Invalid section status for ${row.id}: ${row.status}`)
   }
   const endRaw = row.end_seconds?.trim()
+  const quizSizeRaw = row.quiz_size?.trim()
   return {
     id: required(row, 'id'),
     chapter: required(row, 'chapter'),
@@ -104,6 +105,7 @@ function parseSection(row: Record<string, string>): Section {
     endSeconds: endRaw ? Number(endRaw) : null,
     titleKey: required(row, 'title_key'),
     status,
+    quizSize: quizSizeRaw ? Number(quizSizeRaw) : null,
   }
 }
 

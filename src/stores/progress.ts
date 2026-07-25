@@ -94,7 +94,8 @@ export function createProgressStore(): ProgressStore {
     drawCheckQuestions(current, sections, questions) {
       const pool = poolForPrefix(current, sections, questions)
       const answered = new Set(state.answeredQuestionIds)
-      return drawFromPool(current, pool, answered, QUIZ_SIZE)
+      const size = current.quizSize ?? QUIZ_SIZE
+      return drawFromPool(current, pool, answered, size)
     },
     clearAnsweredUpTo(current, sections, questions) {
       const poolIds = new Set(poolForPrefix(current, sections, questions).map((q) => q.id))

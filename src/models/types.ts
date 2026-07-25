@@ -15,6 +15,8 @@ export interface Section {
   endSeconds: number | null
   titleKey: string
   status: SectionStatus
+  /** Knowledge-check draw size; falls back to QUIZ_SIZE when unset. */
+  quizSize: number | null
 }
 
 export interface Question {

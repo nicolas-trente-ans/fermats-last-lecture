@@ -86,11 +86,15 @@ watch(
 }
 
 .notes-body :deep(h1) {
-  font-size: 1.45rem;
+  font-size: 2rem;
   margin-top: 0;
 }
 
 .notes-body :deep(h2) {
+  font-size: 1.55rem;
+}
+
+.notes-body :deep(h3) {
   font-size: 1.15rem;
 }
 

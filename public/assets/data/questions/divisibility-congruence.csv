@@ -1,0 +1,17 @@
+id,section_id,type,organizer,prompt_key,answer,choices_keys,weight,review_section_id
+div-mc-divides-means,divisibility-congruence,mc,expository,q.div.divides_means.prompt,q.div.divides_means.a,q.div.divides_means.a|q.div.divides_means.b|q.div.divides_means.c,1,
+div-mc-cong-means,divisibility-congruence,mc,expository,q.div.cong_means.prompt,q.div.cong_means.a,q.div.cong_means.a|q.div.cong_means.b|q.div.cong_means.c,1,
+div-mc-zero-mod,divisibility-congruence,mc,comparative,q.div.zero_mod.prompt,q.div.zero_mod.a,q.div.zero_mod.a|q.div.zero_mod.b|q.div.zero_mod.c,1,
+div-mc-multiply-sides,divisibility-congruence,mc,comparative,q.div.multiply_sides.prompt,q.div.multiply_sides.a,q.div.multiply_sides.a|q.div.multiply_sides.b|q.div.multiply_sides.c,1,
+div-mc-product-trap,divisibility-congruence,mc,comparative,q.div.product_trap.prompt,q.div.product_trap.a,q.div.product_trap.a|q.div.product_trap.b|q.div.product_trap.c,1,
+div-mc-linear-combo,divisibility-congruence,mc,graphic,q.div.linear_combo.prompt,q.div.linear_combo.a,q.div.linear_combo.a|q.div.linear_combo.b|q.div.linear_combo.c,1,
+div-mc-cong-ops,divisibility-congruence,mc,comparative,q.div.cong_ops.prompt,q.div.cong_ops.a,q.div.cong_ops.a|q.div.cong_ops.b|q.div.cong_ops.c,1,
+div-mc-why-cong,divisibility-congruence,mc,narrative,q.div.why_cong.prompt,q.div.why_cong.a,q.div.why_cong.a|q.div.why_cong.b|q.div.why_cong.c,1,
+div-mc-bridge-exists,divisibility-congruence,mc,narrative,q.div.bridge_exists.prompt,q.div.bridge_exists.a,q.div.bridge_exists.a|q.div.bridge_exists.b|q.div.bridge_exists.c,1,symbols-notation
+div-match-divides,divisibility-congruence,match,expository,q.div.match_divides.prompt,divides,,1,
+div-mc-remainder,divisibility-congruence,mc,comparative,q.div.remainder.prompt,q.div.remainder.a,q.div.remainder.a|q.div.remainder.b|q.div.remainder.c,1,
+div-mc-transitivity,divisibility-congruence,mc,comparative,q.div.transitivity.prompt,q.div.transitivity.a,q.div.transitivity.a|q.div.transitivity.b|q.div.transitivity.c,1,
+div-mc-sum-diff,divisibility-congruence,mc,comparative,q.div.sum_diff.prompt,q.div.sum_diff.a,q.div.sum_diff.a|q.div.sum_diff.b|q.div.sum_diff.c,1,
+div-mc-cong-add-c,divisibility-congruence,mc,comparative,q.div.cong_add_c.prompt,q.div.cong_add_c.a,q.div.cong_add_c.a|q.div.cong_add_c.b|q.div.cong_add_c.c,1,
+div-mc-equiv-rel,divisibility-congruence,mc,graphic,q.div.equiv_rel.prompt,q.div.equiv_rel.a,q.div.equiv_rel.a|q.div.equiv_rel.b|q.div.equiv_rel.c,1,
+div-mc-why-lemmas,divisibility-congruence,mc,narrative,q.div.why_lemmas.prompt,q.div.why_lemmas.a,q.div.why_lemmas.a|q.div.why_lemmas.b|q.div.why_lemmas.c,1,
