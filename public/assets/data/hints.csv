@@ -38,3 +38,16 @@ div-mc-sum-diff,q.div.sum_diff.hint,1
 div-mc-cong-add-c,q.div.cong_add_c.hint,1
 div-mc-equiv-rel,q.div.equiv_rel.hint,1
 div-mc-why-lemmas,q.div.why_lemmas.hint,1
+gcd-mc-means,q.gcd.means.hint,1
+gcd-mc-coprime,q.gcd.coprime.hint,1
+gcd-mc-coprime-vs-prime,q.gcd.coprime_vs_prime.hint,1
+gcd-mc-euclid-lemma,q.gcd.euclid_lemma.hint,1
+gcd-mc-trap-bridge,q.gcd.trap_bridge.hint,1
+gcd-mc-euclidean-step,q.gcd.euclidean_step.hint,1
+gcd-mc-drop-factor,q.gcd.drop_factor.hint,1
+gcd-mc-cofactors,q.gcd.cofactors.hint,1
+gcd-mc-workflow,q.gcd.workflow.hint,1
+gcd-mc-why-care,q.gcd.why_care.hint,1
+gcd-match-name,q.gcd.match_name.hint,1
+gcd-mc-signs,q.gcd.signs.hint,1
+gcd-mc-with-zero,q.gcd.with_zero.hint,1

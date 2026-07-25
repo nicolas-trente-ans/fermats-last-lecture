@@ -1,0 +1,14 @@
+id,section_id,type,organizer,prompt_key,answer,choices_keys,weight,review_section_id
+gcd-mc-means,gcd,mc,expository,q.gcd.means.prompt,q.gcd.means.a,q.gcd.means.a|q.gcd.means.b|q.gcd.means.c,1,
+gcd-mc-coprime,gcd,mc,expository,q.gcd.coprime.prompt,q.gcd.coprime.a,q.gcd.coprime.a|q.gcd.coprime.b|q.gcd.coprime.c,1,
+gcd-mc-coprime-vs-prime,gcd,mc,comparative,q.gcd.coprime_vs_prime.prompt,q.gcd.coprime_vs_prime.a,q.gcd.coprime_vs_prime.a|q.gcd.coprime_vs_prime.b|q.gcd.coprime_vs_prime.c,1,
+gcd-mc-euclid-lemma,gcd,mc,comparative,q.gcd.euclid_lemma.prompt,q.gcd.euclid_lemma.a,q.gcd.euclid_lemma.a|q.gcd.euclid_lemma.b|q.gcd.euclid_lemma.c,1,
+gcd-mc-trap-bridge,gcd,mc,narrative,q.gcd.trap_bridge.prompt,q.gcd.trap_bridge.a,q.gcd.trap_bridge.a|q.gcd.trap_bridge.b|q.gcd.trap_bridge.c,1,divisibility-congruence
+gcd-mc-euclidean-step,gcd,mc,comparative,q.gcd.euclidean_step.prompt,q.gcd.euclidean_step.a,q.gcd.euclidean_step.a|q.gcd.euclidean_step.b|q.gcd.euclidean_step.c,1,
+gcd-mc-drop-factor,gcd,mc,comparative,q.gcd.drop_factor.prompt,q.gcd.drop_factor.a,q.gcd.drop_factor.a|q.gcd.drop_factor.b|q.gcd.drop_factor.c,1,
+gcd-mc-cofactors,gcd,mc,comparative,q.gcd.cofactors.prompt,q.gcd.cofactors.a,q.gcd.cofactors.a|q.gcd.cofactors.b|q.gcd.cofactors.c,1,
+gcd-mc-workflow,gcd,mc,graphic,q.gcd.workflow.prompt,q.gcd.workflow.a,q.gcd.workflow.a|q.gcd.workflow.b|q.gcd.workflow.c,1,
+gcd-mc-why-care,gcd,mc,narrative,q.gcd.why_care.prompt,q.gcd.why_care.a,q.gcd.why_care.a|q.gcd.why_care.b|q.gcd.why_care.c,1,
+gcd-match-name,gcd,match,expository,q.gcd.match_name.prompt,gcd|greatest common divisor,,1,
+gcd-mc-signs,gcd,mc,comparative,q.gcd.signs.prompt,q.gcd.signs.a,q.gcd.signs.a|q.gcd.signs.b|q.gcd.signs.c,1,
+gcd-mc-with-zero,gcd,mc,expository,q.gcd.with_zero.prompt,q.gcd.with_zero.a,q.gcd.with_zero.a|q.gcd.with_zero.b|q.gcd.with_zero.c,1,
