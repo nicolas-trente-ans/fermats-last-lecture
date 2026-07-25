@@ -1,1 +1,1 @@
-export type { AppData, Locale, LocalizationTable, ProgressState, ProgressStore, Question, QuestionType, Section, SectionStatus } from './types'
+export type { AppData, Locale, LocalizationTable, OrganizerKind, ProgressState, ProgressStore, Question, QuestionType, Section, SectionStatus } from './types'

@@ -110,11 +110,15 @@ const localization = [
 const questionIds = new Set()
 const neededKeys = new Set()
 for (const row of questions) {
-  for (const field of ['id', 'section_id', 'type', 'prompt_key', 'answer']) {
+  for (const field of ['id', 'section_id', 'type', 'organizer', 'prompt_key', 'answer']) {
     if (!row[field]) errors.push(`questions: missing ${field} on ${row.id || '?'}`)
   }
   if (row.type && row.type !== 'mc' && row.type !== 'match') {
     errors.push(`questions: bad type ${row.type}`)
+  }
+  const organizers = new Set(['expository', 'comparative', 'narrative', 'graphic'])
+  if (row.organizer && !organizers.has(row.organizer)) {
+    errors.push(`questions: bad organizer ${row.organizer} on ${row.id}`)
   }
   if (!sectionIds.has(row.section_id)) {
     errors.push(`questions: unknown section_id ${row.section_id}`)

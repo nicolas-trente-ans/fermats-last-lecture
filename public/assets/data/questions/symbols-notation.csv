@@ -1,0 +1,13 @@
+id,section_id,type,organizer,prompt_key,answer,choices_keys,weight,review_section_id
+sym-mc-forall-role,symbols-notation,mc,expository,q.sym.forall_role.prompt,q.sym.forall_role.a,q.sym.forall_role.a|q.sym.forall_role.b|q.sym.forall_role.c,1,
+sym-mc-exists-role,symbols-notation,mc,expository,q.sym.exists_role.prompt,q.sym.exists_role.a,q.sym.exists_role.a|q.sym.exists_role.b|q.sym.exists_role.c,1,
+sym-mc-forall-vs-exists,symbols-notation,mc,comparative,q.sym.forall_vs_exists.prompt,q.sym.forall_vs_exists.a,q.sym.forall_vs_exists.a|q.sym.forall_vs_exists.b|q.sym.forall_vs_exists.c,1,
+sym-mc-defeq-vs-eq,symbols-notation,mc,comparative,q.sym.defeq_vs_eq.prompt,q.sym.defeq_vs_eq.a,q.sym.defeq_vs_eq.a|q.sym.defeq_vs_eq.b|q.sym.defeq_vs_eq.c,1,
+sym-mc-st-role,symbols-notation,mc,expository,q.sym.st_role.prompt,q.sym.st_role.a,q.sym.st_role.a|q.sym.st_role.b|q.sym.st_role.c,1,
+sym-mc-wts-vs-ets,symbols-notation,mc,comparative,q.sym.wts_vs_ets.prompt,q.sym.wts_vs_ets.a,q.sym.wts_vs_ets.a|q.sym.wts_vs_ets.b|q.sym.wts_vs_ets.c,1,
+sym-mc-wlog,symbols-notation,mc,expository,q.sym.wlog.prompt,q.sym.wlog.a,q.sym.wlog.a|q.sym.wlog.b|q.sym.wlog.c,1,
+sym-mc-flt-unpack,symbols-notation,mc,graphic,q.sym.flt_unpack.prompt,q.sym.flt_unpack.a,q.sym.flt_unpack.a|q.sym.flt_unpack.b|q.sym.flt_unpack.c,1,intro
+sym-mc-why-shorthand,symbols-notation,mc,narrative,q.sym.why_shorthand.prompt,q.sym.why_shorthand.a,q.sym.why_shorthand.a|q.sym.why_shorthand.b|q.sym.why_shorthand.c,1,basic-sets
+sym-mc-flt-same-claim,symbols-notation,mc,narrative,q.sym.flt_same_claim.prompt,q.sym.flt_same_claim.a,q.sym.flt_same_claim.a|q.sym.flt_same_claim.b|q.sym.flt_same_claim.c,1,intro
+sym-match-forall,symbols-notation,match,expository,q.sym.match_forall.prompt,∀|forall|for all,,1,
+sym-match-exists,symbols-notation,match,expository,q.sym.match_exists.prompt,∃|exists|there exists,,1,

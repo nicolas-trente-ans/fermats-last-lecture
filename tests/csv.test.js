@@ -64,13 +64,20 @@ test('basic-sets questions exist and answers are consistent', () => {
   const questions = parseCsv(
     readFileSync(join(root, 'public/assets/data/questions/basic-sets.csv'), 'utf8'),
   )
+  const organizers = new Set(['expository', 'comparative', 'narrative', 'graphic'])
   assert.ok(questions.length > 3, 'pool should exceed one quiz draw')
   for (const q of questions) {
     assert.equal(q.section_id, 'basic-sets')
     assert.equal(q.type, 'mc')
+    assert.ok(organizers.has(q.organizer), q.id)
     const choices = q.choices_keys.split('|')
     assert.ok(choices.includes(q.answer), q.id)
   }
+  const kindsUsed = new Set(questions.map((q) => q.organizer))
+  assert.ok(kindsUsed.has('expository'))
+  assert.ok(kindsUsed.has('comparative'))
+  assert.ok(kindsUsed.has('narrative'))
+  assert.ok(kindsUsed.has('graphic'))
 })
 test('match normalization accepts unicode symbols', () => {
   assert.equal(normalizeMatchAnswer(' ℕ '), 'ℕ'.toLowerCase().normalize('NFKC'))

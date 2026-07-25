@@ -4,6 +4,8 @@ export type SectionStatus = 'active' | 'coming_soon'
 
 export type QuestionType = 'mc' | 'match'
 
+export type OrganizerKind = 'expository' | 'comparative' | 'narrative' | 'graphic'
+
 export interface Section {
   id: string
   chapter: string
@@ -19,6 +21,7 @@ export interface Question {
   id: string
   sectionId: string
   type: QuestionType
+  organizer: OrganizerKind
   promptKey: string
   hintKeys: string[]
   answer: string

@@ -1,8 +1,9 @@
-import { DATA_BASE, SUPPORTED_LOCALES } from '@/constants'
+import { DATA_BASE, ORGANIZER_KINDS, SUPPORTED_LOCALES } from '@/constants'
 import type {
   AppData,
   Locale,
   LocalizationTable,
+  OrganizerKind,
   Question,
   QuestionType,
   Section,
@@ -111,6 +112,10 @@ function parseQuestion(row: Record<string, string>): Question {
   if (type !== 'mc' && type !== 'match') {
     throw new Error(`Invalid question type for ${row.id}: ${row.type}`)
   }
+  const organizer = row.organizer as OrganizerKind
+  if (!ORGANIZER_KINDS.includes(organizer)) {
+    throw new Error(`Invalid organizer for ${row.id}: ${row.organizer}`)
+  }
   const choicesKeys = (row.choices_keys || '')
     .split('|')
     .map((s) => s.trim())
@@ -119,6 +124,7 @@ function parseQuestion(row: Record<string, string>): Question {
     id: required(row, 'id'),
     sectionId: required(row, 'section_id'),
     type,
+    organizer,
     promptKey: required(row, 'prompt_key'),
     hintKeys: [],
     answer: required(row, 'answer'),

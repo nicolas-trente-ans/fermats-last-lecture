@@ -1,7 +1,7 @@
 id,chapter,order,start_seconds,title_key,status
 intro,1,1,0,section.intro,active
 basic-sets,1,2,302,section.basic_sets,active
-symbols-notation,1,3,605,section.symbols_notation,active
+symbols-notation,1,3,523,section.symbols_notation,active
 divisibility-congruence,1,4,731,section.divisibility_congruence,active
 gcd,1,5,861,section.gcd,active
 flt-n3,1,6,1021,section.flt_n3,coming_soon

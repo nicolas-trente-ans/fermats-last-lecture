@@ -10,3 +10,15 @@ sets-mc-member-vs-subset,q.sets.member_vs_subset.hint,1
 sets-mc-inclusion-why,q.sets.inclusion_why.hint,1
 sets-mc-nxn-subset,q.sets.nxn_subset.hint,1
 sets-mc-c-vs-r2,q.sets.c_vs_r2.hint,1
+sym-mc-forall-role,q.sym.forall_role.hint,1
+sym-mc-exists-role,q.sym.exists_role.hint,1
+sym-mc-forall-vs-exists,q.sym.forall_vs_exists.hint,1
+sym-mc-defeq-vs-eq,q.sym.defeq_vs_eq.hint,1
+sym-mc-st-role,q.sym.st_role.hint,1
+sym-mc-wts-vs-ets,q.sym.wts_vs_ets.hint,1
+sym-mc-wlog,q.sym.wlog.hint,1
+sym-mc-flt-unpack,q.sym.flt_unpack.hint,1
+sym-mc-why-shorthand,q.sym.why_shorthand.hint,1
+sym-mc-flt-same-claim,q.sym.flt_same_claim.hint,1
+sym-match-forall,q.sym.match_forall.hint,1
+sym-match-exists,q.sym.match_exists.hint,1
