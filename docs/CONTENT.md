@@ -54,4 +54,6 @@ Juxtaposition is hard to parse in notes, especially next to `|`, gcd, and multi-
 
 ## Related
 
-- Knowledge-check authoring (Ausubel / advanced organizers): see `public/assets/data/QUESTION.md`.
+- Knowledge-check authoring (Ausubel / advanced organizers): see [`QUESTION.md`](QUESTION.md).
+- Logic game / sandbox authoring: see [`SANDBOX.md`](SANDBOX.md).
+- Architecture decisions: see [`adr/`](adr/).

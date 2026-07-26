@@ -252,3 +252,9 @@ Before shipping a bank:
 - [ ] Localization keys exist for prompt, choices, and hints in `en` (then other locales)
 - [ ] Prompts are mini-problems with explicit background (hypotheses, substitutions, goal) — no “the notes” / “the lecture” meta-references
 - [ ] `review_section_id` is used sparingly and only points at an earlier section that actually teaches the missing idea
+
+## Related
+
+- Section notes: [`CONTENT.md`](CONTENT.md)
+- Logic game / sandboxes: [`SANDBOX.md`](SANDBOX.md)
+- Architecture decisions: [`adr/`](adr/)

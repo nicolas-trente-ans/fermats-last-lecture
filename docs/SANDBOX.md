@@ -80,3 +80,9 @@ Author levels to track the notes’ graphic schema step-by-step. `yarn validate-
 ## Checking / persistence
 
 Exact slot match vs `target`. Session board under `sessionStorage` key `fermat-summarizer-board-v1`.
+
+## Related
+
+- Section notes: [`CONTENT.md`](CONTENT.md)
+- Knowledge checks: [`QUESTION.md`](QUESTION.md)
+- Architecture decisions: [`adr/`](adr/)

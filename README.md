@@ -25,13 +25,13 @@ Knowledge checks are **small** on purpose: a few items drawn from the current se
 - Checks **bring forward prior knowledge** from earlier sections so new material has somewhere to attach.
 - Optionally, a wrong answer can **recommend revisiting a previous section** (notes + video) when the gap is clearly about an older organizer. Authors set this per question; it is never required.
 
-Authoring guidance for Ausubel-style items lives in [`public/assets/data/QUESTION.md`](public/assets/data/QUESTION.md). Note structure lives in [`public/assets/content/CONTENT.md`](public/assets/content/CONTENT.md).
+Authoring guidance for Ausubel-style items lives in [`docs/QUESTION.md`](docs/QUESTION.md). Note structure lives in [`docs/CONTENT.md`](docs/CONTENT.md). Architecture decisions: [`docs/adr/`](docs/adr/).
 
 ### 4. Chapter mini-apps (the reconstruction)
 
 Each chapter can attach **mini-apps** that build intuition for that chapter’s organizers. Chapter 1 ships a **Logic game** (`/summarizer`), in the spirit of the [Natural Number Game](https://adam.math.hhu.de/#/g/leanprover-community/nng4): worlds of levels, a growing **inventory** of symbols, and a proof board of certified lemmas — levels track the FLT **n = 3** and **n = 4** schemas in the notes. Worlds open after you mark the matching lecture section complete.
 
-Register apps in [`public/assets/data/chapter-apps.csv`](public/assets/data/chapter-apps.csv). Authoring: [`public/assets/data/SANDBOX.md`](public/assets/data/SANDBOX.md).
+Register apps in [`public/assets/data/chapter-apps.csv`](public/assets/data/chapter-apps.csv). Authoring: [`docs/SANDBOX.md`](docs/SANDBOX.md).
 
 ### Pirate mode
 
@@ -53,7 +53,7 @@ yarn install
 yarn dev
 ```
 
-Content lives in `public/assets/data/` (`sections.csv`, `hints.csv`, per-section `questions/` and optional `sandboxes/`, and split `localization/` CSVs) plus section notes in `public/assets/content/{locale}/`. Edit those files without rebuilding the app logic.
+Content lives in `public/assets/data/` (`sections.csv`, `hints.csv`, per-section `questions/` and optional `sandboxes/`, and split `localization/` CSVs) plus section notes in `public/assets/content/{locale}/`. Edit those files without rebuilding the app logic. Authoring guides and ADRs: [`docs/`](docs/).
 
 ```bash
 yarn validate-entities
