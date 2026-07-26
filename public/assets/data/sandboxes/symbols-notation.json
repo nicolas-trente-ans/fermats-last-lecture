@@ -1,0 +1,71 @@
+{
+  "section_id": "symbols-notation",
+  "starting_inventory": ["exists", "nexists", "forall"],
+  "chains": [
+    {
+      "id": "notation",
+      "title_key": "sb.symbols.chain_title",
+      "puzzles": [
+        {
+          "id": "symbols-exists",
+          "mode": "translate",
+          "organizer": "expository",
+          "prompt_key": "sb.symbols.exists.prompt",
+          "hint_key": "sb.symbols.exists.hint",
+          "board_label_key": "sb.symbols.exists.board",
+          "frame": ["quant", "n", "in", "N", "st", "n_gt_1"],
+          "sockets": ["quant"],
+          "palette": ["exists", "nexists", "forall"],
+          "target": { "0": "exists" },
+          "start": {},
+          "unlocks": []
+        },
+        {
+          "id": "symbols-forall",
+          "mode": "translate",
+          "organizer": "expository",
+          "prompt_key": "sb.symbols.forall.prompt",
+          "hint_key": "sb.symbols.forall.hint",
+          "board_label_key": "sb.symbols.forall.board",
+          "requires": ["symbols-exists"],
+          "frame": ["quant", "n", "in", "N", "st", "n_ge_1"],
+          "sockets": ["quant"],
+          "palette": ["exists", "nexists", "forall"],
+          "target": { "0": "forall" },
+          "start": {},
+          "unlocks": []
+        },
+        {
+          "id": "symbols-divides",
+          "mode": "translate",
+          "organizer": "comparative",
+          "prompt_key": "sb.symbols.divides.prompt",
+          "hint_key": "sb.symbols.divides.hint",
+          "board_label_key": "sb.symbols.divides.board",
+          "requires": ["symbols-forall"],
+          "frame": ["a_div_b", "iff", "quant", "k", "in", "Z", "st", "b_eq_ak"],
+          "sockets": ["quant"],
+          "palette": ["exists", "nexists", "forall"],
+          "target": { "0": "exists" },
+          "start": {},
+          "unlocks": []
+        },
+        {
+          "id": "symbols-flt-repair",
+          "mode": "repair",
+          "organizer": "comparative",
+          "prompt_key": "sb.symbols.flt_repair.prompt",
+          "hint_key": "sb.symbols.flt_repair.hint",
+          "board_label_key": "sb.symbols.flt_repair.board",
+          "requires": ["symbols-divides"],
+          "frame": ["quant", "xyz", "in", "Z", "st", "nonzero", "and", "cubesum0"],
+          "sockets": ["quant"],
+          "palette": ["exists", "nexists", "forall"],
+          "target": { "0": "nexists" },
+          "start": { "0": "exists" },
+          "unlocks": ["assume", "conclude", "minimal", "maximal", "empty"]
+        }
+      ]
+    }
+  ]
+}

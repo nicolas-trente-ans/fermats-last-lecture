@@ -1,0 +1,60 @@
+key,en,fr,hu,pirate
+sb.flt_n4.chain_title,Fourth-Power World (n = 4),Monde puissances quatrièmes (n = 4),Negyedik hatvány világ (n = 4),Fourth-Power World (n = 4)
+sb.flt_n4.claim.prompt,"Pack FLT for n = 4: there are no positive integers x, y, z with x⁴ + y⁴ = z⁴.","Pack FLT for n = 4: there are no positive integers x, y, z with x⁴ + y⁴ = z⁴.","Pack FLT for n = 4: there are no positive integers x, y, z with x⁴ + y⁴ = z⁴.","Pack FLT for n = 4: no positive x, y, z with fourth powers summin' to a fourth."
+sb.flt_n4.claim.hint,The claim is non-existence of a positive fourth-power Pythagorean triple.,The claim is non-existence of a positive fourth-power Pythagorean triple.,The claim is non-existence of a positive fourth-power Pythagorean triple.,Hoist ∄ — no positive fourth-power haul.
+sb.flt_n4.claim.board,∄ positive x,y,z with x⁴+y⁴=z⁴,∄ positive x,y,z with x⁴+y⁴=z⁴,∄ positive x,y,z with x⁴+y⁴=z⁴,∄ positive x,y,z with x⁴+y⁴=z⁴
+sb.flt_n4.lemma.prompt,"Pack the square-area lemma: no right triangle with integer sides has square area.","Pack the square-area lemma: no right triangle with integer sides has square area.","Pack the square-area lemma: no right triangle with integer sides has square area.","Pack the square-area lemma: no integer-sided right triangle has square area."
+sb.flt_n4.lemma.hint,The lemma forbids an integer right triangle whose area is a perfect square.,The lemma forbids an integer right triangle whose area is a perfect square.,The lemma forbids an integer right triangle whose area is a perfect square.,The shield: no square-area integer triangle.
+sb.flt_n4.lemma.board,Lemma: no integer right △ has square area,Lemma: no integer right △ has square area,Lemma: no integer right △ has square area,Lemma: no integer right △ has square area
+sb.flt_n4.mod4.prompt,"For every integer n, what are the possible values of n² mod 4?","For every integer n, what are the possible values of n² mod 4?","For every integer n, what are the possible values of n² mod 4?","For every integer n, what are the possible values of n² mod 4?"
+sb.flt_n4.mod4.hint,Squares are ≡ 0 or 1 (mod 4) — never 2 or 3.,Squares are ≡ 0 or 1 (mod 4) — never 2 or 3.,Squares are ≡ 0 or 1 (mod 4) — never 2 or 3.,Squares be 0 or 1 mod 4.
+sb.flt_n4.mod4.board,n² ≡ 0 or 1 (mod 4),n² ≡ 0 or 1 (mod 4),n² ≡ 0 or 1 (mod 4),n² ≡ 0 or 1 (mod 4)
+sb.flt_n4.not_both_odd.prompt,"In a² + b² = c², why can a and b not both be odd?","In a² + b² = c², why can a and b not both be odd?","In a² + b² = c², why can a and b not both be odd?","In a² + b² = c², why can a and b not both be odd?"
+sb.flt_n4.not_both_odd.hint,Odd squares are ≡ 1, so two odds sum to ≡ 2 (mod 4), impossible for a square.,Odd squares are ≡ 1, so two odds sum to ≡ 2 (mod 4), impossible for a square.,Odd squares are ≡ 1, so two odds sum to ≡ 2 (mod 4), impossible for a square.,Two odd squares sum to 2 mod 4 — no square does that.
+sb.flt_n4.not_both_odd.board,Not both legs odd,Not both legs odd,Not both legs odd,Not both legs odd
+sb.flt_n4.primitive.prompt,"If some integer right triangle has square area, why is it enough to rule out a primitive one?","If some integer right triangle has square area, why is it enough to rule out a primitive one?","If some integer right triangle has square area, why is it enough to rule out a primitive one?","If some integer right triangle has square area, why is it enough to rule out a primitive one?"
+sb.flt_n4.primitive.hint,Scaling by d replaces the area by d² times the primitive area; d² is already square.,Scaling by d replaces the area by d² times the primitive area; d² is already square.,Scaling by d replaces the area by d² times the primitive area; d² is already square.,d² is already a square — reduce to the primitive case.
+sb.flt_n4.primitive.board,Enough to rule out primitive square-area △,Enough to rule out primitive square-area △,Enough to rule out primitive square-area △,Enough to rule out primitive square-area △
+sb.flt_n4.a_even.prompt,"In a primitive Pythagorean triple, which parity convention may we take w.l.o.g.?","In a primitive Pythagorean triple, which parity convention may we take w.l.o.g.?","In a primitive Pythagorean triple, which parity convention may we take w.l.o.g.?","In a primitive Pythagorean triple, which parity convention may we take w.l.o.g.?"
+sb.flt_n4.a_even.hint,Exactly one leg is even; label that even leg a.,Exactly one leg is even; label that even leg a.,Exactly one leg is even; label that even leg a.,Exactly one leg even — call it a.
+sb.flt_n4.a_even.board,W.l.o.g. a is even,W.l.o.g. a is even,W.l.o.g. a is even,W.l.o.g. a is even
+sb.flt_n4.reduction.prompt,"If x⁴ + y⁴ = z⁴ has a positive solution, what geometric object follows?","If x⁴ + y⁴ = z⁴ has a positive solution, what geometric object follows?","If x⁴ + y⁴ = z⁴ has a positive solution, what geometric object follows?","If x⁴ + y⁴ = z⁴ has a positive solution, what geometric object follows?"
+sb.flt_n4.reduction.hint,A supposed FLT n=4 solution produces an integer right triangle with square area.,A supposed FLT n=4 solution produces an integer right triangle with square area.,A supposed FLT n=4 solution produces an integer right triangle with square area.,FLT solution ⇒ square-area triangle.
+sb.flt_n4.reduction.board,FLT n=4 solution ⇒ integer right △ with square area,FLT n=4 solution ⇒ integer right △ with square area,FLT n=4 solution ⇒ integer right △ with square area,FLT n=4 solution ⇒ integer right △ with square area
+sb.flt_n4.contradiction.prompt,"How does the square-area lemma finish the proof of FLT for n = 4?","How does the square-area lemma finish the proof of FLT for n = 4?","How does the square-area lemma finish the proof of FLT for n = 4?","How does the square-area lemma finish the proof of FLT for n = 4?"
+sb.flt_n4.contradiction.hint,The triangle from a supposed solution is exactly what the lemma forbids.,The triangle from a supposed solution is exactly what the lemma forbids.,The triangle from a supposed solution is exactly what the lemma forbids.,The lemma forbids the triangle — so no FLT solution.
+sb.flt_n4.contradiction.board,Lemma forbids that △ → no FLT n=4 solution,Lemma forbids that △ → no FLT n=4 solution,Lemma forbids that △ → no FLT n=4 solution,Lemma forbids that △ → no FLT n=4 solution
+sb.token.fourth_sum,x⁴ + y⁴ = z⁴,x⁴ + y⁴ = z⁴,x⁴ + y⁴ = z⁴,x⁴ + y⁴ = z⁴
+sb.token.lemma,Lemma,Lemma,Lemma,Lemma
+sb.token.colon,:,:,:,:
+sb.token.claim,(?),(?),(?),(?)
+sb.token.no_sq_area,no integer right △ has square area,no integer right △ has square area,no integer right △ has square area,no integer right △ has square area
+sb.token.has_sq_area,some integer right △ has square area,some integer right △ has square area,some integer right △ has square area,some integer right △ has square area
+sb.token.all_primitive,every primitive triple has square area,every primitive triple has square area,every primitive triple has square area,every primitive triple has square area
+sb.token.squares_mod4,n² mod 4,n² mod 4,n² mod 4,n² mod 4
+sb.token.are,(?),(?),(?),(?)
+sb.token.mod4_01,≡ 0 or 1,≡ 0 or 1,≡ 0 or 1,≡ 0 or 1
+sb.token.mod4_any,≡ 0;1;2; or 3,≡ 0;1;2; or 3,≡ 0;1;2; or 3,≡ 0;1;2; or 3
+sb.token.mod4_23,≡ 2 or 3,≡ 2 or 3,≡ 2 or 3,≡ 2 or 3
+sb.token.in_pythag,in a² + b² = c²,in a² + b² = c²,in a² + b² = c²,in a² + b² = c²
+sb.token.legs,(?),(?),(?),(?)
+sb.token.not_both_odd,not both legs odd,not both legs odd,not both legs odd,not both legs odd
+sb.token.both_odd_ok,both legs may be odd,both legs may be odd,both legs may be odd,both legs may be odd
+sb.token.both_even_forced,both legs must be even,both legs must be even,both legs must be even,both legs must be even
+sb.token.to_rule_out_sq_area,to rule out square area,to rule out square area,to rule out square area,to rule out square area
+sb.token.reduce_to,(?),(?),(?),(?)
+sb.token.primitive_enough,rule out a primitive △,rule out a primitive △,rule out a primitive △,rule out a primitive △
+sb.token.need_all,check every scaled triple separately,check every scaled triple separately,check every scaled triple separately,check every scaled triple separately
+sb.token.a_even_wlog,take a even w.l.o.g.,take a even w.l.o.g.,take a even w.l.o.g.,take a even w.l.o.g.
+sb.token.primitive_triple,primitive triple,primitive triple,primitive triple,primitive triple
+sb.token.wlog,(?),(?),(?),(?)
+sb.token.flt4_sol,FLT n=4 solution,FLT n=4 solution,FLT n=4 solution,FLT n=4 solution
+sb.token.outcome,(?),(?),(?),(?)
+sb.token.sq_area_tri,integer right △ with square area,integer right △ with square area,integer right △ with square area,integer right △ with square area
+sb.token.odd_hyp,odd hypotenuse only,odd hypotenuse only,odd hypotenuse only,odd hypotenuse only
+sb.token.no_triangle,no triangle at all,no triangle at all,no triangle at all,no triangle at all
+sb.token.so,therefore,therefore,therefore,therefore
+sb.token.finish,(?),(?),(?),(?)
+sb.token.lemma_forbids,the lemma forbids that △,the lemma forbids that △,the lemma forbids that △,the lemma forbids that △
+sb.token.lemma_allows,the lemma allows that △,the lemma allows that △,the lemma allows that △,the lemma allows that △
+sb.token.need_new_lemma,a new lemma is still required,a new lemma is still required,a new lemma is still required,a new lemma is still required

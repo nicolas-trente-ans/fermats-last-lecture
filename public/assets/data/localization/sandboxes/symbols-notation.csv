@@ -1,0 +1,33 @@
+key,en,fr,hu,pirate
+sb.symbols.chain_title,Notation World,Monde Notation,Jelölés világ,Notation World
+sb.symbols.exists.prompt,"Pack: there exists a natural number n greater than 1.","Pack: there exists a natural number n greater than 1.","Pack: there exists a natural number n greater than 1.","Pack: there be a natural n bigger than 1."
+sb.symbols.exists.hint,Use ∃ for “there exists,” not ∀ or ∄.,Use ∃ for “there exists,” not ∀ or ∄.,Use ∃ for “there exists,” not ∀ or ∄.,Ye want “there be,” not “for all” or “there ain't.”
+sb.symbols.exists.board,∃ n ∈ ℕ s.t. n > 1,∃ n ∈ ℕ s.t. n > 1,∃ n ∈ ℕ s.t. n > 1,∃ n ∈ ℕ s.t. n > 1
+sb.symbols.forall.prompt,"Pack: every natural number n is at least 1.","Pack: every natural number n is at least 1.","Pack: every natural number n is at least 1.","Pack: every natural n be at least 1."
+sb.symbols.forall.hint,Use ∀ for “for all,” not ∃.,Use ∀ for “for all,” not ∃.,Use ∀ for “for all,” not ∃.,Hoist ∀ — for every one of them.
+sb.symbols.forall.board,∀ n ∈ ℕ s.t. n ≥ 1,∀ n ∈ ℕ s.t. n ≥ 1,∀ n ∈ ℕ s.t. n ≥ 1,∀ n ∈ ℕ s.t. n ≥ 1
+sb.symbols.divides.prompt,"Pack the definition: a divides b iff there exists an integer k with b = a·k.","Pack the definition: a divides b iff there exists an integer k with b = a·k.","Pack the definition: a divides b iff there exists an integer k with b = a·k.","Pack: a divides b iff there be an integer k with b = a·k."
+sb.symbols.divides.hint,The witness is existential: ∃ k ∈ ℤ s.t. b = a·k.,The witness is existential: ∃ k ∈ ℤ s.t. b = a·k.,The witness is existential: ∃ k ∈ ℤ s.t. b = a·k.,Need a witness k — that's ∃.
+sb.symbols.divides.board,a | b ⇔ ∃ k ∈ ℤ s.t. b = a·k,a | b ⇔ ∃ k ∈ ℤ s.t. b = a·k,a | b ⇔ ∃ k ∈ ℤ s.t. b = a·k,a | b ⇔ ∃ k ∈ ℤ s.t. b = a·k
+sb.symbols.flt_repair.prompt,"Repair the FLT packing: no nonzero integers x, y, z with x³ + y³ + z³ = 0.","Repair the FLT packing: no nonzero integers x, y, z with x³ + y³ + z³ = 0.","Repair the FLT packing: no nonzero integers x, y, z with x³ + y³ + z³ = 0.","Repair the FLT packing: no nonzero integers x, y, z with cubes summin' to 0."
+sb.symbols.flt_repair.hint,The claim is non-existence — swap ∃ for ∄.,The claim is non-existence — swap ∃ for ∄.,The claim is non-existence — swap ∃ for ∄.,The claim says there ain't none — hoist ∄.
+sb.symbols.flt_repair.board,∄ nonzero x,y,z with x³+y³+z³=0,∄ nonzero x,y,z with x³+y³+z³=0,∄ nonzero x,y,z with x³+y³+z³=0,∄ nonzero x,y,z with x³+y³+z³=0
+sb.token.exists,∃,∃,∃,∃
+sb.token.nexists,∄,∄,∄,∄
+sb.token.forall,∀,∀,∀,∀
+sb.token.n,n,n,n,n
+sb.token.k,k,k,k,k
+sb.token.in,∈,∈,∈,∈
+sb.token.N,ℕ,ℕ,ℕ,ℕ
+sb.token.Z,ℤ,ℤ,ℤ,ℤ
+sb.token.st,s.t.,s.t.,s.t.,s.t.
+sb.token.n_gt_1,n > 1,n > 1,n > 1,n > 1
+sb.token.n_ge_1,n ≥ 1,n ≥ 1,n ≥ 1,n ≥ 1
+sb.token.a_div_b,a | b,a | b,a | b,a | b
+sb.token.iff,⇔,⇔,⇔,⇔
+sb.token.b_eq_ak,b = a·k,b = a·k,b = a·k,b = a·k
+sb.token.xyz,"x, y, z","x, y, z","x, y, z","x, y, z"
+sb.token.nonzero,nonzero,nonzero,nonzero,nonzero
+sb.token.and,and,and,and,and
+sb.token.cubesum0,x³ + y³ + z³ = 0,x³ + y³ + z³ = 0,x³ + y³ + z³ = 0,x³ + y³ + z³ = 0
+sb.token.quant,(?),(?),(?),(?)

@@ -105,6 +105,10 @@ const localization = [
   ...sections.flatMap((section) =>
     readCsvIfExists(path.join('localization', 'questions', `${section.id}.csv`)),
   ),
+  ...sections.flatMap((section) =>
+    readCsvIfExists(path.join('localization', 'sandboxes', `${section.id}.csv`)),
+  ),
+  ...readCsvIfExists(path.join('localization', 'sandboxes', 'inventory.csv')),
 ]
 
 const questionIds = new Set()
@@ -170,13 +174,219 @@ for (const chapter of new Set(sections.map((s) => s.chapter))) {
   neededKeys.add(`chapter.${chapter}`)
 }
 
+for (const row of localization) {
+  if (!row.key) errors.push('localization: row without key')
+  if (!row.en) errors.push(`localization: missing en for ${row.key}`)
+}
+
+function readJsonIfExists(relativePath) {
+  const full = path.join(dataDir, relativePath)
+  if (!fs.existsSync(full)) return null
+  try {
+    return JSON.parse(fs.readFileSync(full, 'utf8'))
+  } catch (err) {
+    errors.push(`${relativePath}: invalid JSON (${err.message})`)
+    return null
+  }
+}
+
+const organizers = new Set(['expository', 'comparative', 'narrative', 'graphic'])
+const sandboxModes = new Set(['translate', 'repair'])
+let sandboxCount = 0
+let puzzleCount = 0
+const allPuzzleIds = new Set()
+
+for (const section of sections) {
+  const relative = path.join('sandboxes', `${section.id}.json`)
+  const raw = readJsonIfExists(relative)
+  if (!raw) continue
+  sandboxCount += 1
+  if (raw.section_id && raw.section_id !== section.id) {
+    errors.push(`${relative}: section_id ${raw.section_id} does not match file section`)
+  }
+  const startingInventory = Array.isArray(raw.starting_inventory) ? raw.starting_inventory : []
+  for (const token of startingInventory) {
+    neededKeys.add(`sb.token.${token}`)
+    neededKeys.add(`sb.token.${token}.desc`)
+  }
+  if (!Array.isArray(raw.chains) || raw.chains.length === 0) {
+    errors.push(`${relative}: needs a non-empty chains array`)
+    continue
+  }
+  const puzzleIdsInFile = new Set()
+  for (const chain of raw.chains) {
+    if (!chain.id) errors.push(`${relative}: chain missing id`)
+    if (!chain.title_key) errors.push(`${relative}: chain ${chain.id || '?'} missing title_key`)
+    else neededKeys.add(chain.title_key)
+    if (!Array.isArray(chain.puzzles) || chain.puzzles.length === 0) {
+      errors.push(`${relative}: chain ${chain.id || '?'} needs puzzles`)
+      continue
+    }
+    const earlierInChain = []
+    for (const puzzle of chain.puzzles) {
+      puzzleCount += 1
+      const label = `${relative} puzzle ${puzzle.id || '?'}`
+      for (const field of [
+        'id',
+        'mode',
+        'organizer',
+        'prompt_key',
+        'hint_key',
+        'board_label_key',
+        'frame',
+        'sockets',
+        'palette',
+        'target',
+      ]) {
+        if (puzzle[field] === undefined || puzzle[field] === null || puzzle[field] === '') {
+          errors.push(`${label}: missing ${field}`)
+        }
+      }
+      if (puzzle.id) {
+        if (puzzleIdsInFile.has(puzzle.id)) errors.push(`${label}: duplicate puzzle id`)
+        puzzleIdsInFile.add(puzzle.id)
+        allPuzzleIds.add(puzzle.id)
+      }
+      if (puzzle.mode && !sandboxModes.has(puzzle.mode)) {
+        errors.push(`${label}: bad mode ${puzzle.mode}`)
+      }
+      if (puzzle.organizer && !organizers.has(puzzle.organizer)) {
+        errors.push(`${label}: bad organizer ${puzzle.organizer}`)
+      }
+      if (puzzle.prompt_key) neededKeys.add(puzzle.prompt_key)
+      if (puzzle.hint_key) neededKeys.add(puzzle.hint_key)
+      if (puzzle.board_label_key) neededKeys.add(puzzle.board_label_key)
+      if (puzzle.review_section_id && !sectionIds.has(puzzle.review_section_id)) {
+        errors.push(`${label}: unknown review_section_id ${puzzle.review_section_id}`)
+      }
+      const frame = Array.isArray(puzzle.frame) ? puzzle.frame : []
+      const sockets = Array.isArray(puzzle.sockets) ? puzzle.sockets : []
+      const palette = Array.isArray(puzzle.palette) ? puzzle.palette : []
+      const unlocks = Array.isArray(puzzle.unlocks) ? puzzle.unlocks : []
+      const target = puzzle.target && typeof puzzle.target === 'object' ? puzzle.target : {}
+      const start = puzzle.start && typeof puzzle.start === 'object' ? puzzle.start : {}
+      for (const socket of sockets) {
+        if (!frame.includes(socket)) {
+          errors.push(`${label}: socket ${socket} not in frame`)
+        }
+      }
+      if (sockets.length === 0) errors.push(`${label}: needs at least one socket`)
+      for (let i = 0; i < sockets.length; i += 1) {
+        const key = String(i)
+        if (!target[key]) errors.push(`${label}: target missing key ${key}`)
+        else if (!palette.includes(target[key])) {
+          errors.push(`${label}: target ${target[key]} not in palette`)
+        }
+      }
+      for (const [key, block] of Object.entries(target)) {
+        const index = Number(key)
+        if (Number.isNaN(index) || index < 0 || index >= sockets.length) {
+          errors.push(`${label}: target key ${key} out of socket range`)
+        }
+        if (block) neededKeys.add(`sb.token.${block}`)
+      }
+      for (const [key, block] of Object.entries(start)) {
+        const index = Number(key)
+        if (Number.isNaN(index) || index < 0 || index >= sockets.length) {
+          errors.push(`${label}: start key ${key} out of socket range`)
+        }
+        if (block && !palette.includes(block)) {
+          errors.push(`${label}: start ${block} not in palette`)
+        }
+        if (block) neededKeys.add(`sb.token.${block}`)
+      }
+      for (const token of frame) {
+        neededKeys.add(`sb.token.${token}`)
+      }
+      for (const block of palette) {
+        neededKeys.add(`sb.token.${block}`)
+      }
+      for (const block of unlocks) {
+        neededKeys.add(`sb.token.${block}`)
+        neededKeys.add(`sb.token.${block}.desc`)
+      }
+      const requires = Array.isArray(puzzle.requires)
+        ? puzzle.requires
+        : earlierInChain.length
+          ? [earlierInChain[earlierInChain.length - 1]]
+          : []
+      for (const req of requires) {
+        if (!earlierInChain.includes(req)) {
+          errors.push(`${label}: requires ${req} must refer to an earlier puzzle in the same chain`)
+        }
+      }
+      if (Array.isArray(puzzle.requires_global)) {
+        for (const req of puzzle.requires_global) {
+          if (!req) errors.push(`${label}: empty requires_global entry`)
+        }
+      }
+      earlierInChain.push(puzzle.id)
+    }
+  }
+}
+
+// Second pass: requires_global refer to known puzzles; palette reachable via inventory timeline
+for (const section of sections) {
+  const relative = path.join('sandboxes', `${section.id}.json`)
+  const raw = readJsonIfExists(relative)
+  if (!raw || !Array.isArray(raw.chains)) continue
+  const sectionOrder = Number(section.order)
+  for (const chain of raw.chains) {
+    if (!Array.isArray(chain.puzzles)) continue
+    const earlierInChain = []
+    let inventory = new Set()
+    for (const worldSection of sections) {
+      if (Number(worldSection.order) > sectionOrder) continue
+      const other = readJsonIfExists(path.join('sandboxes', `${worldSection.id}.json`))
+      if (!other) continue
+      for (const token of other.starting_inventory || []) inventory.add(token)
+      if (Number(worldSection.order) < sectionOrder) {
+        for (const otherChain of other.chains || []) {
+          for (const p of otherChain.puzzles || []) {
+            for (const token of p.unlocks || []) inventory.add(token)
+          }
+        }
+      }
+    }
+    for (const puzzle of chain.puzzles) {
+      const label = `${relative} puzzle ${puzzle.id || '?'}`
+      for (const req of puzzle.requires_global || []) {
+        if (!allPuzzleIds.has(req)) {
+          errors.push(`${label}: unknown requires_global ${req}`)
+        }
+      }
+      for (const block of puzzle.palette || []) {
+        if (!inventory.has(block)) {
+          errors.push(
+            `${label}: palette block ${block} is not in inventory yet (starting_inventory / prior unlocks)`,
+          )
+        }
+      }
+      for (const token of puzzle.unlocks || []) inventory.add(token)
+      earlierInChain.push(puzzle.id)
+    }
+  }
+}
+
 for (const key of neededKeys) {
   if (!locKeys.has(key)) errors.push(`localization: missing key ${key}`)
 }
 
-for (const row of localization) {
-  if (!row.key) errors.push('localization: row without key')
-  if (!row.en) errors.push(`localization: missing en for ${row.key}`)
+const chapterApps = readCsvIfExists('chapter-apps.csv')
+const chapterIds = new Set(sections.map((s) => s.chapter))
+for (const row of chapterApps) {
+  for (const field of ['chapter', 'id', 'title_key', 'route']) {
+    if (!row[field]) errors.push(`chapter-apps.csv: missing ${field}`)
+  }
+  if (row.chapter && !chapterIds.has(row.chapter)) {
+    errors.push(`chapter-apps.csv: unknown chapter ${row.chapter}`)
+  }
+  if (row.title_key && !locKeys.has(row.title_key)) {
+    errors.push(`localization: missing key ${row.title_key}`)
+  }
+  if (row.lede_key && !locKeys.has(row.lede_key)) {
+    errors.push(`localization: missing key ${row.lede_key}`)
+  }
 }
 
 if (errors.length) {
@@ -186,5 +396,5 @@ if (errors.length) {
 }
 
 console.log(
-  `OK: ${sections.length} sections, ${questions.length} questions, ${hints.length} hints, ${localization.length} localization keys`,
+  `OK: ${sections.length} sections, ${questions.length} questions, ${hints.length} hints, ${sandboxCount} sandboxes, ${puzzleCount} puzzles, ${chapterApps.length} chapter apps, ${localization.length} localization keys`,
 )

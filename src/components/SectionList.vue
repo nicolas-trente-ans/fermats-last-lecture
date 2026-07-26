@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
-import { useLocale, useProgress } from '@/composables'
-import type { Section } from '@/models'
+import { useAppData, useLocale, useProgress } from '@/composables'
+import type { ChapterApp, Section } from '@/models'
 import { formatTime } from '@/utils/formatTime'
 
 const props = defineProps<{
   sections: Section[]
 }>()
 
+const data = useAppData()
 const { t } = useLocale()
 const progress = useProgress()
 
@@ -21,12 +22,30 @@ const chapters = computed(() => {
   }
   return [...map.entries()]
 })
+
+function appsForChapter(chapter: string): ChapterApp[] {
+  return data.value.chapterApps.filter((app) => app.chapter === chapter)
+}
 </script>
 
 <template>
   <div class="chapters">
     <section v-for="[chapter, items] in chapters" :key="chapter" class="chapter">
       <h2>{{ t(`chapter.${chapter}`) }}</h2>
+
+      <div v-if="appsForChapter(chapter).length" class="apps">
+        <p class="apps-label">{{ t('ui.chapter_apps') }}</p>
+        <RouterLink
+          v-for="app in appsForChapter(chapter)"
+          :key="app.id"
+          class="app-card"
+          :to="app.route"
+        >
+          <span class="app-title">{{ t(app.titleKey) }}</span>
+          <span class="app-lede">{{ t(app.ledeKey) }}</span>
+        </RouterLink>
+      </div>
+
       <ul>
         <li v-for="section in items" :key="section.id">
           <RouterLink
@@ -65,6 +84,45 @@ const chapters = computed(() => {
   font-size: 1.25rem;
   margin: 0 0 0.65rem;
   color: var(--accent);
+}
+
+.apps {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0 0 0.85rem;
+}
+
+.apps-label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.app-card {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.85rem 0.95rem;
+  border: 1px solid rgba(212, 160, 23, 0.45);
+  border-radius: 0.45rem;
+  background: rgba(58, 51, 32, 0.55);
+  text-decoration: none;
+  color: inherit;
+}
+
+.app-card:hover {
+  border-color: var(--accent);
+}
+
+.app-title {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.app-lede {
+  color: var(--muted);
+  line-height: 1.4;
+  font-size: 0.92rem;
 }
 
 ul {

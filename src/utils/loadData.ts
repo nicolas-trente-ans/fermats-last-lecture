@@ -1,13 +1,19 @@
 import { DATA_BASE, ORGANIZER_KINDS, SUPPORTED_LOCALES } from '@/constants'
 import type {
   AppData,
+  ChapterApp,
   Locale,
   LocalizationTable,
   OrganizerKind,
   Question,
   QuestionType,
+  SandboxChain,
+  SandboxFile,
+  SandboxMode,
+  SandboxPuzzle,
   Section,
   SectionStatus,
+  SummarizerWorld,
 } from '@/models'
 import { parseCsv } from '@/utils/csv'
 
@@ -17,10 +23,12 @@ export async function loadAppData(): Promise<AppData> {
   const sectionsRaw = await fetchCsv('sections.csv')
   const sections = applySectionEnds(sectionsRaw.map(parseSection).sort((a, b) => a.order - b.order))
 
-  const [questions, hintsRaw, localization] = await Promise.all([
+  const [questions, hintsRaw, sandboxesBySection, localization, chapterApps] = await Promise.all([
     loadQuestions(sections),
     fetchCsv('hints.csv'),
+    loadSandboxes(sections),
     loadLocalization(sections),
+    loadChapterApps(),
   ])
 
   const hintsByQuestion = groupHintKeys(hintsRaw)
@@ -32,6 +40,9 @@ export async function loadAppData(): Promise<AppData> {
   return {
     sections,
     questions: questionsWithHints,
+    sandboxesBySection,
+    worlds: buildWorlds(sections, sandboxesBySection),
+    chapterApps,
     localization,
     locales: localization.locales,
   }
@@ -51,11 +62,185 @@ function isQuestionRow(row: Record<string, string>): boolean {
   return Boolean(row.id && row.type)
 }
 
+async function loadChapterApps(): Promise<ChapterApp[]> {
+  const rows = await fetchCsvOptional('chapter-apps.csv')
+  return rows
+    .filter((row) => Boolean(row.id && row.chapter))
+    .map((row) => ({
+      chapter: required(row, 'chapter'),
+      id: required(row, 'id'),
+      titleKey: required(row, 'title_key'),
+      ledeKey: row.lede_key?.trim() || 'ui.summarizer_lede',
+      route: required(row, 'route'),
+      order: Number(row.order || '1'),
+    }))
+    .sort((a, b) => a.order - b.order || a.id.localeCompare(b.id))
+}
+
 async function loadLocalization(sections: Section[]): Promise<LocalizationTable> {
   const questionLocFiles = sections.map((s) => `localization/questions/${s.id}.csv`)
-  const files = ['localization/ui.csv', 'localization/sections.csv', ...questionLocFiles]
+  const sandboxLocFiles = sections.map((s) => `localization/sandboxes/${s.id}.csv`)
+  const files = [
+    'localization/ui.csv',
+    'localization/sections.csv',
+    'localization/sandboxes/inventory.csv',
+    ...questionLocFiles,
+    ...sandboxLocFiles,
+  ]
   const batches = await Promise.all(files.map((file) => fetchCsvOptional(file)))
   return parseLocalization(batches.flat().filter((row) => Boolean(row.key)))
+}
+
+async function loadSandboxes(sections: Section[]): Promise<Record<string, SandboxFile>> {
+  const pairs = await Promise.all(
+    sections.map(async (section) => {
+      const raw = await fetchJsonOptional(`sandboxes/${section.id}.json`)
+      if (!raw) return null
+      const sandbox = parseSandboxFile(raw, section.id)
+      return [section.id, sandbox] as const
+    }),
+  )
+  const result: Record<string, SandboxFile> = {}
+  for (const pair of pairs) {
+    if (pair) result[pair[0]] = pair[1]
+  }
+  return result
+}
+
+async function fetchJsonOptional(filename: string): Promise<unknown | null> {
+  const response = await fetch(`${DATA_BASE}/${filename}`)
+  if (response.status === 404) return null
+  if (!response.ok) return null
+  const contentType = response.headers.get('content-type') || ''
+  if (contentType.includes('text/html')) return null
+  const text = await response.text()
+  const trimmed = text.trimStart()
+  if (!trimmed || trimmed.startsWith('<')) return null
+  try {
+    return JSON.parse(trimmed) as unknown
+  } catch {
+    return null
+  }
+}
+
+function parseSandboxFile(raw: unknown, sectionId: string): SandboxFile {
+  if (!raw || typeof raw !== 'object') {
+    throw new Error(`Invalid sandbox for ${sectionId}`)
+  }
+  const data = raw as Record<string, unknown>
+  const fileSectionId = String(data.section_id || sectionId)
+  if (fileSectionId !== sectionId) {
+    throw new Error(`Sandbox section_id ${fileSectionId} does not match ${sectionId}`)
+  }
+  const chainsRaw = Array.isArray(data.chains) ? data.chains : []
+  return {
+    sectionId,
+    startingInventory: asStringArray(data.starting_inventory),
+    chains: chainsRaw.map((chain, index) => parseSandboxChain(chain, sectionId, index)),
+  }
+}
+
+function parseSandboxChain(raw: unknown, sectionId: string, index: number): SandboxChain {
+  if (!raw || typeof raw !== 'object') {
+    throw new Error(`Invalid chain in sandbox ${sectionId} at ${index}`)
+  }
+  const data = raw as Record<string, unknown>
+  const id = String(data.id || '')
+  const titleKey = String(data.title_key || '')
+  if (!id || !titleKey) {
+    throw new Error(`Sandbox chain missing id/title_key in ${sectionId}`)
+  }
+  const puzzlesRaw = Array.isArray(data.puzzles) ? data.puzzles : []
+  const puzzles = puzzlesRaw.map((puzzle, puzzleIndex) =>
+    parseSandboxPuzzle(puzzle, sectionId, id, puzzleIndex),
+  )
+  for (let i = 1; i < puzzles.length; i += 1) {
+    if (puzzles[i].requires.length === 0) {
+      puzzles[i].requires = [puzzles[i - 1].id]
+    }
+  }
+  return {
+    id,
+    titleKey,
+    puzzles,
+  }
+}
+
+function parseSandboxPuzzle(
+  raw: unknown,
+  sectionId: string,
+  chainId: string,
+  index: number,
+): SandboxPuzzle {
+  if (!raw || typeof raw !== 'object') {
+    throw new Error(`Invalid puzzle in ${sectionId}/${chainId} at ${index}`)
+  }
+  const data = raw as Record<string, unknown>
+  const id = String(data.id || '')
+  const mode = data.mode as SandboxMode
+  const organizer = data.organizer as OrganizerKind
+  if (!id) throw new Error(`Sandbox puzzle missing id in ${sectionId}/${chainId}`)
+  if (mode !== 'translate' && mode !== 'repair') {
+    throw new Error(`Invalid sandbox mode for ${id}: ${String(data.mode)}`)
+  }
+  if (!ORGANIZER_KINDS.includes(organizer)) {
+    throw new Error(`Invalid organizer for sandbox ${id}: ${String(data.organizer)}`)
+  }
+  const showBoard = data.show_board === undefined ? true : Boolean(data.show_board)
+  return {
+    id,
+    mode,
+    organizer,
+    promptKey: String(data.prompt_key || ''),
+    hintKey: String(data.hint_key || ''),
+    boardLabelKey: String(data.board_label_key || ''),
+    requires: asStringArray(data.requires),
+    requiresGlobal: asStringArray(data.requires_global),
+    frame: asStringArray(data.frame),
+    sockets: asStringArray(data.sockets),
+    palette: asStringArray(data.palette),
+    target: asStringRecord(data.target),
+    start: asStringRecord(data.start),
+    unlocks: asStringArray(data.unlocks),
+    showBoard,
+    reviewSectionId: data.review_section_id ? String(data.review_section_id) : null,
+  }
+}
+
+function buildWorlds(
+  sections: Section[],
+  sandboxesBySection: Record<string, SandboxFile>,
+): SummarizerWorld[] {
+  const worlds: SummarizerWorld[] = []
+  for (const section of sections) {
+    const sandbox = sandboxesBySection[section.id]
+    if (!sandbox) continue
+    for (const chain of sandbox.chains) {
+      worlds.push({
+        id: chain.id,
+        sectionId: section.id,
+        titleKey: chain.titleKey,
+        order: section.order,
+        startingInventory: sandbox.startingInventory,
+        levels: chain.puzzles,
+      })
+    }
+  }
+  return worlds.sort((a, b) => a.order - b.order || a.id.localeCompare(b.id))
+}
+
+function asStringArray(value: unknown): string[] {
+  if (!Array.isArray(value)) return []
+  return value.map((item) => String(item))
+}
+
+function asStringRecord(value: unknown): Record<string, string> {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return {}
+  const result: Record<string, string> = {}
+  for (const [key, item] of Object.entries(value as Record<string, unknown>)) {
+    result[key] = String(item)
+  }
+  return result
 }
 
 function applySectionEnds(sections: Section[]): Section[] {

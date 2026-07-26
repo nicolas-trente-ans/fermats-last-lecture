@@ -27,6 +27,12 @@ Knowledge checks are **small** on purpose: a few items drawn from the current se
 
 Authoring guidance for Ausubel-style items lives in [`public/assets/data/QUESTION.md`](public/assets/data/QUESTION.md). Note structure lives in [`public/assets/content/CONTENT.md`](public/assets/content/CONTENT.md).
 
+### 4. Chapter mini-apps (the reconstruction)
+
+Each chapter can attach **mini-apps** that build intuition for that chapter’s organizers. Chapter 1 ships a **Logic game** (`/summarizer`), in the spirit of the [Natural Number Game](https://adam.math.hhu.de/#/g/leanprover-community/nng4): worlds of levels, a growing **inventory** of symbols, and a proof board of certified lemmas — levels track the FLT **n = 3** and **n = 4** schemas in the notes. Worlds open after you mark the matching lecture section complete.
+
+Register apps in [`public/assets/data/chapter-apps.csv`](public/assets/data/chapter-apps.csv). Authoring: [`public/assets/data/SANDBOX.md`](public/assets/data/SANDBOX.md).
+
 ### Pirate mode
 
 **Pirate** is a joke locale for people who get bored or distracted by ordinary expository prose. Same math claims and structure as English; heavier sea-shanty / cringe voice so the page stays sticky. It is still an advanced-organizer design — humor is the delivery, not a different curriculum.
@@ -36,8 +42,9 @@ Authoring guidance for Ausubel-style items lives in [`public/assets/data/QUESTIO
 1. Open a section, watch the clip (or read Notes).
 2. Mark the section complete when you are ready for a check.
 3. Take a short open-note quiz; use hints and earlier notes freely.
-4. If confused, retry or revisit a recommended earlier section before continuing.
-5. Use **Next section** when you feel ready — progress is stored in the browser (`localStorage`).
+4. Use that chapter’s **mini-apps** (Chapter 1: Logic game) to rebuild the argument with unlocking symbols.
+5. If confused, retry or revisit a recommended earlier section before continuing.
+6. Use **Next section** when you feel ready — progress is stored in the browser (`localStorage`).
 
 ## Develop
 
@@ -46,7 +53,7 @@ yarn install
 yarn dev
 ```
 
-Content lives in `public/assets/data/` (`sections.csv`, `hints.csv`, per-section `questions/`, and split `localization/` CSVs) plus section notes in `public/assets/content/{locale}/`. Edit those files without rebuilding the app logic.
+Content lives in `public/assets/data/` (`sections.csv`, `hints.csv`, per-section `questions/` and optional `sandboxes/`, and split `localization/` CSVs) plus section notes in `public/assets/content/{locale}/`. Edit those files without rebuilding the app logic.
 
 ```bash
 yarn validate-entities

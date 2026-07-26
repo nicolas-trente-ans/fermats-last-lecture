@@ -29,3 +29,30 @@ ui.correct,Correct.,Correct.,Helyes.,Aye correct.
 ui.try_again,Not quite — try again or open the hint.,Pas tout à fait — réessayez ou ouvrez l'indice.,Nem egészen — próbáld újra vagy nyisd meg a segítséget.,Not quite — try again or open the hint.
 ui.review_section,Review earlier section,Revoir une section précédente,Nézd meg újra a korábbi szakaszt,Revisit an earlier stretch
 ui.section_missing,Section not found.,Section introuvable.,A szakasz nem található.,Section not found.
+ui.summarizer,Logic game,Jeu de logique,Logikai játék,Logic game
+ui.summarizer_lede,"Rebuild the lecture’s logic like a proof game: worlds of levels, an inventory of symbols that grows as you certify lemmas.","Reconstruisez la logique du cours comme un jeu de preuve : des mondes de niveaux, un inventaire de symboles qui s'enrichit à chaque lemme.","Építsd újra az előadás logikáját bizonyításjátékként: világok, szintek, és egy szimbólumkészlet, ami lemmahitelesítéskor nő.","Rebuild the lecture’s logic like a proof game: worlds of levels, an inventory of symbols that grows as ye certify lemmas."
+ui.summarizer_nng_note,"Inspired by the Natural Number Game: start with a few symbols, unlock more by completing levels.","Inspiré du Natural Number Game : commencez avec peu de symboles, débloquez-en d'autres en finissant les niveaux.","A Natural Number Game mintájára: kevés szimbólummal indulsz, szintekkel egyre többet oldasz fel.","Inspired by the Natural Number Game: start with a few symbols, unlock more by clearing levels."
+ui.summarizer_locked,Mark this section complete to unlock the summarizer.,Marquez cette section comme terminée pour débloquer le résumé.,Jelöld késznek a szakaszt az összefoglaló feloldásához.,Mark this stretch done to unlock the summarizer.
+ui.summarizer_world_locked,"Complete the matching lecture section to open this world.","Terminez la section correspondante du cours pour ouvrir ce monde.","A világhoz tartozó előadásszakaszt jelöld késznek.","Finish the matching lecture stretch to open this world."
+ui.summarizer_level_locked,Finish earlier levels (and their unlocks) first.,Terminez d'abord les niveaux précédents.,Előbb a korábbi szinteket kell teljesíteni.,Clear earlier levels first.
+ui.summarizer_inventory,Inventory,Inventaire,Készlet,Inventory
+ui.summarizer_inventory_lede,"Symbols and lemma chips you have unlocked. Tap one to read what it means.","Symboles et puces déjà débloqués. Touchez-en un pour lire sa description.","Feloldott szimbólumok és lemmachipek. Koppints egyre a leírásához.","Symbols and lemma chips ye unlocked. Tap one to read what it means."
+ui.summarizer_inventory_play,"Tap a chip to read it. Usable chips (highlighted) also fill the focused socket.","Touchez une puce pour la lire. Les puces utilisables (surlignées) remplissent aussi l'emplacement focalisé.","Koppints egy chipre a leírásához. A használható (kiemelt) chipek a fókuszált helyet is kitöltik.","Tap a chip to read it. Usable chips (highlighted) also fill the focused socket."
+ui.summarizer_inventory_empty,No symbols yet — open Notation World after completing its section.,Pas encore de symboles — ouvrez le monde Notation après sa section.,Még nincs szimbólum — nyisd meg a Jelölés világot a szakasz után.,No symbols yet — open Notation World after that stretch.
+ui.forget_data,Forget data,Oublier les données,Adatok törlése,Forget data
+ui.forget_data_confirm,"Clear all progress and Logic game unlocks? Language stays. This cannot be undone.","Effacer toute la progression et les déblocages du jeu logique ? La langue est conservée. Irréversible.","Töröljük az összes haladást és a logikai játék feloldásait? A nyelv megmarad. Visszavonhatatlan.","Clear all progress and Logic game unlocks? Language stays. Can't be undone."
+ui.summarizer_unlocked,New unlocks,Nouveaux déblocages,Új feloldások,New unlocks
+ui.summarizer_check,Check,Vérifier,Ellenőrzés,Check
+ui.summarizer_reset,Reset,Réinitialiser,Visszaállítás,Reset
+ui.summarizer_next,Next level,Niveau suivant,Következő szint,Next level
+ui.summarizer_certified,Lemma certified — added to the proof board.,Lemme validé — ajouté au tableau de preuve.,Lemma hitelesítve — a bizonyítótáblára került.,Lemma certified — added to the proof board.
+ui.summarizer_board,Proof board,Tableau de preuve,Bizonyítótábla,Proof board
+ui.summarizer_step,Level {current} / {total} — {title},Niveau {current} / {total} — {title},Szint {current} / {total} — {title},Level {current} / {total} — {title}
+ui.summarizer_locked_step,Locked,Verrouillé,Zárolt,Locked
+ui.summarizer_palette,Level blocks,Blocs du niveau,Szint blokkjai,Level blocks
+ui.summarizer_chain_done,World complete — the proof board holds this spine.,Monde terminé — le tableau de preuve contient cette épine.,Világ kész — a bizonyítótábla tartalmazza a gerincet.,World complete — the proof board holds this spine.
+ui.summarizer_socket_empty,(?),(?),(?),(?)
+ui.summarizer_token_about,About this symbol,À propos de ce symbole,Erről a szimbólumról,About this symbol
+ui.summarizer_chapter_lede,"Chapter mini-app: rebuild this chapter’s proof logic with unlocking symbols (NNG-style).","Mini-app du chapitre : reconstruisez la logique des preuves avec des symboles qui se débloquent.","Fejezet mini-app: építsd újra a bizonyítások logikáját feloldódó szimbólumokkal.","Chapter mini-app: rebuild this chapter’s proof logic with unlockin' symbols."
+ui.chapter_apps,Mini-apps,Mini-apps,Mini-appok,Mini-apps
+ui.chapter_apps_empty,Mini-apps for this chapter are coming later.,Les mini-apps de ce chapitre arriveront plus tard.,Ehhez a fejezethez később jönnek mini-appok.,Mini-apps for this chapter be comin' later.

@@ -38,9 +38,80 @@ export interface LocalizationTable {
   strings: Record<string, Partial<Record<Locale, string>>>
 }
 
+export type SandboxMode = 'translate' | 'repair'
+
+export interface SandboxPuzzle {
+  id: string
+  mode: SandboxMode
+  organizer: OrganizerKind
+  promptKey: string
+  hintKey: string
+  boardLabelKey: string
+  /** Earlier puzzle ids in the same chain that must be certified first. */
+  requires: string[]
+  /** Optional certified puzzle ids from any world (sessionStorage). */
+  requiresGlobal: string[]
+  frame: string[]
+  sockets: string[]
+  /** Candidate blocks for this level (only those in inventory are placeable). */
+  palette: string[]
+  /** Maps socket index ("0", "1", …) → block id. */
+  target: Record<string, string>
+  /** Pre-filled socket fills (repair mode). */
+  start: Record<string, string>
+  /** Symbols / lemma chips added to inventory when this level is certified. */
+  unlocks: string[]
+  showBoard: boolean
+  reviewSectionId: string | null
+}
+
+export interface SandboxChain {
+  id: string
+  titleKey: string
+  puzzles: SandboxPuzzle[]
+}
+
+export interface SandboxFile {
+  sectionId: string
+  /** Symbols available before any level in this world (usually only the first world). */
+  startingInventory: string[]
+  chains: SandboxChain[]
+}
+
+/** One playable world on the summarizer game hub (NNG-style). */
+export interface SummarizerWorld {
+  id: string
+  sectionId: string
+  titleKey: string
+  order: number
+  startingInventory: string[]
+  levels: SandboxPuzzle[]
+}
+
+export interface CertifiedBoardEntry {
+  puzzleId: string
+  sectionId: string
+  chainId: string
+  frame: string[]
+  fills: Record<string, string>
+  boardLabelKey: string
+}
+
+export interface ChapterApp {
+  chapter: string
+  id: string
+  titleKey: string
+  ledeKey: string
+  route: string
+  order: number
+}
+
 export interface AppData {
   sections: Section[]
   questions: Question[]
+  sandboxesBySection: Record<string, SandboxFile>
+  worlds: SummarizerWorld[]
+  chapterApps: ChapterApp[]
   localization: LocalizationTable
   locales: Locale[]
 }
@@ -61,4 +132,6 @@ export interface ProgressStore {
   drawCheckQuestions: (current: Section, sections: Section[], questions: Question[]) => Question[]
   refamiliarize: (current: Section, sections: Section[], questions: Question[]) => Question[]
   clearAnsweredUpTo: (current: Section, sections: Section[], questions: Question[]) => void
+  /** Clear section completion and quiz answers; keeps locale. */
+  forgetProgress: () => void
 }

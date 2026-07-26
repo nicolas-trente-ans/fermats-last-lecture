@@ -106,5 +106,10 @@ export function createProgressStore(): ProgressStore {
       this.clearAnsweredUpTo(current, sections, questions)
       return this.drawCheckQuestions(current, sections, questions)
     },
+    forgetProgress() {
+      state.completedSections = []
+      state.answeredQuestionIds = []
+      persist()
+    },
   }
 }

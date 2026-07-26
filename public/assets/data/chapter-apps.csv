@@ -1,0 +1,2 @@
+chapter,id,title_key,lede_key,route,order
+1,logic-game,ui.summarizer,ui.summarizer_chapter_lede,/summarizer,1

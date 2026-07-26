@@ -1,0 +1,132 @@
+{
+  "section_id": "flt-n4",
+  "starting_inventory": [],
+  "chains": [
+    {
+      "id": "flt-n4",
+      "title_key": "sb.flt_n4.chain_title",
+      "puzzles": [
+        {
+          "id": "flt-n4-claim",
+          "mode": "translate",
+          "organizer": "expository",
+          "prompt_key": "sb.flt_n4.claim.prompt",
+          "hint_key": "sb.flt_n4.claim.hint",
+          "board_label_key": "sb.flt_n4.claim.board",
+          "requires_global": ["flt-n3-contradiction"],
+          "frame": ["quant", "xyz", "in", "N", "st", "fourth_sum"],
+          "sockets": ["quant"],
+          "palette": ["exists", "nexists", "forall"],
+          "target": { "0": "nexists" },
+          "start": {},
+          "unlocks": []
+        },
+        {
+          "id": "flt-n4-lemma",
+          "mode": "translate",
+          "organizer": "expository",
+          "prompt_key": "sb.flt_n4.lemma.prompt",
+          "hint_key": "sb.flt_n4.lemma.hint",
+          "board_label_key": "sb.flt_n4.lemma.board",
+          "requires": ["flt-n4-claim"],
+          "frame": ["lemma", "colon", "claim"],
+          "sockets": ["claim"],
+          "palette": ["no_sq_area", "has_sq_area", "all_primitive"],
+          "target": { "0": "no_sq_area" },
+          "start": {},
+          "unlocks": ["mod4_01", "mod4_any", "mod4_23"]
+        },
+        {
+          "id": "flt-n4-mod4",
+          "mode": "translate",
+          "organizer": "comparative",
+          "prompt_key": "sb.flt_n4.mod4.prompt",
+          "hint_key": "sb.flt_n4.mod4.hint",
+          "board_label_key": "sb.flt_n4.mod4.board",
+          "requires": ["flt-n4-lemma"],
+          "frame": ["squares_mod4", "are"],
+          "sockets": ["are"],
+          "palette": ["mod4_01", "mod4_any", "mod4_23"],
+          "target": { "0": "mod4_01" },
+          "start": {},
+          "unlocks": ["not_both_odd", "both_odd_ok", "both_even_forced"]
+        },
+        {
+          "id": "flt-n4-not-both-odd",
+          "mode": "translate",
+          "organizer": "comparative",
+          "prompt_key": "sb.flt_n4.not_both_odd.prompt",
+          "hint_key": "sb.flt_n4.not_both_odd.hint",
+          "board_label_key": "sb.flt_n4.not_both_odd.board",
+          "requires": ["flt-n4-mod4"],
+          "frame": ["in_pythag", "legs"],
+          "sockets": ["legs"],
+          "palette": ["not_both_odd", "both_odd_ok", "both_even_forced"],
+          "target": { "0": "not_both_odd" },
+          "start": {},
+          "unlocks": ["primitive_enough", "need_all", "a_even_wlog"]
+        },
+        {
+          "id": "flt-n4-primitive",
+          "mode": "translate",
+          "organizer": "narrative",
+          "prompt_key": "sb.flt_n4.primitive.prompt",
+          "hint_key": "sb.flt_n4.primitive.hint",
+          "board_label_key": "sb.flt_n4.primitive.board",
+          "requires": ["flt-n4-not-both-odd"],
+          "frame": ["to_rule_out_sq_area", "reduce_to"],
+          "sockets": ["reduce_to"],
+          "palette": ["primitive_enough", "need_all", "a_even_wlog"],
+          "target": { "0": "primitive_enough" },
+          "start": {},
+          "unlocks": []
+        },
+        {
+          "id": "flt-n4-a-even",
+          "mode": "translate",
+          "organizer": "comparative",
+          "prompt_key": "sb.flt_n4.a_even.prompt",
+          "hint_key": "sb.flt_n4.a_even.hint",
+          "board_label_key": "sb.flt_n4.a_even.board",
+          "requires": ["flt-n4-primitive"],
+          "frame": ["primitive_triple", "wlog"],
+          "sockets": ["wlog"],
+          "palette": ["a_even_wlog", "need_all", "both_even_forced"],
+          "target": { "0": "a_even_wlog" },
+          "start": {},
+          "unlocks": ["sq_area_tri", "odd_hyp", "no_triangle"]
+        },
+        {
+          "id": "flt-n4-reduction",
+          "mode": "translate",
+          "organizer": "narrative",
+          "prompt_key": "sb.flt_n4.reduction.prompt",
+          "hint_key": "sb.flt_n4.reduction.hint",
+          "board_label_key": "sb.flt_n4.reduction.board",
+          "requires": ["flt-n4-a-even"],
+          "frame": ["flt4_sol", "implies", "outcome"],
+          "sockets": ["outcome"],
+          "palette": ["sq_area_tri", "odd_hyp", "no_triangle"],
+          "target": { "0": "sq_area_tri" },
+          "start": {},
+          "unlocks": ["lemma_forbids", "lemma_allows", "need_new_lemma"]
+        },
+        {
+          "id": "flt-n4-contradiction",
+          "mode": "translate",
+          "organizer": "narrative",
+          "prompt_key": "sb.flt_n4.contradiction.prompt",
+          "hint_key": "sb.flt_n4.contradiction.hint",
+          "board_label_key": "sb.flt_n4.contradiction.board",
+          "requires": ["flt-n4-reduction"],
+          "frame": ["so", "finish"],
+          "sockets": ["finish"],
+          "palette": ["lemma_forbids", "lemma_allows", "need_new_lemma"],
+          "target": { "0": "lemma_forbids" },
+          "start": {},
+          "unlocks": []
+        }
+      ]
+    }
+  ]
+}
