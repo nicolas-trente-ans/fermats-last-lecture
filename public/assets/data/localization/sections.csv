@@ -1,10 +1,11 @@
 key,en,fr,hu,pirate
 chapter.1,Chapter 1 · Basics,Chapitre 1 · Bases,1. fejezet · Alapok,Chapter 1 · Basics
-chapter.2,Chapter 2 · Linear Algebra,Chapitre 2 · Algèbre linéaire,2. fejezet · Lineáris algebra,Chapter 2 · Linear Algebra
-chapter.3,Chapter 3 · Abstract Algebra,Chapitre 3 · Algèbre abstraite,3. fejezet · Absztrakt algebra,Chapter 3 · Abstract Algebra
-chapter.4,Chapter 4 · Elliptic Curves,Chapitre 4 · Courbes elliptiques,4. fejezet · Elliptikus görbék,Chapter 4 · Elliptic Curves
-chapter.5,Chapter 5 · Modular Forms,Chapitre 5 · Formes modulaires,5. fejezet · Moduláris formák,Chapter 5 · Modular Forms
-chapter.6,Chapter 6 · The Endgame,Chapitre 6 · Le final,6. fejezet · A végjáték,Chapter 6 · The Endgame
+chapter.2,Chapter 2 · Calculus and Complex Analysis,Chapitre 2 · Calcul et analyse complexe,2. fejezet · Kalkulus és komplex analízis,Chapter 2 · Calculus and Complex Analysis
+chapter.3,Chapter 3 · Linear Algebra,Chapitre 3 · Algèbre linéaire,3. fejezet · Lineáris algebra,Chapter 3 · Linear Algebra
+chapter.4,Chapter 4 · Abstract Algebra,Chapitre 4 · Algèbre abstraite,4. fejezet · Absztrakt algebra,Chapter 4 · Abstract Algebra
+chapter.5,Chapter 5 · Elliptic Curves,Chapitre 5 · Courbes elliptiques,5. fejezet · Elliptikus görbék,Chapter 5 · Elliptic Curves
+chapter.6,Chapter 6 · Modular Forms,Chapitre 6 · Formes modulaires,6. fejezet · Moduláris formák,Chapter 6 · Modular Forms
+chapter.7,Chapter 7 · The Endgame,Chapitre 7 · Le final,7. fejezet · A végjáték,Chapter 7 · The Endgame
 section.intro,Introduction,Introduction,Bevezetés,Introduction
 section.basic_sets,Basic set and number theory,Ensembles et théorie des nombres de base,Alapvető halmaz- és számelmélet,Basic set and number theory
 section.symbols_notation,Symbols and notation,Symboles et notation,Szimbólumok és jelölés,Symbols and notation

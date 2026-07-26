@@ -74,7 +74,8 @@ watch(
 .notes-body {
   color: var(--ink);
   line-height: 1.55;
-  max-width: 46rem;
+  width: 100%;
+  max-width: none;
 }
 
 .notes-body :deep(h1),

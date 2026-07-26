@@ -23,6 +23,17 @@ For each concept, prefer this order:
 
 Keep early material simple. Prefer soft wording for properties that are true but not unique characterizations (e.g. reals “share” arithmetic closure; do not claim that alone defines ℝ).
 
+## Multiplication notation
+
+When two numbers or variables are multiplied, **always show a multiplication symbol** — do not rely on bare juxtaposition.
+
+- Prefer the centered dot in prose and display math: `a·b`, `3·v`, `x·y·z`, LaTeX `\cdot`.
+- Write `x = p·x₁`, not `x = p x₁`; write `|x·y·z|`, not `|xyz|`.
+- Parentheses alone are not enough when a factor sits next to a letter or digit (`3v` → `3·v`, `2p(...)` → `2·p·(...)`).
+- Exponents and ordinary sums/differences need no extra dots (`a³`, `u² − 9·v²` is fine once the `9·v²` product is marked).
+
+Juxtaposition is hard to parse in notes, especially next to `|`, gcd, and multi-letter subscripts.
+
 ## Symbol introduction
 
 - Do not use a symbol until it has been introduced in the notes (or in an earlier section the learner already saw).

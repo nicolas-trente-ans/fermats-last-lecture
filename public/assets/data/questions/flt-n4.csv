@@ -1,0 +1,14 @@
+id,section_id,type,organizer,prompt_key,answer,choices_keys,weight,review_section_id
+flt4-mc-claim,flt-n4,mc,expository,q.flt4.claim.prompt,q.flt4.claim.a,q.flt4.claim.a|q.flt4.claim.b|q.flt4.claim.c,1,
+flt4-mc-lemma,flt-n4,mc,expository,q.flt4.lemma.prompt,q.flt4.lemma.a,q.flt4.lemma.a|q.flt4.lemma.b|q.flt4.lemma.c,1,
+flt4-mc-mod4,flt-n4,mc,comparative,q.flt4.mod4.prompt,q.flt4.mod4.a,q.flt4.mod4.a|q.flt4.mod4.b|q.flt4.mod4.c,1,divisibility-congruence
+flt4-mc-param,flt-n4,mc,comparative,q.flt4.param.prompt,q.flt4.param.a,q.flt4.param.a|q.flt4.param.b|q.flt4.param.c,1,
+flt4-mc-area-factors,flt-n4,mc,comparative,q.flt4.area_factors.prompt,q.flt4.area_factors.a,q.flt4.area_factors.a|q.flt4.area_factors.b|q.flt4.area_factors.c,1,
+flt4-mc-descent,flt-n4,mc,comparative,q.flt4.descent.prompt,q.flt4.descent.a,q.flt4.descent.a|q.flt4.descent.b|q.flt4.descent.c,1,
+flt4-mc-mod8,flt-n4,mc,comparative,q.flt4.mod8.prompt,q.flt4.mod8.a,q.flt4.mod8.a|q.flt4.mod8.b|q.flt4.mod8.c,1,
+flt4-mc-forbidden,flt-n4,mc,comparative,q.flt4.forbidden.prompt,q.flt4.forbidden.a,q.flt4.forbidden.a|q.flt4.forbidden.b|q.flt4.forbidden.c,1,
+flt4-mc-schema,flt-n4,mc,graphic,q.flt4.schema.prompt,q.flt4.schema.a,q.flt4.schema.a|q.flt4.schema.b|q.flt4.schema.c,1,
+flt4-mc-vs-n3,flt-n4,mc,narrative,q.flt4.vs_n3.prompt,q.flt4.vs_n3.a,q.flt4.vs_n3.a|q.flt4.vs_n3.b|q.flt4.vs_n3.c,1,flt-n3
+flt4-mc-why-lemma,flt-n4,mc,narrative,q.flt4.why_lemma.prompt,q.flt4.why_lemma.a,q.flt4.why_lemma.a|q.flt4.why_lemma.b|q.flt4.why_lemma.c,1,
+flt4-match-lemma,flt-n4,match,expository,q.flt4.match_lemma.prompt,square-area lemma|square area lemma|square-area,,1,
+flt4-mc-x-form,flt-n4,mc,comparative,q.flt4.x_form.prompt,q.flt4.x_form.a,q.flt4.x_form.a|q.flt4.x_form.b|q.flt4.x_form.c,1,

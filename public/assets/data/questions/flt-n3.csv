@@ -1,0 +1,14 @@
+id,section_id,type,organizer,prompt_key,answer,choices_keys,weight,review_section_id
+flt3-mc-claim,flt-n3,mc,expository,q.flt3.claim.prompt,q.flt3.claim.a,q.flt3.claim.a|q.flt3.claim.b|q.flt3.claim.c,1,
+flt3-mc-size,flt-n3,mc,expository,q.flt3.size.prompt,q.flt3.size.a,q.flt3.size.a|q.flt3.size.b|q.flt3.size.c,1,
+flt3-mc-coprime,flt-n3,mc,comparative,q.flt3.coprime.prompt,q.flt3.coprime.a,q.flt3.coprime.a|q.flt3.coprime.b|q.flt3.coprime.c,1,
+flt3-mc-parity,flt-n3,mc,comparative,q.flt3.parity.prompt,q.flt3.parity.a,q.flt3.parity.a|q.flt3.parity.b|q.flt3.parity.c,1,
+flt3-mc-uv,flt-n3,mc,comparative,q.flt3.uv.prompt,q.flt3.uv.a,q.flt3.uv.a|q.flt3.uv.b|q.flt3.uv.c,1,
+flt3-mc-gcd-split,flt-n3,mc,comparative,q.flt3.gcd_split.prompt,q.flt3.gcd_split.a,q.flt3.gcd_split.a|q.flt3.gcd_split.b|q.flt3.gcd_split.c,1,
+flt3-mc-coprime-cubes,flt-n3,mc,comparative,q.flt3.coprime_cubes.prompt,q.flt3.coprime_cubes.a,q.flt3.coprime_cubes.a|q.flt3.coprime_cubes.b|q.flt3.coprime_cubes.c,1,gcd
+flt3-mc-cubic-form,flt-n3,mc,comparative,q.flt3.cubic_form.prompt,q.flt3.cubic_form.a,q.flt3.cubic_form.a|q.flt3.cubic_form.b|q.flt3.cubic_form.c,1,
+flt3-mc-schema,flt-n3,mc,graphic,q.flt3.schema.prompt,q.flt3.schema.a,q.flt3.schema.a|q.flt3.schema.b|q.flt3.schema.c,1,
+flt3-mc-descent,flt-n3,mc,narrative,q.flt3.descent.prompt,q.flt3.descent.a,q.flt3.descent.a|q.flt3.descent.b|q.flt3.descent.c,1,
+flt3-mc-why-care,flt-n3,mc,narrative,q.flt3.why_care.prompt,q.flt3.why_care.a,q.flt3.why_care.a|q.flt3.why_care.b|q.flt3.why_care.c,1,
+flt3-match-F,flt-n3,match,expository,q.flt3.match_F.prompt,F,,1,
+flt3-mc-sign-pattern,flt-n3,mc,comparative,q.flt3.sign_pattern.prompt,q.flt3.sign_pattern.a,q.flt3.sign_pattern.a|q.flt3.sign_pattern.b|q.flt3.sign_pattern.c,1,
