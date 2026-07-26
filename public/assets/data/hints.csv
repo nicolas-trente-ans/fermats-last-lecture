@@ -62,7 +62,7 @@ flt3-mc-cubic-form,q.flt3.cubic_form.hint,1
 flt3-mc-schema,q.flt3.schema.hint,1
 flt3-mc-descent,q.flt3.descent.hint,1
 flt3-mc-why-care,q.flt3.why_care.hint,1
-flt3-match-F,q.flt3.match_F.hint,1
+flt3-mc-minimal,q.flt3.minimal.hint,1
 flt3-mc-sign-pattern,q.flt3.sign_pattern.hint,1
 flt4-mc-claim,q.flt4.claim.hint,1
 flt4-mc-lemma,q.flt4.lemma.hint,1
@@ -75,5 +75,5 @@ flt4-mc-forbidden,q.flt4.forbidden.hint,1
 flt4-mc-schema,q.flt4.schema.hint,1
 flt4-mc-vs-n3,q.flt4.vs_n3.hint,1
 flt4-mc-why-lemma,q.flt4.why_lemma.hint,1
-flt4-match-lemma,q.flt4.match_lemma.hint,1
+flt4-mc-primitive,q.flt4.primitive.hint,1
 flt4-mc-x-form,q.flt4.x_form.hint,1

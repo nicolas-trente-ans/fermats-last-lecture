@@ -10,5 +10,5 @@ flt4-mc-forbidden,flt-n4,mc,comparative,q.flt4.forbidden.prompt,q.flt4.forbidden
 flt4-mc-schema,flt-n4,mc,graphic,q.flt4.schema.prompt,q.flt4.schema.a,q.flt4.schema.a|q.flt4.schema.b|q.flt4.schema.c,1,
 flt4-mc-vs-n3,flt-n4,mc,narrative,q.flt4.vs_n3.prompt,q.flt4.vs_n3.a,q.flt4.vs_n3.a|q.flt4.vs_n3.b|q.flt4.vs_n3.c,1,flt-n3
 flt4-mc-why-lemma,flt-n4,mc,narrative,q.flt4.why_lemma.prompt,q.flt4.why_lemma.a,q.flt4.why_lemma.a|q.flt4.why_lemma.b|q.flt4.why_lemma.c,1,
-flt4-match-lemma,flt-n4,match,expository,q.flt4.match_lemma.prompt,square-area lemma|square area lemma|square-area,,1,
+flt4-mc-primitive,flt-n4,mc,comparative,q.flt4.primitive.prompt,q.flt4.primitive.a,q.flt4.primitive.a|q.flt4.primitive.b|q.flt4.primitive.c,1,
 flt4-mc-x-form,flt-n4,mc,comparative,q.flt4.x_form.prompt,q.flt4.x_form.a,q.flt4.x_form.a|q.flt4.x_form.b|q.flt4.x_form.c,1,

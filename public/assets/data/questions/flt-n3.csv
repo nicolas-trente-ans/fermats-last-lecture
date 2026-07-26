@@ -10,5 +10,5 @@ flt3-mc-cubic-form,flt-n3,mc,comparative,q.flt3.cubic_form.prompt,q.flt3.cubic_f
 flt3-mc-schema,flt-n3,mc,graphic,q.flt3.schema.prompt,q.flt3.schema.a,q.flt3.schema.a|q.flt3.schema.b|q.flt3.schema.c,1,
 flt3-mc-descent,flt-n3,mc,narrative,q.flt3.descent.prompt,q.flt3.descent.a,q.flt3.descent.a|q.flt3.descent.b|q.flt3.descent.c,1,
 flt3-mc-why-care,flt-n3,mc,narrative,q.flt3.why_care.prompt,q.flt3.why_care.a,q.flt3.why_care.a|q.flt3.why_care.b|q.flt3.why_care.c,1,
-flt3-match-F,flt-n3,match,expository,q.flt3.match_F.prompt,F,,1,
+flt3-mc-minimal,flt-n3,mc,narrative,q.flt3.minimal.prompt,q.flt3.minimal.a,q.flt3.minimal.a|q.flt3.minimal.b|q.flt3.minimal.c,1,
 flt3-mc-sign-pattern,flt-n3,mc,comparative,q.flt3.sign_pattern.prompt,q.flt3.sign_pattern.a,q.flt3.sign_pattern.a|q.flt3.sign_pattern.b|q.flt3.sign_pattern.c,1,
