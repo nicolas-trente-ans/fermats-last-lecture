@@ -73,6 +73,26 @@ const reviewSection = computed(() => {
   return data.value.sections.find((s) => s.id === id) || null
 })
 
+function findLevel(puzzleId: string): SandboxPuzzle | null {
+  for (const world of worlds.value) {
+    const level = world.levels.find((item) => item.id === puzzleId)
+    if (level) return level
+  }
+  return null
+}
+
+/** Full packed statement for a certified board line. */
+function certifiedChips(entry: CertifiedBoardEntry): string[] {
+  const level = findLevel(entry.puzzleId)
+  if (!level) return [t(entry.boardLabelKey)]
+  return entry.frame.map((token) => {
+    const socketIndex = level.sockets.indexOf(token)
+    if (socketIndex < 0) return tokenLabel(token)
+    const fill = entry.fills[String(socketIndex)]
+    return fill ? tokenLabel(fill) : tokenLabel(token)
+  })
+}
+
 function tokenLabel(tokenId: string): string {
   return t(`sb.token.${tokenId}`)
 }
@@ -378,8 +398,17 @@ watch(
           <div v-if="worldBoard.length" class="board">
             <h2>{{ t('ui.summarizer_board') }}</h2>
             <ol>
-              <li v-for="entry in worldBoard" :key="entry.puzzleId">
-                {{ t(entry.boardLabelKey) }}
+              <li v-for="entry in worldBoard" :key="entry.puzzleId" class="board-line">
+                <p class="board-statement">{{ t(entry.boardLabelKey) }}</p>
+                <div class="board-frame" aria-hidden="true">
+                  <span
+                    v-for="(chip, chipIndex) in certifiedChips(entry)"
+                    :key="`${entry.puzzleId}-${chipIndex}`"
+                    class="chip chrome"
+                  >
+                    {{ chip }}
+                  </span>
+                </div>
               </li>
             </ol>
           </div>
@@ -722,6 +751,22 @@ button.chip.inv:not(:disabled) {
   margin: 0;
   padding-left: 1.2rem;
   display: grid;
+  gap: 0.75rem;
+}
+
+.board-line {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.board-statement {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.board-frame {
+  display: flex;
+  flex-wrap: wrap;
   gap: 0.35rem;
 }
 
