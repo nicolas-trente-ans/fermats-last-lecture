@@ -7,13 +7,28 @@
       "title_key": "sb.flt_n3.chain_title",
       "puzzles": [
         {
+          "id": "flt-n3-claim",
+          "mode": "translate",
+          "organizer": "expository",
+          "prompt_key": "sb.flt_n3.claim.prompt",
+          "hint_key": "sb.flt_n3.claim.hint",
+          "board_label_key": "sb.flt_n3.claim.board",
+          "requires_global": ["symbols-flt-repair"],
+          "frame": ["quant", "xyz", "in", "Z", "st", "nonzero", "and", "cubesum0"],
+          "sockets": ["quant"],
+          "palette": ["exists", "nexists", "forall"],
+          "target": { "0": "nexists" },
+          "start": {},
+          "unlocks": ["x", "y", "z"]
+        },
+        {
           "id": "flt-n3-setup",
           "mode": "translate",
           "organizer": "narrative",
           "prompt_key": "sb.flt_n3.setup.prompt",
           "hint_key": "sb.flt_n3.setup.hint",
           "board_label_key": "sb.flt_n3.setup.board",
-          "requires_global": ["symbols-flt-repair"],
+          "requires": ["flt-n3-claim"],
           "frame": [
             "abs_l", "x", "mul", "y", "mul", "z", "abs_r",
             "cmp",
@@ -23,7 +38,7 @@
           "palette": ["le", "lt", "eq", "neq"],
           "target": { "0": "le" },
           "start": {},
-          "unlocks": ["x", "y", "z", "x1", "y1", "z1", "n0", "n1", "n2", "n3"]
+          "unlocks": ["x1", "y1", "z1", "n0", "n1", "n2", "n3"]
         },
         {
           "id": "flt-n3-L1",
