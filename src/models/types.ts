@@ -47,7 +47,7 @@ export interface SandboxPuzzle {
   promptKey: string
   hintKey: string
   boardLabelKey: string
-  /** Optional proof-board cite badge (e.g. L4a); else derived from L*/CFL unlocks. */
+  /** Optional proof-board cite badge (e.g. L4a); else derived from L* / CFL unlocks. */
   cite: string | null
   /** Earlier puzzle ids in the same chain that must be certified first. */
   requires: string[]
