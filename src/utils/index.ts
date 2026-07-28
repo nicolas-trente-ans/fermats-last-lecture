@@ -3,7 +3,7 @@ export type { AppData } from './loadData'
 export { parseCsv } from './csv'
 export { shuffle } from './shuffle'
 export { isCorrectAnswer, normalizeMatchAnswer } from './answers'
-export { matchesTarget, initialFills } from './sandboxCheck'
+export { matchesTarget, initialFills, acceptedTargetIds, preferredTargetId } from './sandboxCheck'
 export {
   certifyPuzzle,
   certifiedIds,

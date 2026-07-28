@@ -194,12 +194,13 @@ function parseSandboxPuzzle(
     promptKey: String(data.prompt_key || ''),
     hintKey: String(data.hint_key || ''),
     boardLabelKey: String(data.board_label_key || ''),
+    cite: data.cite ? String(data.cite) : null,
     requires: asStringArray(data.requires),
     requiresGlobal: asStringArray(data.requires_global),
     frame: asStringArray(data.frame),
     sockets: asStringArray(data.sockets),
     palette: asStringArray(data.palette),
-    target: asStringRecord(data.target),
+    target: asTargetRecord(data.target),
     start: asStringRecord(data.start),
     unlocks: asStringArray(data.unlocks),
     showBoard,
@@ -239,6 +240,21 @@ function asStringRecord(value: unknown): Record<string, string> {
   const result: Record<string, string> = {}
   for (const [key, item] of Object.entries(value as Record<string, unknown>)) {
     result[key] = String(item)
+  }
+  return result
+}
+
+/** Socket targets: a string, or a non-empty string array (first id preferred). */
+function asTargetRecord(value: unknown): Record<string, string | string[]> {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return {}
+  const result: Record<string, string | string[]> = {}
+  for (const [key, item] of Object.entries(value as Record<string, unknown>)) {
+    if (Array.isArray(item)) {
+      const ids = item.map((entry) => String(entry)).filter(Boolean)
+      if (ids.length) result[key] = ids
+    } else if (item != null && item !== '') {
+      result[key] = String(item)
+    }
   }
   return result
 }

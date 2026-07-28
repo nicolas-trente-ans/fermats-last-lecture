@@ -10,7 +10,7 @@ The game is a **standalone page** at `/summarizer`, attached on the home page as
 2. From **Chapter 1 → Logic game** (or the header shortcut), open the hub.
 3. Enter that section’s **world**; levels unlock in order along the notes’ argument.
 4. Tap inventory / palette chips into sockets; **Check** certifies the lemma.
-5. Certified lines go on the **proof board**; `unlocks` add new symbols for later levels/worlds.
+5. Certified lines go on the **proof board** as `board_label` text (frames are play-only). Optional `cite` or an `L*` / `CFL` unlock shows a block badge for later reference; `unlocks` also add symbols to inventory.
 
 ## Chapter mini-apps
 
@@ -57,6 +57,7 @@ Each `chains[]` entry becomes one **world** (`/summarizer/:worldId/:levelId`).
 |-------|------|
 | `starting_inventory` | Symbols before any level in this world (usually only Notation World) |
 | `unlocks` | Added to inventory when the level is certified |
+| `cite` | Optional proof-board badge (e.g. `L4a`); if omitted, first `L*` / `CFL` unlock is used |
 | `palette` | Candidates; only `palette ∩ inventory` are placeable |
 | `requires` / `requires_global` | Level gates |
 
@@ -79,7 +80,7 @@ Author levels to track the notes’ graphic schema step-by-step. `yarn validate-
 
 ## Checking / persistence
 
-Exact slot match vs `target`. Session board under `sessionStorage` key `fermat-summarizer-board-v1`.
+Exact slot match vs `target`. Each socket value may be a single block id or an **array of accepted ids** (first entry preferred for authoring/hints). Session board under `sessionStorage` key `fermat-summarizer-board-v1`.
 
 ## Related
 

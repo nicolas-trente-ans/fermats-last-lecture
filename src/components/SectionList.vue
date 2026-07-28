@@ -26,12 +26,30 @@ const chapters = computed(() => {
 function appsForChapter(chapter: string): ChapterApp[] {
   return data.value.chapterApps.filter((app) => app.chapter === chapter)
 }
+
+function markChapterComplete(chapter: string, items: Section[]) {
+  progress.markChapterComplete(chapter, items)
+}
 </script>
 
 <template>
   <div class="chapters">
     <section v-for="[chapter, items] in chapters" :key="chapter" class="chapter">
-      <h2>{{ t(`chapter.${chapter}`) }}</h2>
+      <div class="chapter-head">
+        <h2>{{ t(`chapter.${chapter}`) }}</h2>
+        <button
+          class="btn btn-accent"
+          type="button"
+          :disabled="progress.isChapterComplete(chapter)"
+          @click="markChapterComplete(chapter, items)"
+        >
+          {{
+            progress.isChapterComplete(chapter)
+              ? t('ui.completed')
+              : t('ui.mark_chapter_complete')
+          }}
+        </button>
+      </div>
 
       <div v-if="appsForChapter(chapter).length" class="apps">
         <p class="apps-label">{{ t('ui.chapter_apps') }}</p>
@@ -79,10 +97,19 @@ function appsForChapter(chapter: string): ChapterApp[] {
   gap: 1.5rem;
 }
 
+.chapter-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  flex-wrap: wrap;
+  margin: 0 0 0.65rem;
+}
+
 .chapter h2 {
   font-family: var(--font-display);
   font-size: 1.25rem;
-  margin: 0 0 0.65rem;
+  margin: 0;
   color: var(--accent);
 }
 

@@ -1,88 +1,148 @@
 key,en,fr,hu,pirate
 sb.flt_n3.chain_title,Euler Descent World (n = 3),Monde descente d'Euler (n = 3),Euler-leszállás világ (n = 3),Euler Descent World (n = 3)
-sb.flt_n3.claim.prompt,"FLT for n = 3 asserts there are no nonzero integers whose cubes sum to zero. Pack that claim with the correct quantifier.","FLT for n = 3 asserts there are no nonzero integers whose cubes sum to zero. Pack that claim with the correct quantifier.","FLT for n = 3 asserts there are no nonzero integers whose cubes sum to zero. Pack that claim with the correct quantifier.","FLT for n = 3 says no nonzero integers have cubes summin' to zero. Pack it with the right quantifier."
-sb.flt_n3.claim.hint,"Use ∄ — the theorem is a non-existence claim about nonzero x, y, z.","Use ∄ — the theorem is a non-existence claim about nonzero x, y, z.","Use ∄ — the theorem is a non-existence claim about nonzero x, y, z.","Hoist ∄ — there ain't such a triple."
-sb.flt_n3.claim.board,"There do not exist nonzero integers x, y, z such that x³ + y³ + z³ = 0.","There do not exist nonzero integers x, y, z such that x³ + y³ + z³ = 0.","There do not exist nonzero integers x, y, z such that x³ + y³ + z³ = 0.","There do not exist nonzero integers x, y, z such that x³ + y³ + z³ = 0."
-sb.flt_n3.minimal.prompt,"For contradiction let F be the set of all nonzero integer solutions of x³ + y³ + z³ = 0. Assume F is nonempty. Which verb opens the next step, and which size of solution do we pick so that descent can contradict it later?","For contradiction let F be the set of all nonzero integer solutions of x³ + y³ + z³ = 0. Assume F is nonempty. Which verb opens the next step, and which size of solution do we pick so that descent can contradict it later?","For contradiction let F be the set of all nonzero integer solutions of x³ + y³ + z³ = 0. Assume F is nonempty. Which verb opens the next step, and which size of solution do we pick so that descent can contradict it later?","For contradiction let F be all nonzero solutions of x³ + y³ + z³ = 0. Assume F nonempty. Which verb opens the next step, and which size do we grab for later contradiction?"
-sb.flt_n3.minimal.hint,"Assume F nonempty, then pick a solution whose product |x·y·z| is minimal.","Assume F nonempty, then pick a solution whose product |x·y·z| is minimal.","Assume F nonempty, then pick a solution whose product |x·y·z| is minimal.","Assume F nonempty, then grab the smallest product haul."
-sb.flt_n3.minimal.board,"Assume F is nonempty, and pick a solution (x, y, z) in F with minimal |x·y·z|.","Assume F is nonempty, and pick a solution (x, y, z) in F with minimal |x·y·z|.","Assume F is nonempty, and pick a solution (x, y, z) in F with minimal |x·y·z|.","Assume F is nonempty, and pick a solution (x, y, z) in F with minimal |x·y·z|."
-sb.flt_n3.parity.prompt,"Suppose x, y, z are pairwise coprime nonzero integers with x³ + y³ + z³ = 0. Pairwise coprimality already forbids two of them being even (they would share the prime 2). Three odd cubes cannot sum to 0, so at least one variable is even. How many of x, y, z must therefore be even?","Suppose x, y, z are pairwise coprime nonzero integers with x³ + y³ + z³ = 0. Pairwise coprimality already forbids two of them being even (they would share the prime 2). Three odd cubes cannot sum to 0, so at least one variable is even. How many of x, y, z must therefore be even?","Suppose x, y, z are pairwise coprime nonzero integers with x³ + y³ + z³ = 0. Pairwise coprimality already forbids two of them being even (they would share the prime 2). Three odd cubes cannot sum to 0, so at least one variable is even. How many of x, y, z must therefore be even?","Suppose x, y, z be pairwise coprime nonzero integers with x³ + y³ + z³ = 0. Coprimality forbids two evens; three odd cubes can't sum to 0. How many must be even?"
-sb.flt_n3.parity.hint,At most one even (coprimality) and at least one even (three odd cubes cannot sum to 0) forces exactly one even.,At most one even (coprimality) and at least one even (three odd cubes cannot sum to 0) forces exactly one even.,At most one even (coprimality) and at least one even (three odd cubes cannot sum to 0) forces exactly one even.,Forced: exactly one even variable.
-sb.flt_n3.parity.board,"The variables x, y, z are pairwise coprime, and exactly one of them is even.","The variables x, y, z are pairwise coprime, and exactly one of them is even.","The variables x, y, z are pairwise coprime, and exactly one of them is even.","The variables x, y, z are pairwise coprime, and exactly one of them is even."
-sb.flt_n3.uv.prompt,"Take the two odd variables as x = u + v and y = u − v (with gcd(u, v) = 1). Assume x³ + y³ = z³. Expand and simplify: which identity for z³ follows?","Take the two odd variables as x = u + v and y = u − v (with gcd(u, v) = 1). Assume x³ + y³ = z³. Expand and simplify: which identity for z³ follows?","Take the two odd variables as x = u + v and y = u − v (with gcd(u, v) = 1). Assume x³ + y³ = z³. Expand and simplify: which identity for z³ follows?","Take the two odds as x = u + v and y = u − v. Assume x³ + y³ = z³. What identity for z³ follows?"
-sb.flt_n3.uv.hint,Expand (u+v)³ + (u−v)³: odd powers cancel and you get z³ = 2·u·(u² + 3·v²).,Expand (u+v)³ + (u−v)³: odd powers cancel and you get z³ = 2·u·(u² + 3·v²).,Expand (u+v)³ + (u−v)³: odd powers cancel and you get z³ = 2·u·(u² + 3·v²).,Odds as u±v ⇒ 2·u·(u² + 3·v²).
-sb.flt_n3.uv.board,"With x = u + v and y = u − v, the equation becomes z³ = 2·u·(u² + 3·v²).","With x = u + v and y = u − v, the equation becomes z³ = 2·u·(u² + 3·v²).","With x = u + v and y = u − v, the equation becomes z³ = 2·u·(u² + 3·v²).","With x = u + v and y = u − v, the equation becomes z³ = 2·u·(u² + 3·v²)."
-sb.flt_n3.gcd_split.prompt,"From z³ = 2·u·(u² + 3·v²) with gcd(u, v) = 1 and u even (so v is odd), the second factor u² + 3·v² is odd. What are the only possible values of gcd(2·u, u² + 3·v²)?","From z³ = 2·u·(u² + 3·v²) with gcd(u, v) = 1 and u even (so v is odd), the second factor u² + 3·v² is odd. What are the only possible values of gcd(2·u, u² + 3·v²)?","From z³ = 2·u·(u² + 3·v²) with gcd(u, v) = 1 and u even (so v is odd), the second factor u² + 3·v² is odd. What are the only possible values of gcd(2·u, u² + 3·v²)?","From z³ = 2·u·(u² + 3·v²) with gcd(u, v) = 1 and u even, the second factor is odd. What values can gcd(2·u, u² + 3·v²) take?"
-sb.flt_n3.gcd_split.hint,"The second factor is odd, so not 2; with gcd(u,v)=1 the only leftover candidate prime is 3 — hence the gcd is 1 or 3.","The second factor is odd, so not 2; with gcd(u,v)=1 the only leftover candidate prime is 3 — hence the gcd is 1 or 3.","The second factor is odd, so not 2; with gcd(u,v)=1 the only leftover candidate prime is 3 — hence the gcd is 1 or 3.","Second factor odd — leftover candidate only 3."
-sb.flt_n3.gcd_split.board,"The case split is gcd(2·u, u² + 3·v²) ∈ {1, 3}.","The case split is gcd(2·u, u² + 3·v²) ∈ {1, 3}.","The case split is gcd(2·u, u² + 3·v²) ∈ {1, 3}.","The case split is gcd(2·u, u² + 3·v²) ∈ {1, 3}."
-sb.flt_n3.cubes.prompt,"In the gcd = 1 branch, the product 2·u · (u² + 3·v²) is a perfect cube and the two factors are coprime. What does the coprime-factors lemma say about each factor?","In the gcd = 1 branch, the product 2·u · (u² + 3·v²) is a perfect cube and the two factors are coprime. What does the coprime-factors lemma say about each factor?","In the gcd = 1 branch, the product 2·u · (u² + 3·v²) is a perfect cube and the two factors are coprime. What does the coprime-factors lemma say about each factor?","In the gcd = 1 branch, 2·u and u² + 3·v² multiply to a cube and are coprime. What does that say about each factor?"
-sb.flt_n3.cubes.hint,Pairwise-coprime factors of a cube are themselves ± cubes.,Pairwise-coprime factors of a cube are themselves ± cubes.,Pairwise-coprime factors of a cube are themselves ± cubes.,Coprime factors of a cube be ± cubes themselves.
-sb.flt_n3.cubes.board,"When the gcd is 1, both factors 2·u and u² + 3·v² are ± perfect cubes.","When the gcd is 1, both factors 2·u and u² + 3·v² are ± perfect cubes.","When the gcd is 1, both factors 2·u and u² + 3·v² are ± perfect cubes.","When the gcd is 1, both factors 2·u and u² + 3·v² are ± perfect cubes."
-sb.flt_n3.cubic_form.prompt,"In particular u² + 3·v² = s³ for some integer s. The cubic-form lemma parametrizes integer solutions of that equation. Which expression does it give for u?","In particular u² + 3·v² = s³ for some integer s. The cubic-form lemma parametrizes integer solutions of that equation. Which expression does it give for u?","In particular u² + 3·v² = s³ for some integer s. The cubic-form lemma parametrizes integer solutions of that equation. Which expression does it give for u?","In particular u² + 3·v² = s³. The cubic-form lemma parametrizes u how?"
-sb.flt_n3.cubic_form.hint,"u = e·(e² − 9·f²) for integers e, f.","u = e·(e² − 9·f²) for integers e, f.","u = e·(e² − 9·f²) for integers e, f.","u = e·(e² − 9·f²)."
-sb.flt_n3.cubic_form.board,"By the cubic-form lemma, u = e·(e² − 9·f²) for integers e, f.","By the cubic-form lemma, u = e·(e² − 9·f²) for integers e, f.","By the cubic-form lemma, u = e·(e² − 9·f²) for integers e, f.","By the cubic-form lemma, u = e·(e² − 9·f²) for integers e, f."
-sb.flt_n3.factors.prompt,"After that parametrization, another cube factors as a product of three pairwise-coprime pieces involving e and f. Which factorization appears?","After that parametrization, another cube factors as a product of three pairwise-coprime pieces involving e and f. Which factorization appears?","After that parametrization, another cube factors as a product of three pairwise-coprime pieces involving e and f. Which factorization appears?","After parametrizing, which three-factor cube appears?"
-sb.flt_n3.factors.hint,r³ = 2·e·(e + 3·f)·(e − 3·f).,r³ = 2·e·(e + 3·f)·(e − 3·f).,r³ = 2·e·(e + 3·f)·(e − 3·f).,r³ = 2·e·(e ± 3·f).
-sb.flt_n3.factors.board,"A cube factors as r³ = 2·e·(e + 3·f)·(e − 3·f) with pairwise-coprime factors.","A cube factors as r³ = 2·e·(e + 3·f)·(e − 3·f) with pairwise-coprime factors.","A cube factors as r³ = 2·e·(e + 3·f)·(e − 3·f) with pairwise-coprime factors.","A cube factors as r³ = 2·e·(e + 3·f)·(e − 3·f) with pairwise-coprime factors."
-sb.flt_n3.sign.prompt,"Those three factors become ± cubes A³, B³, C³. You want A + B + C = 0 so that A³ + B³ + C³ = 0 is automatic. Why take A = −2·e with B = e + 3·f and C = e − 3·f rather than A = +2·e with the same B and C?","Those three factors become ± cubes A³, B³, C³. You want A + B + C = 0 so that A³ + B³ + C³ = 0 is automatic. Why take A = −2·e with B = e + 3·f and C = e − 3·f rather than A = +2·e with the same B and C?","Those three factors become ± cubes A³, B³, C³. You want A + B + C = 0 so that A³ + B³ + C³ = 0 is automatic. Why take A = −2·e with B = e + 3·f and C = e − 3·f rather than A = +2·e with the same B and C?","Why prefer A = −2·e with B = e + 3·f and C = e − 3·f over A = +2·e, when you need A + B + C = 0?"
-sb.flt_n3.sign.hint,(−2·e)+(e+3·f)+(e−3·f)=0; without the minus the sum is 4·e.,(−2·e)+(e+3·f)+(e−3·f)=0; without the minus the sum is 4·e.,(−2·e)+(e+3·f)+(e−3·f)=0; without the minus the sum is 4·e.,Need three numbers that sum to zero before cubing.
-sb.flt_n3.sign.board,"Taking (−2·e), (e + 3·f), and (e − 3·f) works because those three integers sum to 0.","Taking (−2·e), (e + 3·f), and (e − 3·f) works because those three integers sum to 0.","Taking (−2·e), (e + 3·f), and (e − 3·f) works because those three integers sum to 0.","Taking (−2·e), (e + 3·f), and (e − 3·f) works because those three integers sum to 0."
-sb.flt_n3.contradiction.prompt,"Those three integers are ± cubes summing to zero, so they give another element (α, β, γ) of F. Compared with the original minimal solution (x, y, z), what is true of |α·β·γ|?","Those three integers are ± cubes summing to zero, so they give another element (α, β, γ) of F. Compared with the original minimal solution (x, y, z), what is true of |α·β·γ|?","Those three integers are ± cubes summing to zero, so they give another element (α, β, γ) of F. Compared with the original minimal solution (x, y, z), what is true of |α·β·γ|?","Those three ± cubes give another element of F. What happens to |α·β·γ| versus the minimal solution?"
-sb.flt_n3.contradiction.hint,You get another element of F with strictly smaller |α·β·γ| — contradicting minimality.,You get another element of F with strictly smaller |α·β·γ| — contradicting minimality.,You get another element of F with strictly smaller |α·β·γ| — contradicting minimality.,A smaller product in F — contradiction.
-sb.flt_n3.contradiction.board,"Descent produces another solution in F with strictly smaller |α·β·γ|, contradicting minimality.","Descent produces another solution in F with strictly smaller |α·β·γ|, contradicting minimality.","Descent produces another solution in F with strictly smaller |α·β·γ|, contradicting minimality.","Descent produces another solution in F with strictly smaller |α·β·γ|, contradicting minimality."
+sb.flt_n3.setup.prompt,"Assume F (nonzero solutions of x³+y³+z³=0) is nonempty. Pick (x,y,z) in F whose product size is minimal. Fill the comparison between |x·y·z| and a generic other solution's product.","Assume F (nonzero solutions of x³+y³+z³=0) is nonempty. Pick (x,y,z) in F whose product size is minimal. Fill the comparison between |x·y·z| and a generic other solution's product.","Assume F (nonzero solutions of x³+y³+z³=0) is nonempty. Pick (x,y,z) in F whose product size is minimal. Fill the comparison between |x·y·z| and a generic other solution's product.","Assume F nonempty. Grab a minimal-product triple. Fill the comparison betwixt |x·y·z| and another haul."
+sb.flt_n3.setup.hint,Minimal means |x·y·z| ≤ |x₁·y₁·z₁| for every other solution in F.,Minimal means |x·y·z| ≤ |x₁·y₁·z₁| for every other solution in F.,Minimal means |x·y·z| ≤ |x₁·y₁·z₁| for every other solution in F.,Minimal means ≤ every other product in F.
+sb.flt_n3.setup.board,"Assume F ≠ ∅ and pick (x, y, z) ∈ F with |x·y·z| minimal.","Assume F ≠ ∅ and pick (x, y, z) ∈ F with |x·y·z| minimal.","Assume F ≠ ∅ and pick (x, y, z) ∈ F with |x·y·z| minimal.","Assume F ≠ ∅ and pick (x, y, z) ∈ F with |x·y·z| minimal."
+sb.flt_n3.L1.prompt,"If a common prime divides x, y, and z, dividing out that prime yields a strictly smaller solution in F. Pack gcd(x, y, z) (?) (?).","If a common prime divides x, y, and z, dividing out that prime yields a strictly smaller solution in F. Pack gcd(x, y, z) (?) (?).","If a common prime divides x, y, and z, dividing out that prime yields a strictly smaller solution in F. Pack gcd(x, y, z) (?) (?).","A common prime would give a smaller haul in F. Pack gcd(x, y, z) (?) (?)."
+sb.flt_n3.L1.hint,A common prime divisor would contradict minimality — so the triple gcd equals 1.,A common prime divisor would contradict minimality — so the triple gcd equals 1.,A common prime divisor would contradict minimality — so the triple gcd equals 1.,Common prime ⇒ smaller solution. So gcd = 1.
+sb.flt_n3.L1.board,"gcd(x, y, z) = 1.","gcd(x, y, z) = 1.","gcd(x, y, z) = 1.","gcd(x, y, z) = 1."
+sb.flt_n3.L2.prompt,"If (w.l.o.g.) gcd(x, y) ≠ 1, a prime p divides x and y, hence divides z³, hence divides z — contradicting L1. Fill all three pairwise gcd values.","If (w.l.o.g.) gcd(x, y) ≠ 1, a prime p divides x and y, hence divides z³, hence divides z — contradicting L1. Fill all three pairwise gcd values.","If (w.l.o.g.) gcd(x, y) ≠ 1, a prime p divides x and y, hence divides z³, hence divides z — contradicting L1. Fill all three pairwise gcd values.","If gcd(x,y)≠1 then p|x,y ⇒ p|z, contradicting L1. Fill all three pairwise gcds."
+sb.flt_n3.L2.hint,Pairwise coprimality: each pairwise gcd equals 1.,Pairwise coprimality: each pairwise gcd equals 1.,Pairwise coprimality: each pairwise gcd equals 1.,Each pairwise gcd is 1.
+sb.flt_n3.L2.board,"gcd(x, y) = gcd(y, z) = gcd(x, z) = 1.","gcd(x, y) = gcd(y, z) = gcd(x, z) = 1.","gcd(x, y) = gcd(y, z) = gcd(x, z) = 1.","gcd(x, y) = gcd(y, z) = gcd(x, z) = 1."
+sb.flt_n3.L3.prompt,"All even contradicts L1. Two even + one odd makes the cube-sum odd. Three odds make the cube-sum odd. So exactly one is even — pack w.l.o.g. (?) | (?).","All even contradicts L1. Two even + one odd makes the cube-sum odd. Three odds make the cube-sum odd. So exactly one is even — pack w.l.o.g. (?) | (?).","All even contradicts L1. Two even + one odd makes the cube-sum odd. Three odds make the cube-sum odd. So exactly one is even — pack w.l.o.g. (?) | (?).","Exactly one even. Pack w.l.o.g. (?) | (?)."
+sb.flt_n3.L3.hint,w.l.o.g. the even variable is z, so 2 | z.,w.l.o.g. the even variable is z, so 2 | z.,w.l.o.g. the even variable is z, so 2 | z.,Even means 2 divides z.
+sb.flt_n3.L3.board,"Exactly one of x, y, z is even; w.l.o.g. 2 | z.","Exactly one of x, y, z is even; w.l.o.g. 2 | z.","Exactly one of x, y, z is even; w.l.o.g. 2 | z.","Exactly one of x, y, z is even; w.l.o.g. 2 | z."
+sb.flt_n3.L4a.prompt,"With x, y odd, set u := (x+y)/2 and v := (x−y)/2. Expand z³: fill the leading factor and the sign inside (u² (?) 3·v²).","With x, y odd, set u := (x+y)/2 and v := (x−y)/2. Expand z³: fill the leading factor and the sign inside (u² (?) 3·v²).","With x, y odd, set u := (x+y)/2 and v := (x−y)/2. Expand z³: fill the leading factor and the sign inside (u² (?) 3·v²).","Odds as u±v. Fill the leading factor and the inner ±."
+sb.flt_n3.L4a.hint,Expand (u+v)³ + (u−v)³: you get z³ = 2·u·(u² + 3·v²).,Expand (u+v)³ + (u−v)³: you get z³ = 2·u·(u² + 3·v²).,Expand (u+v)³ + (u−v)³: you get z³ = 2·u·(u² + 3·v²).,Leading 2 and inner +.
+sb.flt_n3.L4a.board,"z³ = 2·u·(u² + 3·v²).","z³ = 2·u·(u² + 3·v²).","z³ = 2·u·(u² + 3·v²).","z³ = 2·u·(u² + 3·v²)."
+sb.flt_n3.L4b.prompt,"A common prime divisor of u and v would divide x = u+v and y = u−v, contradicting L2. Pack gcd(u, v) (?) (?).","A common prime divisor of u and v would divide x = u+v and y = u−v, contradicting L2. Pack gcd(u, v) (?) (?).","A common prime divisor of u and v would divide x = u+v and y = u−v, contradicting L2. Pack gcd(u, v) (?) (?).","Common prime of u,v would hit x and y. Pack gcd(u, v) (?) (?)."
+sb.flt_n3.L4b.hint,gcd(u, v) = 1 by pairwise coprimality of x and y.,gcd(u, v) = 1 by pairwise coprimality of x and y.,gcd(u, v) = 1 by pairwise coprimality of x and y.,gcd(u, v) = 1.
+sb.flt_n3.L4b.board,"x = u+v, y = u−v, gcd(u, v) = 1, and z³ = 2·u·(u²+3·v²).","x = u+v, y = u−v, gcd(u, v) = 1, and z³ = 2·u·(u²+3·v²).","x = u+v, y = u−v, gcd(u, v) = 1, and z³ = 2·u·(u²+3·v²).","x = u+v, y = u−v, gcd(u, v) = 1, and z³ = 2·u·(u²+3·v²)."
+sb.flt_n3.L5.prompt,"A common prime p ≠ 2 of 2·u and u²+3·v² would force p|u and p|v (when p ≠ 3), contradicting L4. Pack the membership: gcd (…) (?) {(?), (?)}.","A common prime p ≠ 2 of 2·u and u²+3·v² would force p|u and p|v (when p ≠ 3), contradicting L4. Pack the membership: gcd (…) (?) {(?), (?)}.","A common prime p ≠ 2 of 2·u and u²+3·v² would force p|u and p|v (when p ≠ 3), contradicting L4. Pack the membership: gcd (…) (?) {(?), (?)}.","Pack that gcd (?) {(?), (?)}."
+sb.flt_n3.L5.hint,"The only leftover candidate prime is 3 — so gcd ∈ {1, 3}.","The only leftover candidate prime is 3 — so gcd ∈ {1, 3}.","The only leftover candidate prime is 3 — so gcd ∈ {1, 3}.","∈ {1, 3}."
+sb.flt_n3.L5.board,"gcd(2·u, u²+3·v²) ∈ {1, 3}.","gcd(2·u, u²+3·v²) ∈ {1, 3}.","gcd(2·u, u²+3·v²) ∈ {1, 3}.","gcd(2·u, u²+3·v²) ∈ {1, 3}."
+sb.flt_n3.L6.prompt,"If pairwise-coprime factors multiply to a cube k³, each factor is itself ± a cube. Pack a = (?) r^(?).","If pairwise-coprime factors multiply to a cube k³, each factor is itself ± a cube. Pack a = (?) r^(?).","If pairwise-coprime factors multiply to a cube k³, each factor is itself ± a cube. Pack a = (?) r^(?).","Coprime factors of a cube be ± cubes. Pack a = (?) r^(?)."
+sb.flt_n3.L6.hint,Each factor is ± a cube — use ± and exponent 3.,Each factor is ± a cube — use ± and exponent 3.,Each factor is ± a cube — use ± and exponent 3.,Use ± and 3.
+sb.flt_n3.L6.board,Pairwise-coprime factors of a cube are themselves ± cubes.,Pairwise-coprime factors of a cube are themselves ± cubes.,Pairwise-coprime factors of a cube are themselves ± cubes.,Pairwise-coprime factors of a cube are themselves ± cubes.
+sb.flt_n3.L7.prompt,"When gcd(2·u, u²+3·v²) = 1, apply L6 to z³ = 2·u·(u²+3·v²). Fill both cube exponents: 2·u = r^(?) and u²+3·v² = s^(?).","When gcd(2·u, u²+3·v²) = 1, apply L6 to z³ = 2·u·(u²+3·v²). Fill both cube exponents: 2·u = r^(?) and u²+3·v² = s^(?).","When gcd(2·u, u²+3·v²) = 1, apply L6 to z³ = 2·u·(u²+3·v²). Fill both cube exponents: 2·u = r^(?) and u²+3·v² = s^(?).","gcd = 1 branch: fill both cube exponents."
+sb.flt_n3.L7.hint,Both factors are ± cubes — so both exponents are 3.,Both factors are ± cubes — so both exponents are 3.,Both factors are ± cubes — so both exponents are 3.,Both exponents are 3.
+sb.flt_n3.L7.board,"If the gcd is 1, then 2·u = r³ and u²+3·v² = s³.","If the gcd is 1, then 2·u = r³ and u²+3·v² = s³.","If the gcd is 1, then 2·u = r³ and u²+3·v² = s³.","If the gcd is 1, then 2·u = r³ and u²+3·v² = s³."
+sb.flt_n3.CFL.prompt,"Given p²+3q² = s³ and gcd(p,q)=1, the cubic-form lemma (CFL) parametrizes p. Applied to u,v: fill the sign and coefficient in u = e·(e² (?) (?)·f²).","Given p²+3q² = s³ and gcd(p,q)=1, the cubic-form lemma (CFL) parametrizes p. Applied to u,v: fill the sign and coefficient in u = e·(e² (?) (?)·f²).","Given p²+3q² = s³ and gcd(p,q)=1, the cubic-form lemma (CFL) parametrizes p. Applied to u,v: fill the sign and coefficient in u = e·(e² (?) (?)·f²).","CFL: u = e·(e² (?) (?)·f²). Fill both."
+sb.flt_n3.CFL.hint,The cubic-form lemma gives u = e·(e² − 9·f²).,The cubic-form lemma gives u = e·(e² − 9·f²).,The cubic-form lemma gives u = e·(e² − 9·f²).,Minus and 9.
+sb.flt_n3.CFL.board,"Cubic form lemma: u = e·(e² − 9·f²) (and the companion formula for v).","Cubic form lemma: u = e·(e² − 9·f²) (and the companion formula for v).","Cubic form lemma: u = e·(e² − 9·f²) (and the companion formula for v).","Cubic form lemma: u = e·(e² − 9·f²) (and the companion formula for v)."
+sb.flt_n3.L8.prompt,"From the factorizations of r³ and s³, if both e and f are odd then 2|r and 2|s, contradicting gcd(r,s)=1. Pack (?) | e (?) (?) | f.","From the factorizations of r³ and s³, if both e and f are odd then 2|r and 2|s, contradicting gcd(r,s)=1. Pack (?) | e (?) (?) | f.","From the factorizations of r³ and s³, if both e and f are odd then 2|r and 2|s, contradicting gcd(r,s)=1. Pack (?) | e (?) (?) | f.","Not both odd: pack (?) | e (?) (?) | f."
+sb.flt_n3.L8.hint,"Exactly one even means 2|e or 2|f (not both odd).","Exactly one even means 2|e or 2|f (not both odd).","Exactly one even means 2|e or 2|f (not both odd).","2 ∨ 2."
+sb.flt_n3.L8.board,"Exactly one of e, f is even.","Exactly one of e, f is even.","Exactly one of e, f is even.","Exactly one of e, f is even."
+sb.flt_n3.L9.prompt,"If 3|e then 3|r and 3|s, contradicting gcd(r,s)=1. Pack ¬((?) | (?)).","If 3|e then 3|r and 3|s, contradicting gcd(r,s)=1. Pack ¬((?) | (?)).","If 3|e then 3|r and 3|s, contradicting gcd(r,s)=1. Pack ¬((?) | (?)).","Pack ¬((?) | (?))."
+sb.flt_n3.L9.hint,3 does not divide e.,3 does not divide e.,3 does not divide e.,Forbidden: 3 | e.
+sb.flt_n3.L9.board,3 does not divide e.,3 does not divide e.,3 does not divide e.,3 does not divide e.
+sb.flt_n3.L10.prompt,"For any a,b: (a+b) ≡ (a−b) (mod 2). Also 3 ≡ 1 (mod 2). Pack (e (?) 3·f) (?) (e (?) 3·f) (mod 2).","For any a,b: (a+b) ≡ (a−b) (mod 2). Also 3 ≡ 1 (mod 2). Pack (e (?) 3·f) (?) (e (?) 3·f) (mod 2).","For any a,b: (a+b) ≡ (a−b) (mod 2). Also 3 ≡ 1 (mod 2). Pack (e (?) 3·f) (?) (e (?) 3·f) (mod 2).","Pack (e (?) 3·f) (?) (e (?) 3·f) (mod 2)."
+sb.flt_n3.L10.hint,"Use − then ≡ then + (and mod 2 is chrome).","Use − then ≡ then + (and mod 2 is chrome).","Use − then ≡ then + (and mod 2 is chrome).","− ≡ +."
+sb.flt_n3.L10.board,"(e − 3·f) ≡ (e + 3·f) (mod 2).","(e − 3·f) ≡ (e + 3·f) (mod 2).","(e − 3·f) ≡ (e + 3·f) (mod 2).","(e − 3·f) ≡ (e + 3·f) (mod 2)."
+sb.flt_n3.L11.prompt,"A common prime dividing any two of 2·e, (e−3f), (e+3f) would be 2 or 3; both are ruled out by L8–L10 and L9. Pack gcd((?)·e, e−3·f) (?) (?).","A common prime dividing any two of 2·e, (e−3f), (e+3f) would be 2 or 3; both are ruled out by L8–L10 and L9. Pack gcd((?)·e, e−3·f) (?) (?).","A common prime dividing any two of 2·e, (e−3f), (e+3f) would be 2 or 3; both are ruled out by L8–L10 and L9. Pack gcd((?)·e, e−3·f) (?) (?).","Pack gcd((?)·e, e−3·f) (?) (?)."
+sb.flt_n3.L11.hint,Pairwise coprime means gcd(2·e, e−3·f) = 1.,Pairwise coprime means gcd(2·e, e−3·f) = 1.,Pairwise coprime means gcd(2·e, e−3·f) = 1.,2 · e equals 1.
+sb.flt_n3.L11.board,"2·e, (e−3·f), and (e+3·f) are pairwise coprime.","2·e, (e−3·f), and (e+3·f) are pairwise coprime.","2·e, (e−3·f), and (e+3·f) are pairwise coprime.","2·e, (e−3·f), and (e+3·f) are pairwise coprime."
+sb.flt_n3.L12.prompt,"If gcd(2·u, u²+3·v²) = 3 then 3|u. Pack u = (?)·q ⇒ gcd(2·q, v²+3·q²) (?) (?).","If gcd(2·u, u²+3·v²) = 3 then 3|u. Pack u = (?)·q ⇒ gcd(2·q, v²+3·q²) (?) (?).","If gcd(2·u, u²+3·v²) = 3 then 3|u. Pack u = (?)·q ⇒ gcd(2·q, v²+3·q²) (?) (?).","gcd = 3 branch: pack u = (?)·q ⇒ gcd (…) (?) (?)."
+sb.flt_n3.L12.hint,Set u = 3·q and obtain gcd = 1.,Set u = 3·q and obtain gcd = 1.,Set u = 3·q and obtain gcd = 1.,3 · q and = 1.
+sb.flt_n3.L12.board,"If the gcd is 3, set u = 3·q and reduce to a coprime gcd = 1 situation.","If the gcd is 3, set u = 3·q and reduce to a coprime gcd = 1 situation.","If the gcd is 3, set u = 3·q and reduce to a coprime gcd = 1 situation.","If the gcd is 3, set u = 3·q and reduce to a coprime gcd = 1 situation."
+sb.flt_n3.close.prompt,"Descent yields |a·b·c| strictly smaller than |x·y·z|, so F must be empty. Pack |a·b·c| (?) |x·y·z| ⇒ F (?) (?).","Descent yields |a·b·c| strictly smaller than |x·y·z|, so F must be empty. Pack |a·b·c| (?) |x·y·z| ⇒ F (?) (?).","Descent yields |a·b·c| strictly smaller than |x·y·z|, so F must be empty. Pack |a·b·c| (?) |x·y·z| ⇒ F (?) (?).","Pack |a·b·c| (?) |x·y·z| ⇒ F (?) (?)."
+sb.flt_n3.close.hint,"Strict descent |a·b·c| < |x·y·z| forces F = empty.","Strict descent |a·b·c| < |x·y·z| forces F = empty.","Strict descent |a·b·c| < |x·y·z| forces F = empty.","< and F = empty."
+sb.flt_n3.close.board,"Descent yields a strictly smaller element of F — contradiction. Hence F = ∅.","Descent yields a strictly smaller element of F — contradiction. Hence F = ∅.","Descent yields a strictly smaller element of F — contradiction. Hence F = ∅.","Descent yields a strictly smaller element of F — contradiction. Hence F = ∅."
+sb.token.x,x,x,x,x
+sb.token.y,y,y,y,y
+sb.token.z,z,z,z,z
+sb.token.F,F,F,F,F
+sb.token.x1,x₁,x₁,x₁,x₁
+sb.token.y1,y₁,y₁,y₁,y₁
+sb.token.z1,z₁,z₁,z₁,z₁
+sb.token.u,u,u,u,u
+sb.token.v,v,v,v,v
+sb.token.e,e,e,e,e
+sb.token.f,f,f,f,f
+sb.token.r,r,r,r,r
+sb.token.s,s,s,s,s
+sb.token.p,p,p,p,p
+sb.token.a,a,a,a,a
+sb.token.b,b,b,b,b
+sb.token.c,c,c,c,c
+sb.token.q,q,q,q,q
+sb.token.plus,+,+,+,+
+sb.token.minus,−,−,−,−
+sb.token.mul,·,·,·,·
+sb.token.div_op,/,/,/,/
+sb.token.pow,^,^,^,^
+sb.token.eq,=,=,=,=
+sb.token.neq,≠,≠,≠,≠
+sb.token.le,≤,≤,≤,≤
+sb.token.lt,<,<,<,<
+sb.token.equiv,≡,≡,≡,≡
+sb.token.lparen,(,(,(,(
+sb.token.rparen,),),),)
+sb.token.comma,",",",",",",","
+sb.token.semi,;,;,;,;
+sb.token.lbrace,"{","{","{","{"
+sb.token.rbrace,"}","}","}","}"
+sb.token.div,|,|,|,|
+sb.token.gcd,gcd,gcd,gcd,gcd
+sb.token.mod,mod,mod,mod,mod
+sb.token.n0,0,0,0,0
+sb.token.n1,1,1,1,1
+sb.token.n2,2,2,2,2
+sb.token.n3,3,3,3,3
+sb.token.n9,9,9,9,9
+sb.token.pm,±,±,±,±
+sb.token.abs_l,|,|,|,|
+sb.token.abs_r,|,|,|,|
+sb.token.wlog_kw,w.l.o.g.,w.l.o.g.,w.l.o.g.,w.l.o.g.
+sb.token.not,¬,¬,¬,¬
+sb.token.imply,⇒,⇒,⇒,⇒
+sb.token.or,∨,∨,∨,∨
+sb.token.pick,pick,pick,pick,pick
 sb.token.assume,assume,assume,assume,assume
+sb.token.L1,L1,L1,L1,L1
+sb.token.L2,L2,L2,L2,L2
+sb.token.L3,L3,L3,L3,L3
+sb.token.L4,L4,L4,L4,L4
+sb.token.L5,L5,L5,L5,L5
+sb.token.L6,L6,L6,L6,L6
+sb.token.L7,L7,L7,L7,L7
+sb.token.CFL,CFL,CFL,CFL,CFL
+sb.token.L8,L8,L8,L8,L8
+sb.token.L9,L9,L9,L9,L9
+sb.token.L10,L10,L10,L10,L10
+sb.token.L11,L11,L11,L11,L11
+sb.token.L12,L12,L12,L12,L12
+sb.token.cmp,(?),(?),(?),(?)
+sb.token.rhs,(?),(?),(?),(?)
+sb.token.even_prime,(?),(?),(?),(?)
+sb.token.lead,(?),(?),(?),(?)
+sb.token.set_elt,(?),(?),(?),(?)
+sb.token.sign,(?),(?),(?),(?)
+sb.token.exp,(?),(?),(?),(?)
+sb.token.coef,(?),(?),(?),(?)
+sb.token.connect,(?),(?),(?),(?)
+sb.token.bad_prime,(?),(?),(?),(?)
+sb.token.rel,(?),(?),(?),(?)
+sb.token.scale,(?),(?),(?),(?)
+sb.token.rhs1,(?),(?),(?),(?)
+sb.token.rhs2,(?),(?),(?),(?)
+sb.token.rhs3,(?),(?),(?),(?)
+sb.token.even_var,(?),(?),(?),(?)
+sb.token.inner_op,(?),(?),(?),(?)
+sb.token.memb,(?),(?),(?),(?)
+sb.token.set1,(?),(?),(?),(?)
+sb.token.set2,(?),(?),(?),(?)
+sb.token.exp_r,(?),(?),(?),(?)
+sb.token.exp_s,(?),(?),(?),(?)
+sb.token.sign_op,(?),(?),(?),(?)
+sb.token.p_left,(?),(?),(?),(?)
+sb.token.p_right,(?),(?),(?),(?)
+sb.token.who,(?),(?),(?),(?)
+sb.token.left_op,(?),(?),(?),(?)
+sb.token.right_op,(?),(?),(?),(?)
+sb.token.empty_sock,(?),(?),(?),(?)
 sb.token.conclude,conclude,conclude,conclude,conclude
 sb.token.minimal,minimal,minimal,minimal,minimal
 sb.token.maximal,maximal,maximal,maximal,maximal
 sb.token.empty,empty,empty,empty,empty
-sb.token.F,F,F,F,F
-sb.token.nonempty,≠ ∅,≠ ∅,≠ ∅,≠ ∅
-sb.token.pick,pick,pick,pick,pick
-sb.token.product,|x·y·z|,|x·y·z|,|x·y·z|,|x·y·z|
-sb.token.verb,(?),(?),(?),(?)
-sb.token.size,(?),(?),(?),(?)
-sb.token.coprime,pairwise coprime,pairwise coprime,pairwise coprime,pairwise coprime
-sb.token.parity,(?),(?),(?),(?)
-sb.token.even,even,even,even,even
-sb.token.exactly_one,exactly one,exactly one,exactly one,exactly one
-sb.token.at_most_one,at most one,at most one,at most one,at most one
-sb.token.all_odd,all odd,all odd,all odd,all odd
-sb.token.two_even,exactly two,exactly two,exactly two,exactly two
-sb.token.x_eq_upv,x = u + v,x = u + v,x = u + v,x = u + v
-sb.token.y_eq_umv,y = u − v,y = u − v,y = u − v,y = u − v
 sb.token.implies,⇒,⇒,⇒,⇒
-sb.token.identity,(?),(?),(?),(?)
-sb.token.z3_2u,z³ = 2·u·(u² + 3·v²),z³ = 2·u·(u² + 3·v²),z³ = 2·u·(u² + 3·v²),z³ = 2·u·(u² + 3·v²)
-sb.token.z3_uv,z³ = u·v,z³ = u·v,z³ = u·v,z³ = u·v
-sb.token.z3_u2v2,z³ = u² + v²,z³ = u² + v²,z³ = u² + v²,z³ = u² + v²
-sb.token.gcd_label,"gcd(2·u, u²+3·v²)","gcd(2·u, u²+3·v²)","gcd(2·u, u²+3·v²)","gcd(2·u, u²+3·v²)"
-sb.token.equals,=,=,=,=
-sb.token.split,(?),(?),(?),(?)
-sb.token.gcd_1or3,1 or 3,1 or 3,1 or 3,1 or 3
-sb.token.gcd_any,any divisor of 2·u,any divisor of 2·u,any divisor of 2·u,any divisor of 2·u
-sb.token.gcd_must2,exactly 2,exactly 2,exactly 2,exactly 2
-sb.token.gcd_is_1,gcd = 1,gcd = 1,gcd = 1,gcd = 1
-sb.token.factors_are,(?),(?),(?),(?)
-sb.token.both_pm_cubes,both factors ± cubes,both factors ± cubes,both factors ± cubes,both factors ± cubes
-sb.token.only_product_cube,only the product is a cube,only the product is a cube,only the product is a cube,only the product is a cube
-sb.token.factors_share_3,the factors share the prime 3,the factors share the prime 3,the factors share the prime 3,the factors share the prime 3
-sb.token.u_eq,u =,u =,u =,u =
-sb.token.param,(?),(?),(?),(?)
-sb.token.u_param,e·(e² − 9·f²),e·(e² − 9·f²),e·(e² − 9·f²),e·(e² − 9·f²)
-sb.token.u_sum,e + f,e + f,e + f,e + f
-sb.token.u_product,e·f,e·f,e·f,e·f
-sb.token.r3_eq,r³ =,r³ =,r³ =,r³ =
-sb.token.factorization,(?),(?),(?),(?)
-sb.token.r3_factor,2·e·(e+3·f)·(e−3·f),2·e·(e+3·f)·(e−3·f),2·e·(e+3·f)·(e−3·f),2·e·(e+3·f)·(e−3·f)
-sb.token.r3_uv,u·v,u·v,u·v,u·v
-sb.token.r3_simple,e³,e³,e³,e³
-sb.token.why_minus,prefer −2·e because,prefer −2·e because,prefer −2·e because,prefer −2·e because
-sb.token.reason,(?),(?),(?),(?)
-sb.token.sign_sum0,the three sum to 0,the three sum to 0,the three sum to 0,the three sum to 0
-sb.token.sign_cosmetic,the minus is only cosmetic,the minus is only cosmetic,the minus is only cosmetic,the minus is only cosmetic
-sb.token.sign_neg_e,e itself must be negative,e itself must be negative,e itself must be negative,e itself must be negative
-sb.token.descent_gives,descent yields,descent yields,descent yields,descent yields
-sb.token.outcome,(?),(?),(?),(?)
-sb.token.smaller_product,smaller |α·β·γ| in F,smaller |α·β·γ| in F,smaller |α·β·γ| in F,smaller |α·β·γ| in F
-sb.token.same_size,same product size,same product size,same product size,same product size
-sb.token.f_empty,F was already empty,F was already empty,F was already empty,F was already empty

@@ -8,6 +8,7 @@ export type { ProgressStore } from '@/models'
 function defaultState(): ProgressState {
   return {
     completedSections: [],
+    completedChapters: [],
     answeredQuestionIds: [],
     locale: DEFAULT_LOCALE,
   }
@@ -20,6 +21,7 @@ function loadState(): ProgressState {
     const parsed = JSON.parse(raw) as Partial<ProgressState>
     return {
       completedSections: Array.isArray(parsed.completedSections) ? parsed.completedSections : [],
+      completedChapters: Array.isArray(parsed.completedChapters) ? parsed.completedChapters : [],
       answeredQuestionIds: Array.isArray(parsed.answeredQuestionIds)
         ? parsed.answeredQuestionIds
         : [],
@@ -62,6 +64,7 @@ export function createProgressStore(): ProgressStore {
   function persist() {
     saveState({
       completedSections: [...state.completedSections],
+      completedChapters: [...state.completedChapters],
       answeredQuestionIds: [...state.answeredQuestionIds],
       locale: state.locale,
     })
@@ -77,6 +80,24 @@ export function createProgressStore(): ProgressStore {
         state.completedSections.push(sectionId)
         persist()
       }
+    },
+    isChapterComplete(chapterId: string) {
+      return state.completedChapters.includes(chapterId)
+    },
+    markChapterComplete(chapterId: string, sectionsInChapter: Section[]) {
+      let changed = false
+      if (!state.completedChapters.includes(chapterId)) {
+        state.completedChapters.push(chapterId)
+        changed = true
+      }
+      for (const section of sectionsInChapter) {
+        if (section.chapter !== chapterId) continue
+        if (!state.completedSections.includes(section.id)) {
+          state.completedSections.push(section.id)
+          changed = true
+        }
+      }
+      if (changed) persist()
     },
     isQuestionAnswered(questionId: string) {
       return state.answeredQuestionIds.includes(questionId)
@@ -108,6 +129,7 @@ export function createProgressStore(): ProgressStore {
     },
     forgetProgress() {
       state.completedSections = []
+      state.completedChapters = []
       state.answeredQuestionIds = []
       persist()
     },

@@ -13,7 +13,7 @@
           "prompt_key": "sb.flt_n4.claim.prompt",
           "hint_key": "sb.flt_n4.claim.hint",
           "board_label_key": "sb.flt_n4.claim.board",
-          "requires_global": ["flt-n3-contradiction"],
+          "requires_global": ["flt-n3-close"],
           "frame": ["quant", "xyz", "in", "N", "st", "fourth_sum"],
           "sockets": ["quant"],
           "palette": ["exists", "nexists", "forall"],

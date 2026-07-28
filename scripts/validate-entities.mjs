@@ -274,16 +274,27 @@ for (const section of sections) {
       for (let i = 0; i < sockets.length; i += 1) {
         const key = String(i)
         if (!target[key]) errors.push(`${label}: target missing key ${key}`)
-        else if (!palette.includes(target[key])) {
-          errors.push(`${label}: target ${target[key]} not in palette`)
+        else {
+          const accepted = Array.isArray(target[key]) ? target[key] : [target[key]]
+          if (accepted.length === 0) {
+            errors.push(`${label}: target ${key} is an empty array`)
+          }
+          for (const block of accepted) {
+            if (!palette.includes(block)) {
+              errors.push(`${label}: target ${block} not in palette`)
+            }
+          }
         }
       }
-      for (const [key, block] of Object.entries(target)) {
+      for (const [key, slot] of Object.entries(target)) {
         const index = Number(key)
         if (Number.isNaN(index) || index < 0 || index >= sockets.length) {
           errors.push(`${label}: target key ${key} out of socket range`)
         }
-        if (block) neededKeys.add(`sb.token.${block}`)
+        const accepted = Array.isArray(slot) ? slot : [slot]
+        for (const block of accepted) {
+          if (block) neededKeys.add(`sb.token.${block}`)
+        }
       }
       for (const [key, block] of Object.entries(start)) {
         const index = Number(key)

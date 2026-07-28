@@ -10,11 +10,7 @@ import {
   isWorldPlayable,
   placeablePalette,
 } from '@/utils/summarizerInventory'
-import {
-  certifyPuzzle,
-  certifiedIds,
-  loadCertifiedBoard,
-} from '@/utils/summarizerBoard'
+import { certifyPuzzle, certifiedIds, loadCertifiedBoard } from '@/utils/summarizerBoard'
 
 const data = useAppData()
 const { t } = useLocale()
@@ -36,9 +32,7 @@ const worlds = computed(() => data.value.worlds)
 const worldId = computed(() => String(route.params.worldId || ''))
 const levelId = computed(() => String(route.params.levelId || ''))
 
-const activeWorld = computed(
-  () => worlds.value.find((world) => world.id === worldId.value) || null,
-)
+const activeWorld = computed(() => worlds.value.find((world) => world.id === worldId.value) || null)
 
 const activeLevel = computed(() => {
   if (!activeWorld.value || !levelId.value) return null
@@ -63,7 +57,8 @@ const placeable = computed(() =>
 const worldBoard = computed(() => {
   if (!activeWorld.value) return []
   return boardEntries.value.filter(
-    (entry) => entry.chainId === activeWorld.value!.id || entry.sectionId === activeWorld.value!.sectionId,
+    (entry) =>
+      entry.chainId === activeWorld.value!.id || entry.sectionId === activeWorld.value!.sectionId,
   )
 })
 
@@ -81,16 +76,14 @@ function findLevel(puzzleId: string): SandboxPuzzle | null {
   return null
 }
 
-/** Full packed statement for a certified board line. */
-function certifiedChips(entry: CertifiedBoardEntry): string[] {
+/** Proof-board cite badge: explicit cite, else first L-number or CFL unlock. */
+const LEMMA_CITE = /^(L\d+|CFL)$/
+
+function boardCite(entry: CertifiedBoardEntry): string | null {
   const level = findLevel(entry.puzzleId)
-  if (!level) return [t(entry.boardLabelKey)]
-  return entry.frame.map((token) => {
-    const socketIndex = level.sockets.indexOf(token)
-    if (socketIndex < 0) return tokenLabel(token)
-    const fill = entry.fills[String(socketIndex)]
-    return fill ? tokenLabel(fill) : tokenLabel(token)
-  })
+  if (!level) return null
+  if (level.cite) return level.cite
+  return level.unlocks.find((token) => LEMMA_CITE.test(token)) || null
 }
 
 function tokenLabel(tokenId: string): string {
@@ -107,11 +100,7 @@ function inspectToken(tokenId: string) {
 
 function onInventoryClick(tokenId: string) {
   inspectToken(tokenId)
-  if (
-    activeLevel.value &&
-    placeable.value.includes(tokenId) &&
-    feedback.value !== 'correct'
-  ) {
+  if (activeLevel.value && placeable.value.includes(tokenId) && feedback.value !== 'correct') {
     placeBlock(tokenId)
   }
 }
@@ -209,9 +198,7 @@ function goNextLevel() {
   if (!world) return
   const next = world.levels.find(
     (level, index) =>
-      index > activeLevelIndex.value &&
-      levelUnlocked(level) &&
-      !done.value.has(level.id),
+      index > activeLevelIndex.value && levelUnlocked(level) && !done.value.has(level.id),
   )
   if (next) {
     router.push(`/summarizer/${world.id}/${next.id}`)
@@ -261,7 +248,9 @@ watch(
           >
             {{ tokenLabel(token) }}
           </button>
-          <span v-if="!inventoryList.length" class="muted">{{ t('ui.summarizer_inventory_empty') }}</span>
+          <span v-if="!inventoryList.length" class="muted">{{
+            t('ui.summarizer_inventory_empty')
+          }}</span>
         </div>
         <div v-if="inspectedToken" class="token-desc">
           <p class="token-desc-label">{{ t('ui.summarizer_token_about') }}</p>
@@ -296,11 +285,7 @@ watch(
                 done: done.has(level.id),
                 locked: !levelUnlocked(level),
               }"
-              :to="
-                levelUnlocked(level)
-                  ? `/summarizer/${world.id}/${level.id}`
-                  : ''
-              "
+              :to="levelUnlocked(level) ? `/summarizer/${world.id}/${level.id}` : ''"
               :aria-disabled="!levelUnlocked(level)"
               @click="
                 (event) => {
@@ -399,16 +384,8 @@ watch(
             <h2>{{ t('ui.summarizer_board') }}</h2>
             <ol>
               <li v-for="entry in worldBoard" :key="entry.puzzleId" class="board-line">
+                <span v-if="boardCite(entry)" class="board-cite">{{ boardCite(entry) }}</span>
                 <p class="board-statement">{{ t(entry.boardLabelKey) }}</p>
-                <div class="board-frame" aria-hidden="true">
-                  <span
-                    v-for="(chip, chipIndex) in certifiedChips(entry)"
-                    :key="`${entry.puzzleId}-${chipIndex}`"
-                    class="chip chrome"
-                  >
-                    {{ chip }}
-                  </span>
-                </div>
               </li>
             </ol>
           </div>
@@ -431,8 +408,7 @@ watch(
               }"
               :disabled="!isSocket(activeLevel, token) || feedback === 'correct'"
               @click="
-                isSocket(activeLevel, token) &&
-                  focusSocket(socketIndexForToken(activeLevel, token))
+                isSocket(activeLevel, token) && focusSocket(socketIndexForToken(activeLevel, token))
               "
             >
               {{ displayedToken(activeLevel, token) }}
@@ -755,19 +731,30 @@ button.chip.inv:not(:disabled) {
 }
 
 .board-line {
-  display: grid;
-  gap: 0.4rem;
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+}
+
+.board-cite {
+  flex: 0 0 auto;
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--accent, #c4b5a0);
+  padding: 0.1rem 0.35rem;
+  border: 1px solid var(--line);
+  border-radius: 0.25rem;
+  background: rgba(255, 255, 255, 0.04);
+  white-space: nowrap;
 }
 
 .board-statement {
   margin: 0;
+  flex: 1;
+  min-width: 0;
   line-height: 1.45;
-}
-
-.board-frame {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
 }
 
 .palette-wrap {

@@ -7,6 +7,7 @@ ui.open,Open,Ouvrir,Megnyitás,Set sail
 ui.back_home,All sections,Toutes les sections,Összes szakasz,Back to the chart
 ui.watch_range,Watch,Regardez,Nézd,Watch
 ui.mark_complete,Mark section complete,Marquer la section comme terminée,Szakasz kész,Mark this stretch done
+ui.mark_chapter_complete,Mark chapter complete,Marquer le chapitre comme terminé,Fejezet kész,Mark this chart done
 ui.mode_video,Video,Vidéo,Videó,Video
 ui.mode_notes,Notes,Notes,Jegyzetek,Notes
 ui.notes_missing,Notes for this section are not available in this language yet.,Les notes de cette section ne sont pas encore disponibles dans cette langue.,Ehhez a szakaszhoz még nincs jegyzet ezen a nyelven.,Notes for this stretch ain't aboard in this tongue yet.

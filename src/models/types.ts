@@ -47,6 +47,8 @@ export interface SandboxPuzzle {
   promptKey: string
   hintKey: string
   boardLabelKey: string
+  /** Optional proof-board cite badge (e.g. L4a); else derived from L*/CFL unlocks. */
+  cite: string | null
   /** Earlier puzzle ids in the same chain that must be certified first. */
   requires: string[]
   /** Optional certified puzzle ids from any world (sessionStorage). */
@@ -55,8 +57,11 @@ export interface SandboxPuzzle {
   sockets: string[]
   /** Candidate blocks for this level (only those in inventory are placeable). */
   palette: string[]
-  /** Maps socket index ("0", "1", …) → block id. */
-  target: Record<string, string>
+  /**
+   * Maps socket index ("0", "1", …) → accepted block id, or an array of accepted
+   * ids with the first entry preferred (e.g. for hints / board labels).
+   */
+  target: Record<string, string | string[]>
   /** Pre-filled socket fills (repair mode). */
   start: Record<string, string>
   /** Symbols / lemma chips added to inventory when this level is certified. */
@@ -118,6 +123,7 @@ export interface AppData {
 
 export interface ProgressState {
   completedSections: string[]
+  completedChapters: string[]
   answeredQuestionIds: string[]
   locale: Locale
 }
@@ -126,12 +132,15 @@ export interface ProgressStore {
   state: ProgressState
   isSectionComplete: (sectionId: string) => boolean
   markSectionComplete: (sectionId: string) => void
+  isChapterComplete: (chapterId: string) => boolean
+  /** Mark the chapter complete and every section in it complete. */
+  markChapterComplete: (chapterId: string, sectionsInChapter: Section[]) => void
   isQuestionAnswered: (questionId: string) => boolean
   markQuestionAnswered: (questionId: string) => void
   setLocale: (locale: Locale) => void
   drawCheckQuestions: (current: Section, sections: Section[], questions: Question[]) => Question[]
   refamiliarize: (current: Section, sections: Section[], questions: Question[]) => Question[]
   clearAnsweredUpTo: (current: Section, sections: Section[], questions: Question[]) => void
-  /** Clear section completion and quiz answers; keeps locale. */
+  /** Clear section/chapter completion and quiz answers; keeps locale. */
   forgetProgress: () => void
 }
