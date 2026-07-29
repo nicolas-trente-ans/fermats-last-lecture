@@ -194,6 +194,7 @@ function parseSandboxPuzzle(
     promptKey: String(data.prompt_key || ''),
     hintKey: String(data.hint_key || ''),
     boardLabelKey: String(data.board_label_key || ''),
+    evidenceKey: data.evidence_key ? String(data.evidence_key) : null,
     cite: data.cite ? String(data.cite) : null,
     requires: asStringArray(data.requires),
     requiresGlobal: asStringArray(data.requires_global),

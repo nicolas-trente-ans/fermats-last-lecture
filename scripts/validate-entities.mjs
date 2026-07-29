@@ -256,6 +256,7 @@ for (const section of sections) {
       if (puzzle.prompt_key) neededKeys.add(puzzle.prompt_key)
       if (puzzle.hint_key) neededKeys.add(puzzle.hint_key)
       if (puzzle.board_label_key) neededKeys.add(puzzle.board_label_key)
+      if (puzzle.evidence_key) neededKeys.add(puzzle.evidence_key)
       if (puzzle.review_section_id && !sectionIds.has(puzzle.review_section_id)) {
         errors.push(`${label}: unknown review_section_id ${puzzle.review_section_id}`)
       }

@@ -55,11 +55,21 @@ const placeable = computed(() =>
 )
 
 const worldBoard = computed(() => {
-  if (!activeWorld.value) return []
-  return boardEntries.value.filter(
-    (entry) =>
-      entry.chainId === activeWorld.value!.id || entry.sectionId === activeWorld.value!.sectionId,
+  const world = activeWorld.value
+  if (!world || activeLevelIndex.value < 0) return []
+  const byId = new Map(
+    boardEntries.value
+      .filter(
+        (entry) => entry.chainId === world.id || entry.sectionId === world.sectionId,
+      )
+      .map((entry) => [entry.puzzleId, entry]),
   )
+  // Only lines through the active level (world order), so replaying an older
+  // level hides later certified lemmas without touching sessionStorage.
+  return world.levels
+    .slice(0, activeLevelIndex.value + 1)
+    .map((level) => byId.get(level.id))
+    .filter((entry): entry is CertifiedBoardEntry => entry != null)
 })
 
 const reviewSection = computed(() => {
@@ -77,13 +87,21 @@ function findLevel(puzzleId: string): SandboxPuzzle | null {
 }
 
 /** Proof-board cite badge: explicit cite, else first L-number or CFL unlock. */
-const LEMMA_CITE = /^(L\d+|CFL)$/
+const LEMMA_CITE = /^(L\d+[a-z]?|CFL)$/
 
 function boardCite(entry: CertifiedBoardEntry): string | null {
   const level = findLevel(entry.puzzleId)
   if (!level) return null
   if (level.cite) return level.cite
   return level.unlocks.find((token) => LEMMA_CITE.test(token)) || null
+}
+
+/** Full evidence / proof sketch for a cite badge tooltip. */
+function boardEvidence(entry: CertifiedBoardEntry): string {
+  const level = findLevel(entry.puzzleId)
+  if (!level) return t(entry.boardLabelKey)
+  if (level.evidenceKey) return t(level.evidenceKey)
+  return t(level.promptKey)
 }
 
 function tokenLabel(tokenId: string): string {
@@ -384,7 +402,15 @@ watch(
             <h2>{{ t('ui.summarizer_board') }}</h2>
             <ol>
               <li v-for="entry in worldBoard" :key="entry.puzzleId" class="board-line">
-                <span v-if="boardCite(entry)" class="board-cite">{{ boardCite(entry) }}</span>
+                <span
+                  v-if="boardCite(entry)"
+                  class="board-cite"
+                  tabindex="0"
+                  :aria-label="`${boardCite(entry)}: ${boardEvidence(entry)}`"
+                >
+                  {{ boardCite(entry) }}
+                  <span class="board-cite-tip" role="tooltip">{{ boardEvidence(entry) }}</span>
+                </span>
                 <p class="board-statement">{{ t(entry.boardLabelKey) }}</p>
               </li>
             </ol>
@@ -737,6 +763,7 @@ button.chip.inv:not(:disabled) {
 }
 
 .board-cite {
+  position: relative;
   flex: 0 0 auto;
   font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, monospace;
   font-size: 0.8rem;
@@ -748,6 +775,41 @@ button.chip.inv:not(:disabled) {
   border-radius: 0.25rem;
   background: rgba(255, 255, 255, 0.04);
   white-space: nowrap;
+  cursor: help;
+}
+
+.board-cite:hover,
+.board-cite:focus {
+  border-color: rgba(212, 160, 23, 0.55);
+  outline: none;
+}
+
+.board-cite-tip {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 0.35rem);
+  z-index: 8;
+  width: max-content;
+  max-width: min(28rem, 75vw);
+  padding: 0.55rem 0.7rem;
+  border: 1px solid rgba(212, 160, 23, 0.4);
+  border-radius: 0.35rem;
+  background: #1a2433;
+  color: var(--text, #e8eef8);
+  font-family: var(--font-body, inherit);
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 1.45;
+  white-space: normal;
+  box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.35);
+}
+
+.board-cite:hover .board-cite-tip,
+.board-cite:focus .board-cite-tip,
+.board-cite:focus-within .board-cite-tip {
+  display: block;
 }
 
 .board-statement {

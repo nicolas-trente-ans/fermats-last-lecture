@@ -10,7 +10,7 @@ The game is a **standalone page** at `/summarizer`, attached on the home page as
 2. From **Chapter 1 → Logic game** (or the header shortcut), open the hub.
 3. Enter that section’s **world**; levels unlock in order along the notes’ argument.
 4. Tap inventory / palette chips into sockets; **Check** certifies the lemma.
-5. Certified lines go on the **proof board** as `board_label` text (frames are play-only). Optional `cite` or an `L*` / `CFL` unlock shows a block badge for later reference; `unlocks` also add symbols to inventory.
+5. Certified lines go on the **proof board** as `board_label` text (frames are play-only). Optional `cite` or an `L*` / `CFL` unlock shows a block badge for later reference; hover the badge to read optional `evidence_key` (full proof sketch), falling back to the level prompt. `unlocks` also add symbols to inventory.
 
 ## Chapter mini-apps
 
@@ -80,7 +80,7 @@ Author levels to track the notes’ graphic schema step-by-step. `yarn validate-
 
 ## Checking / persistence
 
-Exact slot match vs `target`. Each socket value may be a single block id or an **array of accepted ids** (first entry preferred for authoring/hints). Session board under `sessionStorage` key `fermat-summarizer-board-v1`.
+Exact slot match vs `target`. Each socket value may be a single block id or an **array of accepted ids** (first entry preferred for authoring/hints). Session board under `sessionStorage` key `fermat-summarizer-board-v1`. On a level, the proof board shows certified lines **up through the active level only** (replaying an older level hides later lemmas; session progress is unchanged).
 
 ## Related
 

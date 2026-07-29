@@ -1,6 +1,11 @@
 {
   "section_id": "flt-n3",
-  "starting_inventory": ["le", "lt", "eq", "neq"],
+  "starting_inventory": [
+    "le",
+    "lt",
+    "eq",
+    "neq"
+  ],
   "chains": [
     {
       "id": "flt-n3",
@@ -13,13 +18,36 @@
           "prompt_key": "sb.flt_n3.claim.prompt",
           "hint_key": "sb.flt_n3.claim.hint",
           "board_label_key": "sb.flt_n3.claim.board",
-          "requires_global": ["symbols-flt-repair"],
-          "frame": ["quant", "xyz", "in", "Z", "st", "nonzero", "and", "cubesum0"],
-          "sockets": ["quant"],
-          "palette": ["exists", "nexists", "forall"],
-          "target": { "0": "nexists" },
+          "requires_global": [
+            "symbols-flt-repair"
+          ],
+          "frame": [
+            "quant",
+            "xyz",
+            "in",
+            "Z",
+            "st",
+            "nonzero",
+            "and",
+            "cubesum0"
+          ],
+          "sockets": [
+            "quant"
+          ],
+          "palette": [
+            "exists",
+            "nexists",
+            "forall"
+          ],
+          "target": {
+            "0": "nexists"
+          },
           "start": {},
-          "unlocks": ["x", "y", "z"]
+          "unlocks": [
+            "x",
+            "y",
+            "z"
+          ]
         },
         {
           "id": "flt-n3-setup",
@@ -28,17 +56,48 @@
           "prompt_key": "sb.flt_n3.setup.prompt",
           "hint_key": "sb.flt_n3.setup.hint",
           "board_label_key": "sb.flt_n3.setup.board",
-          "requires": ["flt-n3-claim"],
-          "frame": [
-            "abs_l", "x", "mul", "y", "mul", "z", "abs_r",
-            "cmp",
-            "abs_l", "x1", "mul", "y1", "mul", "z1", "abs_r"
+          "requires": [
+            "flt-n3-claim"
           ],
-          "sockets": ["cmp"],
-          "palette": ["le", "lt", "eq", "neq"],
-          "target": { "0": "le" },
+          "frame": [
+            "abs_l",
+            "x",
+            "mul",
+            "y",
+            "mul",
+            "z",
+            "abs_r",
+            "cmp",
+            "abs_l",
+            "x1",
+            "mul",
+            "y1",
+            "mul",
+            "z1",
+            "abs_r"
+          ],
+          "sockets": [
+            "cmp"
+          ],
+          "palette": [
+            "le",
+            "lt",
+            "eq",
+            "neq"
+          ],
+          "target": {
+            "0": "le"
+          },
           "start": {},
-          "unlocks": ["x1", "y1", "z1", "n0", "n1", "n2", "n3"]
+          "unlocks": [
+            "x1",
+            "y1",
+            "z1",
+            "n0",
+            "n1",
+            "n2",
+            "n3"
+          ]
         },
         {
           "id": "flt-n3-L1",
@@ -47,13 +106,44 @@
           "prompt_key": "sb.flt_n3.L1.prompt",
           "hint_key": "sb.flt_n3.L1.hint",
           "board_label_key": "sb.flt_n3.L1.board",
-          "requires": ["flt-n3-setup"],
-          "frame": ["gcd", "lparen", "x", "comma", "y", "comma", "z", "rparen", "rel", "rhs"],
-          "sockets": ["rel", "rhs"],
-          "palette": ["eq", "neq", "n1", "n2", "n3", "n0"],
-          "target": { "0": "eq", "1": "n1" },
+          "evidence_key": "sb.flt_n3.L1.evidence",
+          "requires": [
+            "flt-n3-setup"
+          ],
+          "frame": [
+            "gcd",
+            "lparen",
+            "x",
+            "comma",
+            "y",
+            "comma",
+            "z",
+            "rparen",
+            "rel",
+            "rhs"
+          ],
+          "sockets": [
+            "rel",
+            "rhs"
+          ],
+          "palette": [
+            "eq",
+            "neq",
+            "n1",
+            "n2",
+            "n3",
+            "n0"
+          ],
+          "target": {
+            "0": "eq",
+            "1": "n1"
+          },
           "start": {},
-          "unlocks": ["L1", "p", "div"]
+          "unlocks": [
+            "L1",
+            "p",
+            "div"
+          ]
         },
         {
           "id": "flt-n3-L2",
@@ -62,17 +152,56 @@
           "prompt_key": "sb.flt_n3.L2.prompt",
           "hint_key": "sb.flt_n3.L2.hint",
           "board_label_key": "sb.flt_n3.L2.board",
-          "requires": ["flt-n3-L1"],
-          "frame": [
-            "gcd", "lparen", "x", "comma", "y", "rparen", "eq", "rhs1",
-            "gcd", "lparen", "y", "comma", "z", "rparen", "eq", "rhs2",
-            "gcd", "lparen", "x", "comma", "z", "rparen", "eq", "rhs3"
+          "evidence_key": "sb.flt_n3.L2.evidence",
+          "requires": [
+            "flt-n3-L1"
           ],
-          "sockets": ["rhs1", "rhs2", "rhs3"],
-          "palette": ["n1", "n2", "n3", "p"],
-          "target": { "0": "n1", "1": "n1", "2": "n1" },
+          "frame": [
+            "gcd",
+            "lparen",
+            "x",
+            "comma",
+            "y",
+            "rparen",
+            "eq",
+            "rhs1",
+            "gcd",
+            "lparen",
+            "y",
+            "comma",
+            "z",
+            "rparen",
+            "eq",
+            "rhs2",
+            "gcd",
+            "lparen",
+            "x",
+            "comma",
+            "z",
+            "rparen",
+            "eq",
+            "rhs3"
+          ],
+          "sockets": [
+            "rhs1",
+            "rhs2",
+            "rhs3"
+          ],
+          "palette": [
+            "n1",
+            "n2",
+            "n3",
+            "p"
+          ],
+          "target": {
+            "0": "n1",
+            "1": "n1",
+            "2": "n1"
+          },
           "start": {},
-          "unlocks": ["L2"]
+          "unlocks": [
+            "L2"
+          ]
         },
         {
           "id": "flt-n3-L3",
@@ -81,13 +210,44 @@
           "prompt_key": "sb.flt_n3.L3.prompt",
           "hint_key": "sb.flt_n3.L3.hint",
           "board_label_key": "sb.flt_n3.L3.board",
-          "requires": ["flt-n3-L2"],
-          "frame": ["wlog_kw", "even_prime", "div", "even_var"],
-          "sockets": ["even_prime", "even_var"],
-          "palette": ["n2", "n3", "n1", "p", "x", "y", "z"],
-          "target": { "0": "n2", "1": ["z", "x", "y"] },
+          "evidence_key": "sb.flt_n3.L3.evidence",
+          "requires": [
+            "flt-n3-L2"
+          ],
+          "frame": [
+            "wlog_kw",
+            "even_prime",
+            "div",
+            "even_var"
+          ],
+          "sockets": [
+            "even_prime",
+            "even_var"
+          ],
+          "palette": [
+            "n2",
+            "n3",
+            "n1",
+            "p",
+            "x",
+            "y",
+            "z"
+          ],
+          "target": {
+            "0": "n2",
+            "1": [
+              "z",
+              "x",
+              "y"
+            ]
+          },
           "start": {},
-          "unlocks": ["L3", "plus", "minus", "mul"]
+          "unlocks": [
+            "L3",
+            "plus",
+            "minus",
+            "mul"
+          ]
         },
         {
           "id": "flt-n3-L4a",
@@ -96,17 +256,54 @@
           "prompt_key": "sb.flt_n3.L4a.prompt",
           "hint_key": "sb.flt_n3.L4a.hint",
           "board_label_key": "sb.flt_n3.L4a.board",
+          "evidence_key": "sb.flt_n3.L4a.evidence",
           "cite": "L4a",
-          "requires": ["flt-n3-L3"],
-          "frame": [
-            "z", "pow", "n3", "eq", "lead", "mul", "u", "mul",
-            "lparen", "u", "pow", "n2", "inner_op", "n3", "mul", "v", "pow", "n2", "rparen"
+          "requires": [
+            "flt-n3-L3"
           ],
-          "sockets": ["lead", "inner_op"],
-          "palette": ["n2", "n3", "n1", "n0", "plus", "minus", "mul"],
-          "target": { "0": "n2", "1": "plus" },
+          "frame": [
+            "z",
+            "pow",
+            "n3",
+            "eq",
+            "lead",
+            "mul",
+            "u",
+            "mul",
+            "lparen",
+            "u",
+            "pow",
+            "n2",
+            "inner_op",
+            "n3",
+            "mul",
+            "v",
+            "pow",
+            "n2",
+            "rparen"
+          ],
+          "sockets": [
+            "lead",
+            "inner_op"
+          ],
+          "palette": [
+            "n2",
+            "n3",
+            "n1",
+            "n0",
+            "plus",
+            "minus",
+            "mul"
+          ],
+          "target": {
+            "0": "n2",
+            "1": "plus"
+          },
           "start": {},
-          "unlocks": ["u", "v"]
+          "unlocks": [
+            "u",
+            "v"
+          ]
         },
         {
           "id": "flt-n3-L4b",
@@ -115,13 +312,41 @@
           "prompt_key": "sb.flt_n3.L4b.prompt",
           "hint_key": "sb.flt_n3.L4b.hint",
           "board_label_key": "sb.flt_n3.L4b.board",
-          "requires": ["flt-n3-L4a"],
-          "frame": ["gcd", "lparen", "u", "comma", "v", "rparen", "rel", "rhs"],
-          "sockets": ["rel", "rhs"],
-          "palette": ["eq", "neq", "n1", "n2", "n3", "p"],
-          "target": { "0": "eq", "1": "n1" },
+          "evidence_key": "sb.flt_n3.L4b.evidence",
+          "requires": [
+            "flt-n3-L4a"
+          ],
+          "frame": [
+            "gcd",
+            "lparen",
+            "u",
+            "comma",
+            "v",
+            "rparen",
+            "rel",
+            "rhs"
+          ],
+          "sockets": [
+            "rel",
+            "rhs"
+          ],
+          "palette": [
+            "eq",
+            "neq",
+            "n1",
+            "n2",
+            "n3",
+            "p"
+          ],
+          "target": {
+            "0": "eq",
+            "1": "n1"
+          },
           "start": {},
-          "unlocks": ["L4", "in"]
+          "unlocks": [
+            "L4",
+            "in"
+          ]
         },
         {
           "id": "flt-n3-L5",
@@ -130,17 +355,59 @@
           "prompt_key": "sb.flt_n3.L5.prompt",
           "hint_key": "sb.flt_n3.L5.hint",
           "board_label_key": "sb.flt_n3.L5.board",
-          "requires": ["flt-n3-L4b"],
-          "frame": [
-            "gcd", "lparen", "n2", "mul", "u", "comma",
-            "u", "pow", "n2", "plus", "n3", "mul", "v", "pow", "n2", "rparen",
-            "memb", "lbrace", "set1", "comma", "set2", "rbrace"
+          "evidence_key": "sb.flt_n3.L5.evidence",
+          "requires": [
+            "flt-n3-L4b"
           ],
-          "sockets": ["memb", "set1", "set2"],
-          "palette": ["in", "eq", "neq", "n1", "n3", "n2", "n0", "p"],
-          "target": { "0": "in", "1": "n1", "2": "n3" },
+          "frame": [
+            "gcd",
+            "lparen",
+            "n2",
+            "mul",
+            "u",
+            "comma",
+            "u",
+            "pow",
+            "n2",
+            "plus",
+            "n3",
+            "mul",
+            "v",
+            "pow",
+            "n2",
+            "rparen",
+            "memb",
+            "lbrace",
+            "set1",
+            "comma",
+            "set2",
+            "rbrace"
+          ],
+          "sockets": [
+            "memb",
+            "set1",
+            "set2"
+          ],
+          "palette": [
+            "in",
+            "eq",
+            "neq",
+            "n1",
+            "n3",
+            "n2",
+            "n0",
+            "p"
+          ],
+          "target": {
+            "0": "in",
+            "1": "n1",
+            "2": "n3"
+          },
           "start": {},
-          "unlocks": ["L5", "pm"]
+          "unlocks": [
+            "L5",
+            "pm"
+          ]
         },
         {
           "id": "flt-n3-L6",
@@ -149,13 +416,42 @@
           "prompt_key": "sb.flt_n3.L6.prompt",
           "hint_key": "sb.flt_n3.L6.hint",
           "board_label_key": "sb.flt_n3.L6.board",
-          "requires": ["flt-n3-L5"],
-          "frame": ["a", "eq", "sign", "r", "pow", "exp"],
-          "sockets": ["sign", "exp"],
-          "palette": ["pm", "plus", "minus", "mul", "n3", "n2", "n1"],
-          "target": { "0": "pm", "1": "n3" },
+          "evidence_key": "sb.flt_n3.L6.evidence",
+          "requires": [
+            "flt-n3-L5"
+          ],
+          "frame": [
+            "a",
+            "eq",
+            "sign",
+            "r",
+            "pow",
+            "exp"
+          ],
+          "sockets": [
+            "sign",
+            "exp"
+          ],
+          "palette": [
+            "pm",
+            "plus",
+            "minus",
+            "mul",
+            "n3",
+            "n2",
+            "n1"
+          ],
+          "target": {
+            "0": "pm",
+            "1": "n3"
+          },
           "start": {},
-          "unlocks": ["L6", "k", "n", "n9"]
+          "unlocks": [
+            "L6",
+            "k",
+            "n",
+            "n9"
+          ]
         },
         {
           "id": "flt-n3-L7",
@@ -164,16 +460,53 @@
           "prompt_key": "sb.flt_n3.L7.prompt",
           "hint_key": "sb.flt_n3.L7.hint",
           "board_label_key": "sb.flt_n3.L7.board",
-          "requires": ["flt-n3-L6"],
-          "frame": [
-            "n2", "mul", "u", "eq", "r", "pow", "exp_r", "comma",
-            "u", "pow", "n2", "plus", "n3", "mul", "v", "pow", "n2", "eq", "s", "pow", "exp_s"
+          "evidence_key": "sb.flt_n3.L7.evidence",
+          "requires": [
+            "flt-n3-L6"
           ],
-          "sockets": ["exp_r", "exp_s"],
-          "palette": ["n3", "n2", "n1", "n9"],
-          "target": { "0": "n3", "1": "n3" },
+          "frame": [
+            "n2",
+            "mul",
+            "u",
+            "eq",
+            "r",
+            "pow",
+            "exp_r",
+            "comma",
+            "u",
+            "pow",
+            "n2",
+            "plus",
+            "n3",
+            "mul",
+            "v",
+            "pow",
+            "n2",
+            "eq",
+            "s",
+            "pow",
+            "exp_s"
+          ],
+          "sockets": [
+            "exp_r",
+            "exp_s"
+          ],
+          "palette": [
+            "n3",
+            "n2",
+            "n1",
+            "n9"
+          ],
+          "target": {
+            "0": "n3",
+            "1": "n3"
+          },
           "start": {},
-          "unlocks": ["L7", "r", "s"]
+          "unlocks": [
+            "L7",
+            "r",
+            "s"
+          ]
         },
         {
           "id": "flt-n3-CFL",
@@ -182,15 +515,54 @@
           "prompt_key": "sb.flt_n3.CFL.prompt",
           "hint_key": "sb.flt_n3.CFL.hint",
           "board_label_key": "sb.flt_n3.CFL.board",
-          "requires": ["flt-n3-L7"],
-          "frame": [
-            "u", "eq", "e", "mul", "lparen", "e", "pow", "n2", "sign_op", "coef", "mul", "f", "pow", "n2", "rparen"
+          "evidence_key": "sb.flt_n3.CFL.evidence",
+          "requires": [
+            "flt-n3-L7"
           ],
-          "sockets": ["sign_op", "coef"],
-          "palette": ["minus", "plus", "mul", "n9", "n3", "n1", "n2"],
-          "target": { "0": "minus", "1": "n9" },
+          "frame": [
+            "u",
+            "eq",
+            "e",
+            "mul",
+            "lparen",
+            "e",
+            "pow",
+            "n2",
+            "sign_op",
+            "coef",
+            "mul",
+            "f",
+            "pow",
+            "n2",
+            "rparen"
+          ],
+          "sockets": [
+            "sign_op",
+            "coef"
+          ],
+          "palette": [
+            "minus",
+            "plus",
+            "mul",
+            "n9",
+            "n3",
+            "n1",
+            "n2"
+          ],
+          "target": {
+            "0": "minus",
+            "1": "n9"
+          },
           "start": {},
-          "unlocks": ["CFL", "e", "f", "or", "and", "imply", "comma"]
+          "unlocks": [
+            "CFL",
+            "e",
+            "f",
+            "or",
+            "and",
+            "imply",
+            "comma"
+          ]
         },
         {
           "id": "flt-n3-L8",
@@ -199,13 +571,42 @@
           "prompt_key": "sb.flt_n3.L8.prompt",
           "hint_key": "sb.flt_n3.L8.hint",
           "board_label_key": "sb.flt_n3.L8.board",
-          "requires": ["flt-n3-CFL"],
-          "frame": ["p_left", "div", "e", "connect", "p_right", "div", "f"],
-          "sockets": ["p_left", "connect", "p_right"],
-          "palette": ["n2", "n3", "n1", "or", "and", "imply", "comma"],
-          "target": { "0": "n2", "1": "or", "2": "n2" },
+          "evidence_key": "sb.flt_n3.L8.evidence",
+          "requires": [
+            "flt-n3-CFL"
+          ],
+          "frame": [
+            "p_left",
+            "div",
+            "e",
+            "connect",
+            "p_right",
+            "div",
+            "f"
+          ],
+          "sockets": [
+            "p_left",
+            "connect",
+            "p_right"
+          ],
+          "palette": [
+            "n2",
+            "n3",
+            "n1",
+            "or",
+            "and",
+            "imply",
+            "comma"
+          ],
+          "target": {
+            "0": "n2",
+            "1": "or",
+            "2": "n2"
+          },
           "start": {},
-          "unlocks": ["L8"]
+          "unlocks": [
+            "L8"
+          ]
         },
         {
           "id": "flt-n3-L9",
@@ -214,13 +615,39 @@
           "prompt_key": "sb.flt_n3.L9.prompt",
           "hint_key": "sb.flt_n3.L9.hint",
           "board_label_key": "sb.flt_n3.L9.board",
-          "requires": ["flt-n3-L8"],
-          "frame": ["not", "lparen", "bad_prime", "div", "who", "rparen"],
-          "sockets": ["bad_prime", "who"],
-          "palette": ["n3", "n2", "n1", "p", "e", "f"],
-          "target": { "0": "n3", "1": "e" },
+          "evidence_key": "sb.flt_n3.L9.evidence",
+          "requires": [
+            "flt-n3-L8"
+          ],
+          "frame": [
+            "not",
+            "lparen",
+            "bad_prime",
+            "div",
+            "who",
+            "rparen"
+          ],
+          "sockets": [
+            "bad_prime",
+            "who"
+          ],
+          "palette": [
+            "n3",
+            "n2",
+            "n1",
+            "p",
+            "e",
+            "f"
+          ],
+          "target": {
+            "0": "n3",
+            "1": "e"
+          },
           "start": {},
-          "unlocks": ["L9", "equiv"]
+          "unlocks": [
+            "L9",
+            "equiv"
+          ]
         },
         {
           "id": "flt-n3-L10",
@@ -229,18 +656,52 @@
           "prompt_key": "sb.flt_n3.L10.prompt",
           "hint_key": "sb.flt_n3.L10.hint",
           "board_label_key": "sb.flt_n3.L10.board",
-          "requires": ["flt-n3-L9"],
-          "frame": [
-            "lparen", "e", "left_op", "n3", "mul", "f", "rparen",
-            "rel",
-            "lparen", "e", "right_op", "n3", "mul", "f", "rparen",
-            "mod", "n2"
+          "evidence_key": "sb.flt_n3.L10.evidence",
+          "requires": [
+            "flt-n3-L9"
           ],
-          "sockets": ["left_op", "rel", "right_op"],
-          "palette": ["minus", "plus", "mul", "equiv", "eq", "neq", "le"],
-          "target": { "0": "minus", "1": "equiv", "2": "plus" },
+          "frame": [
+            "lparen",
+            "e",
+            "left_op",
+            "n3",
+            "mul",
+            "f",
+            "rparen",
+            "rel",
+            "lparen",
+            "e",
+            "right_op",
+            "n3",
+            "mul",
+            "f",
+            "rparen",
+            "mod",
+            "n2"
+          ],
+          "sockets": [
+            "left_op",
+            "rel",
+            "right_op"
+          ],
+          "palette": [
+            "minus",
+            "plus",
+            "mul",
+            "equiv",
+            "eq",
+            "neq",
+            "le"
+          ],
+          "target": {
+            "0": "minus",
+            "1": "equiv",
+            "2": "plus"
+          },
           "start": {},
-          "unlocks": ["L10"]
+          "unlocks": [
+            "L10"
+          ]
         },
         {
           "id": "flt-n3-L11",
@@ -249,16 +710,51 @@
           "prompt_key": "sb.flt_n3.L11.prompt",
           "hint_key": "sb.flt_n3.L11.hint",
           "board_label_key": "sb.flt_n3.L11.board",
-          "requires": ["flt-n3-L10"],
-          "frame": [
-            "gcd", "lparen", "lead", "mul", "e", "comma", "e", "minus", "n3", "mul", "f", "rparen",
-            "rel", "rhs"
+          "evidence_key": "sb.flt_n3.L11.evidence",
+          "requires": [
+            "flt-n3-L10"
           ],
-          "sockets": ["lead", "rel", "rhs"],
-          "palette": ["n2", "n1", "n3", "p", "eq", "neq"],
-          "target": { "0": "n2", "1": "eq", "2": "n1" },
+          "frame": [
+            "gcd",
+            "lparen",
+            "lead",
+            "mul",
+            "e",
+            "comma",
+            "e",
+            "minus",
+            "n3",
+            "mul",
+            "f",
+            "rparen",
+            "rel",
+            "rhs"
+          ],
+          "sockets": [
+            "lead",
+            "rel",
+            "rhs"
+          ],
+          "palette": [
+            "n2",
+            "n1",
+            "n3",
+            "p",
+            "eq",
+            "neq"
+          ],
+          "target": {
+            "0": "n2",
+            "1": "eq",
+            "2": "n1"
+          },
           "start": {},
-          "unlocks": ["L11", "a", "b", "c"]
+          "unlocks": [
+            "L11",
+            "a",
+            "b",
+            "c"
+          ]
         },
         {
           "id": "flt-n3-L12",
@@ -267,18 +763,59 @@
           "prompt_key": "sb.flt_n3.L12.prompt",
           "hint_key": "sb.flt_n3.L12.hint",
           "board_label_key": "sb.flt_n3.L12.board",
-          "requires": ["flt-n3-L11"],
-          "frame": [
-            "u", "eq", "scale", "mul", "q", "imply",
-            "gcd", "lparen", "n2", "mul", "q", "comma",
-            "v", "pow", "n2", "plus", "n3", "mul", "q", "pow", "n2", "rparen",
-            "rel", "rhs"
+          "evidence_key": "sb.flt_n3.L12.evidence",
+          "requires": [
+            "flt-n3-L11"
           ],
-          "sockets": ["scale", "rel", "rhs"],
-          "palette": ["n3", "n2", "n1", "p", "eq", "neq"],
-          "target": { "0": "n3", "1": "eq", "2": "n1" },
+          "frame": [
+            "u",
+            "eq",
+            "scale",
+            "mul",
+            "q",
+            "imply",
+            "gcd",
+            "lparen",
+            "n2",
+            "mul",
+            "q",
+            "comma",
+            "v",
+            "pow",
+            "n2",
+            "plus",
+            "n3",
+            "mul",
+            "q",
+            "pow",
+            "n2",
+            "rparen",
+            "rel",
+            "rhs"
+          ],
+          "sockets": [
+            "scale",
+            "rel",
+            "rhs"
+          ],
+          "palette": [
+            "n3",
+            "n2",
+            "n1",
+            "p",
+            "eq",
+            "neq"
+          ],
+          "target": {
+            "0": "n3",
+            "1": "eq",
+            "2": "n1"
+          },
           "start": {},
-          "unlocks": ["L12", "q"]
+          "unlocks": [
+            "L12",
+            "q"
+          ]
         },
         {
           "id": "flt-n3-close",
@@ -287,18 +824,53 @@
           "prompt_key": "sb.flt_n3.close.prompt",
           "hint_key": "sb.flt_n3.close.hint",
           "board_label_key": "sb.flt_n3.close.board",
-          "requires": ["flt-n3-L12"],
-          "frame": [
-            "abs_l", "a", "mul", "b", "mul", "c", "abs_r",
-            "cmp",
-            "abs_l", "x", "mul", "y", "mul", "z", "abs_r",
-            "imply", "F", "rel", "empty_sock"
+          "requires": [
+            "flt-n3-L12"
           ],
-          "sockets": ["cmp", "rel", "empty_sock"],
-          "palette": ["lt", "le", "eq", "neq", "empty"],
-          "target": { "0": "lt", "1": "eq", "2": "empty" },
+          "frame": [
+            "abs_l",
+            "a",
+            "mul",
+            "b",
+            "mul",
+            "c",
+            "abs_r",
+            "cmp",
+            "abs_l",
+            "x",
+            "mul",
+            "y",
+            "mul",
+            "z",
+            "abs_r",
+            "imply",
+            "F",
+            "rel",
+            "empty_sock"
+          ],
+          "sockets": [
+            "cmp",
+            "rel",
+            "empty_sock"
+          ],
+          "palette": [
+            "lt",
+            "le",
+            "eq",
+            "neq",
+            "empty"
+          ],
+          "target": {
+            "0": "lt",
+            "1": "eq",
+            "2": "empty"
+          },
           "start": {},
-          "unlocks": ["no_sq_area", "has_sq_area", "all_primitive"]
+          "unlocks": [
+            "no_sq_area",
+            "has_sq_area",
+            "hyp_never_sq"
+          ]
         }
       ]
     }

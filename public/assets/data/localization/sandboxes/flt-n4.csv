@@ -30,7 +30,7 @@ sb.token.colon,:,:,:,:
 sb.token.claim,(?),(?),(?),(?)
 sb.token.no_sq_area,no integer right △ has square area,no integer right △ has square area,no integer right △ has square area,no integer right △ has square area
 sb.token.has_sq_area,some integer right △ has square area,some integer right △ has square area,some integer right △ has square area,some integer right △ has square area
-sb.token.all_primitive,every primitive triple has square area,every primitive triple has square area,every primitive triple has square area,every primitive triple has square area
+sb.token.hyp_never_sq,no integer right △ has square hypotenuse,no integer right △ has square hypotenuse,no integer right △ has square hypotenuse,no integer right △ has square hypotenuse
 sb.token.squares_mod4,n² mod 4,n² mod 4,n² mod 4,n² mod 4
 sb.token.are,(?),(?),(?),(?)
 sb.token.mod4_01,≡ 0 or 1,≡ 0 or 1,≡ 0 or 1,≡ 0 or 1
